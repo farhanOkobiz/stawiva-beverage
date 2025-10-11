@@ -42,13 +42,14 @@ import Forgot from "./pages/Forgot";
 import ResetPassword from "./pages/ResetPassword";
 import BrandShop from "./components/shop/BrandShop";
 import Clients from "./pages/Clients";
+import Management from "./components/management/Management";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="/about" element={<About />} />
-
+      <Route path="/company/about-us" element={<About />} />
+      <Route path="/company/management" element={<Management />} />
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/blogs/:slug" element={<SingleBlogPage />} />
@@ -64,7 +65,7 @@ const router = createBrowserRouter(
       <Route path="/gallery" element={<EventPage />} />
       <Route path="/gallery/:id" element={<SingleEventPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/shop" element={<Shop />}>
+      <Route path="/products" element={<Shop />}>
         <Route index element={<ProductGridShopPage />} />
         <Route path="category/:slug" element={<CategoryShop />} />
         <Route path="brand/:slug" element={<BrandShop />} />

@@ -13,7 +13,7 @@ const Thankyou = () => {
           <div className="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
             {/* Brand Name */}
             <h1 className="text-5xl text-primary font-bold mb-6 tracking-tight">
-              Qutex
+              Stawiva Beverage
             </h1>
 
             {/* Thank You Message */}

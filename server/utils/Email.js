@@ -6,7 +6,7 @@ module.exports = class Email {
     this.to = user.email;
     this.firstName = user.name ? user.name.split(" ")[0] : "Admin";
     this.url = url;
-    this.from = `Qutex <${process.env.EMAIL_FROM}>`;
+    this.from = `Stawiva Beverage <${process.env.EMAIL_FROM}>`;
   }
 
   newTransport() {
@@ -36,12 +36,12 @@ module.exports = class Email {
 
   async sendWelcome() {
     const html = `
-      <h1>Welcome to the Qutex, ${this.firstName}!</h1>
+      <h1>Welcome to the Stawiva Beverage, ${this.firstName}!</h1>
       <p>We are excited to have you onboard.</p>
       <p>Click <a href="${this.url}">here</a> to get verified.</p>
     `;
 
-    await this.send(html, "Welcome to the Qutex Family!");
+    await this.send(html, "Welcome to the Stawiva Beverage Family!");
   }
 
   async sendPasswordReset() {
@@ -52,7 +52,7 @@ module.exports = class Email {
     <p><a href="${this.url}">Reset your password</a></p>
     <p>If you did not request a password reset, please ignore this email.</p>
     <p>Thanks,</p>
-    <p>The Qutex Team</p>
+    <p>The Stawiva Beverage Team</p>
   `;
 
     await this.send(
@@ -133,7 +133,7 @@ module.exports = class Email {
       <p>Current stock: <strong>${product.stock}</strong></p>
       <p>Please consider restocking the product to ensure availability for future orders.</p>
       <p>Thanks,</p>
-      <p>The Qutex System</p>
+      <p>The Stawiva Beverage System</p>
     `;
 
     await this.send(

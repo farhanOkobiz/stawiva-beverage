@@ -84,7 +84,7 @@ const cloudinaryUploadMiddleware = (folder, fieldName) => {
       Date.now() + "-" + Math.round(Math.random() * 1e9);
 
     const uploadToCloudinary = async (file) => {
-      const folderPath = `qutex/uploads/${folder}`.replace(/\/+$/, "");
+      const folderPath = `Stawiva Beverage/uploads/${folder}`.replace(/\/+$/, "");
 
       const resourceType = file.mimetype.startsWith("image")
         ? "image"

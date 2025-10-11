@@ -19,7 +19,7 @@ const Footer = () => {
                   <img className="w-full" src={logo} />
                 </div>
                 <h2 className="text-xl text-text font-bold mb-3 mt-5">
-                  We Are Qutex
+                  We Are Stawiva Beverage
                 </h2>
                 <p className="text-[14px] leading-7 text-gray-600">
                   Our Mission Is To Empower Garment Manufacturers, Tailors, And
@@ -123,7 +123,7 @@ const Footer = () => {
         <Containar>
           <div className="flex justify-between flex-wrap px-5 lg:px-0 py-5 text-white">
             <p className="text-[12px] sm:text-[14px]">
-              Qutex © 2025. All Rights Reserved.
+              Stawiva Beverage © 2025. All Rights Reserved.
             </p>
             <a
               href="https://okobiz.com/"

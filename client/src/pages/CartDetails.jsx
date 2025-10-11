@@ -102,7 +102,7 @@ const CartDetails = () => {
   return (
     <div className="font-robo pb-20">
       <div className="h-[64px] sm:h-[83.4px] bg-[#f5f5f5] "></div>
-      <BradCumbs title="Qutex " brad="Cart"></BradCumbs>
+      <BradCumbs title="Stawiva Beverage " brad="Cart"></BradCumbs>
       <Containar>
         <div className="mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold my-10">Cart Details</h1>

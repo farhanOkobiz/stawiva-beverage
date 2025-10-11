@@ -6,20 +6,25 @@ import Chooseus from "../components/about/Chooseus";
 import OurJourney from "../components/about/OurJourney";
 import WhatWeDo from "../components/about/WhatWeDo";
 import Partner from "../components/home/Partner";
+import Management from "../components/management/Management";
 import BradCumbs from "../components/shared/BradCumbs";
+import SubBanner from "../components/shared/subBanner/SubBanner";
+import AboutUs from "./AboutUs";
 
 const About = () => {
   return (
     <div className="font-robo lg:px-0">
-      <div className="h-[68px] sm:h-[83.4px] bg-[#f5f5f5] "></div>
-      <BradCumbs title="Know About Qutex " brad="About"></BradCumbs>
-      <AboutIntroduction></AboutIntroduction>
+      <div className=" bg-[#f5f5f5] "></div>
+      {/* <BradCumbs title="Know About Stawiva Beverage " brad="About"></BradCumbs> */}
+      {/* <SubBanner/> */}
+       <AboutUs/>
+      {/* <AboutIntroduction></AboutIntroduction>
       <AboutValues></AboutValues>
-      <WhatWeDo></WhatWeDo>
+      <WhatWeDo></WhatWeDo> */}
       {/* <OurTeam></OurTeam> */}
       {/* <OurJourney></OurJourney> */}
-      <Chooseus></Chooseus>
-      <Partner></Partner>
+      {/* <Chooseus></Chooseus>
+      <Partner></Partner> */}
     </div>
   );
 };

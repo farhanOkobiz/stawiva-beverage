@@ -48,7 +48,7 @@ const AboutValues = () => {
                 Our Mission
               </h2>
               <p className="w-full  leading-7 text-lg text-justify text-gray-500">
-                At Qutex, our mission is to revolutionize the sewing industry by
+                At Stawiva Beverage, our mission is to revolutionize the sewing industry by
                 delivering innovative, high-quality sewing machines and services
                 that empower creativity and precision. We are dedicated to
                 supporting individuals and businesses by providing reliable,
@@ -66,10 +66,10 @@ const AboutValues = () => {
                 Our vision is to become a global leader in the sewing machine
                 industry, known for innovation, reliability, and
                 customer-centric solutions. We strive to foster a community of
-                creators, designers, and businesses who trust Qutex as their
+                creators, designers, and businesses who trust Stawiva Beverage as their
                 partner in achieving excellence. By driving technological
                 advancements and sustainable practices, we envision a future
-                where Qutex empowers every individual to unlock their full
+                where Stawiva Beverage empowers every individual to unlock their full
                 creative potential and bring their ideas to life.
               </p>
             </div>

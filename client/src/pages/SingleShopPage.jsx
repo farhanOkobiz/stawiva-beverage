@@ -238,7 +238,7 @@ const SingleShopPage = () => {
                   )}
                 </div>
               </div>
-              <div className="text-xl underline text-blue-500 text-center">https://qutexbd.com/</div>
+              <div className="text-xl underline text-blue-500 text-center">https://Stawiva Beveragebd.com/</div>
             </div>
           </div>
         </div>

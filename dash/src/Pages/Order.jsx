@@ -229,7 +229,7 @@ const Orders = () => {
               <div class="billing-section">
                 <div class="billing-info">
                   <p<strong><b>COMPANY:</b></strong></p>
-                <p>Qutex</p>
+                <p>Stawiva Beverage</p>
                 <p>+88 01914314909</p>
                 <p>tmcsbd.hss@gmail.com</p>
                 </div>

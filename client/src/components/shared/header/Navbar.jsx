@@ -343,7 +343,7 @@ const Navbar = () => {
 
               <div className="hidden md:flex text-gray-600 font-semibold text-xl">
                 {/* <Search /> */}
-                Welcome To Qutex
+                Welcome To Stawiva Beverage
               </div>
 
               <div className="hidden md:flex items-center space-x-4 text-gray-600">
