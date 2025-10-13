@@ -8,7 +8,11 @@ const generateSlug = require("../utils/slugGenerator");
 
 exports.createProductController = catchAsync(async (req, res, next) => {
   const body = { ...req.body };
-  body.specification = JSON.parse(body.model);
+  try {
+    body.packaging = JSON.parse(body.model);
+  } catch {
+    body.packaging = body.packaging || [];
+  }
   const title = body?.title;
   const slug = generateSlug(title);
   if (!body.photos || body.photos.length === 0) {
@@ -19,7 +23,7 @@ exports.createProductController = catchAsync(async (req, res, next) => {
       )
     );
   }
-  console.log("This is body", body)
+  console.log("This is body", body);
   // kkk
   try {
     body.slug = slug;
@@ -79,7 +83,12 @@ exports.getProductController = catchAsync(async (req, res, next) => {
 exports.updateProductController = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
   const body = { ...req.body };
-  body.specification = JSON.parse(body.model);
+  // On update also parse model JSON into packaging
+  try {
+    body.packaging = JSON.parse(body.model);
+  } catch {
+    body.packaging = body.packaging || [];
+  }
 
   // Handle new photos if provided by the Cloudinary upload middleware
   if (req.body.photos && req.body.photos.length > 0) {

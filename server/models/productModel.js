@@ -6,8 +6,15 @@ const productSchema = new Schema(
   {
     productId: {
       type: String,
-      required: [true, "Product ID is required"],
       unique: true,
+      default: function () {
+        const now = new Date();
+        const year = now.getFullYear().toString().slice(-2);
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const day = String(now.getDate()).padStart(2, "0");
+        const uniquePart = `${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
+        return `PRO-${year}${month}${day}${uniquePart}`;
+      },
     },
     title: {
       type: String,
@@ -36,11 +43,19 @@ const productSchema = new Schema(
       ref: "Category",
       required: [true, "Category ID is required"],
     },
-    // Packaging Options (array for flexibility)
+    // Packaging Options (array of objects: { type, sizes })
     packaging: [
       {
-        type: String,
-        trim: true,
+        type: {
+          type: String,
+          trim: true,
+        },
+        sizes: [
+          {
+            type: String,
+            trim: true,
+          },
+        ],
       },
     ],
     //  Main Ingredients
@@ -73,20 +88,6 @@ const productSchema = new Schema(
   }
 );
 
-productSchema.pre("save", async function (next) {
-  if (!this.productId) {
-    const now = new Date();
-    const year = now.getFullYear().toString().slice(-2);
-    const month = String(now.getMonth() + 1).padStart(2, "0"); // 10
-    const day = String(now.getDate()).padStart(2, "0"); // 13
-
-    // unique 4-digit random or time-based number
-    const uniquePart = `${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
-    this.productId = `PRO-${year}${month}${day}${uniquePart}`;
-  }
-
-  next();
-});
 
 const Product = model("Product", productSchema);
 

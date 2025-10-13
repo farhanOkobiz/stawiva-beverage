@@ -19,6 +19,7 @@ import axiosInstance from "../Components/Axios";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // import the Quill styling
 import DynamicFormList from "../Components/DynamicFormList";
+import DynamicPackagingField from "../Components/DynamicPackagingField";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -88,45 +89,85 @@ const Products = () => {
     setConfirmLoading(true); // Set loading state to true
     try {
       const values = await form.validateFields();
-      console.log("This is", values);
+      console.log("form values on submit:", values);
       const formData = new FormData();
-      const requiredFields = ["model", "advantages"];
 
-      // Validate required fields
+      // Require 'packaging' (DynamicPackagingField uses name="packaging")
+      const requiredFields = ["packaging"];
+
+      // Validate required fields robustly
       for (const field of requiredFields) {
-        if (
-          !values[field] ||
-          (Array.isArray(values[field]) && values[field].length === 0) ||
-          values[field].includes("undefined")
-        ) {
-          message.error(`${field} is required and must have valid values.`);
-          return; // Stop submission if validation fails
+        const val = values[field];
+        if (!Array.isArray(val) || val.length === 0) {
+          message.error(
+            `${field} is required and must have at least one entry.`
+          );
+          setConfirmLoading(false);
+          return;
+        }
+
+        // Validate packaging entries: each should have a non-empty 'type' and a non-empty 'sizes' array
+        const invalidPackaging = val.some((entry) => {
+          if (!entry || typeof entry !== "object") return true;
+          const hasType =
+            entry.type &&
+            String(entry.type).trim() !== "" &&
+            entry.type !== "undefined";
+          const hasSizes =
+            Array.isArray(entry.sizes) &&
+            entry.sizes.filter(
+              (s) => s !== undefined && s !== null && String(s).trim() !== ""
+            ).length > 0;
+          return !(hasType && hasSizes);
+        });
+
+        if (invalidPackaging) {
+          message.error(
+            "Each packaging entry must have a valid type and at least one size."
+          );
+          setConfirmLoading(false);
+          return;
         }
       }
-      // Append fields from the form
-      // Object.keys(values).forEach((key) => {
-      //   if (key !== "photos") {
-      //     formData.append(key, values[key]);
-      //   }
-      // });
+
+      // Append fields from the form into formData
       for (const key in values) {
-        if (key === "model") {
-          formData.append("model", JSON.stringify(values.model));
-        } else if (Array.isArray(values[key])) {
-          const validItems = values[key].filter(
-            (item) => item !== "undefined" && item.trim() !== ""
-          );
-          console.log("leeee", validItems);
-          if (validItems.length > 0) {
-            validItems.forEach((item) => {
-              formData.append(`${key}[]`, item);
-            });
+        const value = values[key];
+        if (value === undefined || value === null) continue;
+
+        if (Array.isArray(value)) {
+          // Special-case packaging: backend expects the JSON string in 'model'
+          if (key === "packaging") {
+            formData.append("model", JSON.stringify(value));
           } else {
-            message.success(`${key} is required but contains invalid values.`);
-            return;
+            // If array items are objects (e.g., other lists), serialize the whole array as JSON
+            const firstItem = value[0];
+            if (firstItem && typeof firstItem === "object") {
+              formData.append(key, JSON.stringify(value));
+            } else {
+              // primitive array (strings) - append as multiple fields
+              const validItems = value.filter(
+                (item) =>
+                  item !== undefined &&
+                  item !== null &&
+                  String(item).trim() !== "" &&
+                  item !== "undefined"
+              );
+              if (validItems.length > 0) {
+                validItems.forEach((item) => {
+                  formData.append(`${key}[]`, item);
+                });
+              } else {
+                message.error(
+                  `${key} is required but contains invalid values.`
+                );
+                setConfirmLoading(false);
+                return;
+              }
+            }
           }
         } else {
-          formData.append(key, values[key]);
+          formData.append(key, value);
         }
       }
       // Combine existing photos and new ones
@@ -204,7 +245,9 @@ const Products = () => {
     if (product) {
       form.setFieldsValue({
         ...product,
-        model: product?.specification,
+        // backend expects body.model to be a JSON string that becomes specification
+        // the UI uses `packaging` Form.List, so populate that from product.specification
+        packaging: product?.specification || [],
         category: product.category?._id,
         brand: product.brand?._id,
         details: product.details,
@@ -272,11 +315,6 @@ const Products = () => {
       key: "title",
     },
     {
-      title: "Price",
-      dataIndex: "price",
-      key: "price",
-    },
-    {
       title: "Category",
       dataIndex: ["category", "title"],
       key: "category",
@@ -285,6 +323,32 @@ const Products = () => {
       title: "Brand",
       dataIndex: ["brand", "title"],
       key: "brand",
+    },
+    {
+      title: "Packaging",
+      dataIndex: "packaging",
+      key: "packaging",
+      render: (packaging) =>
+        packaging
+          .map((p) => `${p.type}: ${p.sizes ? p.sizes.join(", ") : ""}`)
+          .join(" | "),
+    },
+    {
+      title: "Main Ingredients",
+      dataIndex: "mainIngredients",
+      key: "mainIngredients",
+      render: (ingredients) => ingredients.join(", "),
+    },
+    {
+      title: "Certifications",
+      dataIndex: "certifications",
+      key: "certifications",
+      render: (certs) => certs.join(", "),
+    },
+    {
+      title: "Shelf Life",
+      dataIndex: "shelfLife",
+      key: "shelfLife",
     },
     {
       title: "Action",
@@ -334,6 +398,7 @@ const Products = () => {
         width={1000}
       >
         <Form form={form} layout="vertical">
+          {/* Title */}
           <Form.Item
             name="title"
             label="Title (Title has to be unique)"
@@ -343,31 +408,7 @@ const Products = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            name="price"
-            label="Price"
-            rules={[
-              { required: true, message: "Please enter the product price" },
-            ]}
-          >
-            <Input type="number" />
-          </Form.Item>
-          <DynamicFormList
-            name="model"
-            label="Model"
-            placeholder="Model Name"
-            rules={[
-              { required: true, message: "Please input your product model!" },
-            ]}
-          />
-          <DynamicFormList
-            name="advantages"
-            label="Advantages"
-            placeholder="Insert your advantages"
-            rules={[
-              { required: true, message: "Please insert your advantages!" },
-            ]}
-          />
+          {/* Details */}
           <Form.Item
             name="details"
             label="Details"
@@ -377,10 +418,11 @@ const Products = () => {
           >
             <ReactQuill />
           </Form.Item>
+          {/* Brand */}
           <Form.Item
             name="brand"
             label="Brand"
-            rules={[{ required: true, message: "Please select a Brand" }]}
+            rules={[{ required: true, message: "Please select a brand" }]}
           >
             <Select onChange={handleBrandChange}>
               {brands.map((brand) => (
@@ -390,6 +432,7 @@ const Products = () => {
               ))}
             </Select>
           </Form.Item>
+          {/* Category */}
           <Form.Item
             name="category"
             label="Category"
@@ -403,7 +446,25 @@ const Products = () => {
               ))}
             </Select>
           </Form.Item>
-          Dynamic
+          {/* Packaging (Dynamic Array) */}
+          <DynamicPackagingField form={form} />
+          {/* Main Ingredients (Dynamic Array) */}
+          <DynamicFormList
+            name="mainIngredients"
+            label="Main Ingredients"
+            placeholder="e.g., Water"
+          />
+          {/* Certifications (Dynamic Array) */}
+          <DynamicFormList
+            name="certifications"
+            label="Certifications"
+            placeholder="e.g., ISO, FDA"
+          />
+          {/* Shelf Life */}
+          <Form.Item name="shelfLife" label="Shelf Life">
+            <Input placeholder="24 months" />
+          </Form.Item>
+          {/* photo */}
           <Form.Item label="Photos">
             <Upload
               fileList={fileList}

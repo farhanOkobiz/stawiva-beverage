@@ -67,12 +67,14 @@ const SingleShopPage = () => {
   return (
     <div className="font-robo">
       <div className="h-[68px] sm:h-[83.4px]"></div>
-      <SinglePageBradCumbs title={product?.title} />
+      <div className="mt-4">
+        <SinglePageBradCumbs title={product?.title} />
+      </div>
       <Containar>
         <div className="pb-24">
           <div className="grid grid-cols-12 gap-y-10 lg:gap-10">
             <div className="col-span-12">
-              <div className="text-[32px] font-bold capitalize">
+              {/* <div className="text-[32px] font-bold capitalize">
                 {product ? product.title : <Skeleton width={200} />}
               </div>
               <div className="text-[14px] font-normal my-1">
@@ -81,9 +83,9 @@ const SingleShopPage = () => {
                 ) : (
                   <Skeleton width={150} />
                 )}
-              </div>
+              </div> */}
               <div className="grid grid-cols-12 md:gap-6 lg:gap-x-5">
-                <div className="col-span-12 md:col-span-6">
+                <div className="col-span-12 md:col-span-5">
                   <div className="relative group">
                     <Swiper
                       ref={swiperRef}
@@ -94,11 +96,11 @@ const SingleShopPage = () => {
                       className="w-full"
                     >
                       {product?.photos?.length > 0 ? (
-                        product.photos.map((item, index) => (
+                        product?.photos?.map((item, index) => (
                           <SwiperSlide key={index}>
                             <img
                               src={item}
-                              className="w-full object-contain"
+                              className="w-full h-96 object-contain border rounded"
                               alt="Product"
                             />
                           </SwiperSlide>
@@ -123,63 +125,62 @@ const SingleShopPage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-6">
-                  <div className="overflow-x-auto p-4 rounded-lg">
-                    <table className="w-full border border-gray-300">
-                      <tbody>
-                        {/* Header Row (Models) */}
-                        <tr className="border-b">
-                          <th className="px-6 py-3 font-semibold text-center border-r">
-                            Model
-                          </th>
-                          {product?.specification.map((item, index) => (
-                            <th
-                              key={index}
-                              className="px-6 py-3 font-semibold text-center border-r"
-                            >
-                              {item.model}
-                            </th>
-                          ))}
-                        </tr>
-
-                        {/* Specification Rows */}
-                        {product?.specification[0]?.typeValue.map(
-                          (subItem, i) => (
-                            <tr key={i} className="border-b">
-                              <th className="px-6 py-3 text-center font-semibold border-r">
-                                {subItem.type}
-                              </th>
-                              {product?.specification.map((item, index) => (
-                                <td
-                                  key={index}
-                                  className="px-6 py-3 text-center border-r"
-                                >
-                                  {item.typeValue[i]?.value || "-"}
-                                </td>
-                              ))}
-                            </tr>
-                          )
-                        )}
-                      </tbody>
-                    </table>
+                <div className="col-span-12 md:col-span-7">
+                  <h2 className="text-[1.3rem] font-bold leading-[1.5]">
+                    {product?.title}
+                  </h2>
+                  <h3 className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
+                    <span className="text-[1.3rem] font-bold leading-[1.5]">
+                      Brand:
+                    </span>{" "}
+                    <span className="text-lg">
+                      {product?.brand?.title || "N/A"}
+                    </span>
+                  </h3>
+                  <div className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
+                    <span className="text-[1.3rem] font-bold leading-[1.5]">
+                      Packaging:
+                    </span>{" "}
+                    <span className="text-lg">
+                      {product?.packaging?.map((pack, i) => (
+                        <span key={i} className="ml-2">
+                          <span className="font-medium">{pack.type}:</span>{" "}
+                          <span>{pack?.sizes?.join(", ")}</span>
+                          {i < product?.packaging?.length - 1 && ", "}
+                        </span>
+                      ))}
+                    </span>
+                  </div>
+                  <div className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
+                    <span className="text-[1.3rem] font-bold leading-[1.5]">
+                      Main Ingredients:
+                    </span>{" "}
+                    <span className="text-lg text-gray-700">
+                      {product?.mainIngredients?.length > 0
+                        ? product?.mainIngredients?.join("; ")
+                        : "N/A"}
+                    </span>
+                  </div>
+                  {/* Shelf Life */}
+                  <div className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
+                    <span className="text-[1.3rem] font-bold leading-[1.5]">
+                      Shelf Life:
+                    </span>{" "}
+                    <span className="text-lg text-gray-700">
+                      {product?.shelfLife || "N/A"} Month
+                    </span>
                   </div>
 
-                  <div className="mt-5">
-                    <div className="text-2xl font-bold">Advantages:</div>
-                    <div>
-                      {product?.advantages &&
-                      Array.isArray(product.advantages) ? (
-                        <ul className="list-disc pl-5">
-                          {product.advantages.map((advantage, index) => (
-                            <li key={index} className="my-3">
-                              {advantage}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p>No advantages available</p>
-                      )}
-                    </div>
+                  {/* Certifications */}
+                  <div className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
+                    <span className="text-[1.3rem] font-bold leading-[1.5]">
+                      Certifications:
+                    </span>{" "}
+                    <span className="text-lg text-gray-700">
+                      {product?.certifications?.length > 0
+                        ? product.certifications.join(", ")
+                        : "N/A"}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -187,11 +188,11 @@ const SingleShopPage = () => {
                 <div className="flex gap-1 text-2xl font-bold items-center my-5 text-primary">
                   {product ? (
                     <>
-                      <span className="">Price:</span>
+                      {/* <span className="">Price:</span>
                       <FaBangladeshiTakaSign className="" />
                       <span className="">
                         {product.price}
-                      </span>
+                      </span> */}
                     </>
                   ) : (
                     <>
@@ -205,7 +206,7 @@ const SingleShopPage = () => {
                     </>
                   )}
                 </div>
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   {product ? (
                     <>
                       <button
@@ -221,7 +222,7 @@ const SingleShopPage = () => {
                       <Skeleton height={48} width={120} />
                     </>
                   )}
-                </div>
+                </div> */}
               </div>
               <div className="pt-14">
                 <div className="py-4 border-b">
@@ -238,7 +239,6 @@ const SingleShopPage = () => {
                   )}
                 </div>
               </div>
-              <div className="text-xl underline text-blue-500 text-center">https://Stamina Plusbd.com/</div>
             </div>
           </div>
         </div>
@@ -263,8 +263,6 @@ const SingleShopPage = () => {
                   </div>
                 )}
               </div>
-
-              {/* -------------- */}
             </div>
           </div>
         </Containar>

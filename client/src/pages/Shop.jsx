@@ -97,7 +97,7 @@ const Shop = () => {
       <Containar>
         <div className="flex gap-2 items-center py-10">
           <Link className="font-medium" to={"/"}>
-            Home{" "}
+            Home
           </Link>
           <FaChevronRight className="text-[12px]" />
           <Link className="font-medium" to={"/products"}>

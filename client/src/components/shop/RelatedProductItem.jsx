@@ -115,18 +115,18 @@ const RelatedProductItem = ({ slug, prevProductId }) => {
                 >
                   {item?.title}
                 </Link>
-                <p className="text-gray-600 text-[18px]">
+                {/* <p className="text-gray-600 text-[18px]">
                   <FaBangladeshiTakaSign className="inline-block" />{" "}
                   {item?.price}
-                </p>
-                <div className="flex justify-center items-center mt-5">
+                </p> */}
+                {/* <div className="flex justify-center items-center mt-5">
                   <button
                     onClick={() => handleBuyNow(item)}
                     className="rounded-full hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150 text-white bg-primary px-8 py-2 text-sm"
                   >
                     Order Now
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </SwiperSlide>

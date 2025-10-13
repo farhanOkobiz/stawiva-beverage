@@ -17,7 +17,7 @@ const SaleFeature = () => {
   ];
 
   const apiUrls = {
-    Featured: `${baseApi}/option`, // All products
+    Featured: `${baseApi}/option`,
     "On Sale": `${baseApi}/option?sort=saleNumber`, // Products on sale
     "Most Viewed": `${baseApi}/option?sort=visitCount`, // Most viewed products
   };

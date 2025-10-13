@@ -76,7 +76,7 @@ const ProductGridShopPage = () => {
         },
       });
       setLoading(false);
-
+      
       setTotalProducts(response.data.totalData);
       return response.data.data.doc;
     } catch (error) {
