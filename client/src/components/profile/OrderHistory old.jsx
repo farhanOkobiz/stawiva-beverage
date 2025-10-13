@@ -172,7 +172,7 @@ const OrderHistory = () => {
                 <div class="billing-section">
                   <div class="billing-info">
                     <p<strong><b>COMPANY:</b></strong></p>
-                  <p>Stawiva Beverage</p>
+                  <p>Stamina Plus</p>
                   <p>+88 01890011810</p>
                   <p>info@agroinfusion.com</p>
                   </div>

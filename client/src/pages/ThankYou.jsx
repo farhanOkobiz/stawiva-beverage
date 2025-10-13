@@ -13,7 +13,7 @@ const Thankyou = () => {
           <div className="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
             {/* Brand Name */}
             <h1 className="text-5xl text-primary font-bold mb-6 tracking-tight">
-              Stawiva Beverage
+              Stamina Plus
             </h1>
 
             {/* Thank You Message */}
@@ -33,7 +33,7 @@ const Thankyou = () => {
 
             {/* Track Order Button */}
             <button className="border-2 border-primary text-primary px-6 py-2 rounded-md hover:bg-primary hover:text-white transition">
-              Contact Us: 01914314909
+              Contact Us: 01511169923
             </button>
           </div>
         </div>

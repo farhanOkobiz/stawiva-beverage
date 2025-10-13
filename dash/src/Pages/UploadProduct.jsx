@@ -343,24 +343,6 @@ const Products = () => {
           >
             <Input />
           </Form.Item>
-          {/* <Form.Item
-            name="sku"
-            label="SKU (minimum 8 characters and has to be unique)"
-            rules={[
-              { required: true, message: "Please enter the product SKU" },
-            ]}
-          >
-            <Input />
-          </Form.Item> */}
-          {/* <Form.Item
-            name="size"
-            label="Quantity"
-            rules={[
-              { required: true, message: "Please enter the product size" },
-            ]}
-          >
-            <Input />
-          </Form.Item> */}
           <Form.Item
             name="price"
             label="Price"
@@ -370,15 +352,6 @@ const Products = () => {
           >
             <Input type="number" />
           </Form.Item>
-          {/* <Form.Item
-            name="stock"
-            label="Stock"
-            rules={[
-              { required: true, message: "Please enter the stock quantity" },
-            ]}
-          >
-            <Input type="number" />
-          </Form.Item> */}
           <DynamicFormList
             name="model"
             label="Model"

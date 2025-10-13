@@ -93,17 +93,17 @@ const Shop = () => {
 
   return (
     <>
-      <div className="h-[68px] sm:h-[83.4px] bg-[#f5f5f5] font-robo "></div>
+      <div className="h-[68px] sm:h-[140.4px] bg-[#f5f5f5] font-robo "></div>
       <Containar>
         <div className="flex gap-2 items-center py-10">
           <Link className="font-medium" to={"/"}>
             Home{" "}
           </Link>
           <FaChevronRight className="text-[12px]" />
-          <Link className="font-medium" to={"/shop"}>
-            Shop
+          <Link className="font-medium" to={"/products"}>
+            Products
           </Link>
-          {isCategoryPath && (
+          {/* {isCategoryPath && (
             <>
               <FaChevronRight className="text-[12px]" />
               <h3 className="capitalize">{categoryName}</h3>
@@ -114,7 +114,7 @@ const Shop = () => {
               <FaChevronRight className="text-[12px]" />
               <h3 className="capitalize">{brandName}</h3>
             </>
-          )}
+          )} */}
         </div>
       </Containar>
 
@@ -185,10 +185,10 @@ const Shop = () => {
           </div> */}
 
           <div className="grid grid-cols-12 gap-5">
-            <div className="col-span-3 hidden lg:block ">
-              <div className="sticky top-[88px]">
+            {/* <div className=" col-span-3 hidden lg:block ">
+              <div className="sticky top-[88px]"> */}
                 {/* Brand Filter */}
-                <div className="shadow-md">
+                {/* <div className="shadow-md">
                   <div className="w-full bg-white border-l-2 border-t border-b border-r border-l-primary">
                     <div>
                       <h3 className="uppercase tracking-wide text-[18px] py-3.5 px-3 font-bold">
@@ -218,10 +218,10 @@ const Shop = () => {
                       </Link>
                     ))
                   )}
-                </div>
+                </div> */}
 
                 {/* Category Filter */}
-                <div className="shadow-md mt-10">
+                {/* <div className="shadow-md mt-10">
                   <div className="w-full bg-white border-l-2 border-t border-b border-r border-l-primary">
                     <div>
                       <h3 className="uppercase tracking-wide text-[18px] py-3.5 px-3 font-bold">
@@ -251,13 +251,13 @@ const Shop = () => {
                       </Link>
                     ))
                   )}
-                </div>
+                </div> */}
 
-                <PriceRange />
-              </div>
-            </div>
+                {/* <PriceRange /> */}
+              {/* </div>
+            </div> */}
 
-            <div className="col-span-12 lg:col-span-9 sm:col-span-12">
+            <div className="col-span-12 lg:col-span-12 sm:col-span-12">
               <div className="bg-white w-full">
                 <Outlet />
               </div>

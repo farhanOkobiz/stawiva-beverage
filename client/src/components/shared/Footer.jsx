@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/logo/stamina.png";
 import { contactInfo, menulist, socialLink } from "../constants";
 import { Link, NavLink } from "react-router-dom";
 import "./footer.css";
@@ -15,11 +15,11 @@ const Footer = () => {
             <div className=" grid grid-cols-12 gap-y-4  md:gap-10">
               {/* Section 1 */}
               <div className="col-span-12 md:col-span-6 lg:col-span-4 h-auto">
-                <div className="w-[68px]">
+                <div className="w-[80px]">
                   <img className="w-full" src={logo} />
                 </div>
                 <h2 className="text-xl text-text font-bold mb-3 mt-5">
-                  We Are Stawiva Beverage
+                  We Are Stamina Plus
                 </h2>
                 <p className="text-[14px] leading-7 text-gray-600">
                   Our Mission Is To Empower Garment Manufacturers, Tailors, And
@@ -55,7 +55,7 @@ const Footer = () => {
                   <div className="col-span-12 lg:col-span-7">
                     <h2 className="text-xl font-bold my-4 lg:mt-0">Office</h2>
                     <p className="text-gray-600 text-[14px]">
-                      183,184 MISCO SUPER MARKET,MRPUR-1,DHAKA-1216
+                      Malibag,DHAKA-1216
                     </p>
 
                     <ul className="mt-5 flex flex-col gap-y-3">
@@ -108,7 +108,7 @@ const Footer = () => {
                 <h2 className="text-xl font-bold mb-4">Maps</h2>
                 <iframe
                   className="h-[200px] w-full border-none"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.1636426655611!2d90.35367408734224!3d23.796603548612488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0e858b66893%3A0x60021542f8e5761d!2sMisco%20Super%20Market%20Masjid!5e0!3m2!1sen!2sbd!4v1737281240053!5m2!1sen!2sbd"
+                  src="https://www.google.com/maps"
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -123,7 +123,7 @@ const Footer = () => {
         <Containar>
           <div className="flex justify-between flex-wrap px-5 lg:px-0 py-5 text-white">
             <p className="text-[12px] sm:text-[14px]">
-              Stawiva Beverage © 2025. All Rights Reserved.
+              Stamina Plus © 2025. All Rights Reserved.
             </p>
             <a
               href="https://okobiz.com/"

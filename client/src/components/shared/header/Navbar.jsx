@@ -343,7 +343,7 @@ const Navbar = () => {
 
               <div className="hidden md:flex text-gray-600 font-semibold text-xl">
                 {/* <Search /> */}
-                Welcome To Stawiva Beverage
+                Welcome To Stamina Plus
               </div>
 
               <div className="hidden md:flex items-center space-x-4 text-gray-600">
@@ -352,8 +352,8 @@ const Navbar = () => {
                     <p className="text-sm text-gray-00 text-right">
                       Call Us Now
                     </p>
-                    <a className="text-gray-600" href="tel:+8801914314909 ">
-                    01914314909
+                    <a className="text-gray-600" href="tel:+8801511169923 ">
+                    01511169923
                     </a>
                   </div>
                   <div className="bg-[#eaeaec] w-10 h-10 rounded-full flex items-center justify-center">

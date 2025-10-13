@@ -36,7 +36,7 @@ app.use(express.json({ limit: "50mb" }));
 
 app.use(monogoSanitize());
 
-app.get("/", (req, res) => res.send("Welcome to Stawiva Beverage..!🌿"));
+app.get("/", (req, res) => res.send("Welcome to Stamina Plus..!🌿"));
 app.use(routes);
 app.use(globalErrorMiddleware);
 

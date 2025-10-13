@@ -43,10 +43,10 @@ export const menulist = [
     title: "INDUSTRIES",
     subMenuList: [
       {
-        title: "Beverage",
-        link: "/industries/beverage",
+        title: "Food and Beverage ",
+        link: "/industries/food-beverage",
         description:
-          "Refreshing drinks to energize and keep you hydrated all day.",
+          "Stamina+ Beverage Limited delivers innovative solutions for the food and beverage sector, focusing on premium-quality products, strict safety standards, and sustainable practices. From concept to consumer, we ensure every product meets the highest standards of taste, nutrition, and reliability.",
       },
     ],
   },
@@ -54,10 +54,16 @@ export const menulist = [
     title: "SUSTAINABILITY",
     subMenuList: [
       {
-        title: "Team",
-        link: "/sustainability/team",
+        title: "Environmental Sustainability",
+        link: "/sustainability/environmental-sustainability",
         description:
-          "A group working together to achieve common goals efficiently and effectively.",
+          "At Stamina+ Beverage Limited, we recognize that protecting the environment is fundamental to our mission. Our commitment to environmental sustainability shapes every decision we make, from sourcing ingredients to delivering products to our consumers.",
+      },
+      {
+        title: "Employment & Welfare",
+        link: "/sustainability/employment-welfare",
+        description:
+          "At Stamina+ Beverage Limited, our employees are the heart of our success. We are committed to creating a work environment that fosters growth, well-being, and professional excellence.",
       },
     ],
   },
@@ -80,7 +86,7 @@ export const menulist = [
   // {
   //   title: "Hotline",
   //   icon: FaPhoneAlt,
-  //   link: "tel:+8801914314909",
+  //   link: "tel:+8801511169923",
   //   color: "#E63946",
   // },
 ];
@@ -89,33 +95,33 @@ export const socialLink = [
   {
     title: "Facebook",
     icon: FaFacebookF,
-    link: "https://www.facebook.com/profile.php?id=100054376337057 ",
+    link: "https://www.facebook.com/people/Staminaplus/61569582182168/?rdid=6TTDKoplN3t7r3oV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bc9oxzDh3%2F",
     color: "#1877F2",
   },
-  {
-    title: "Youtube",
-    icon: FaYoutube,
-    link: "https://www.youtube.com/@shahalam846",
-    color: "#C11616",
-  },
+  // {
+  //   title: "Youtube",
+  //   icon: FaYoutube,
+  //   link: "https://www.youtube.com/@shahalam846",
+  //   color: "#C11616",
+  // },
   {
     title: "WhatsApp",
     icon: FaWhatsapp, // WhatsApp icon from React Icons
-    link: "https://wa.me/8801914314909", // WhatsApp link with international number
+    link: "https://wa.me/88 01511169923", // WhatsApp link with international number
     color: "#25D366",
   },
-  {
-    title: "Telegram",
-    icon: FaTelegram,
-    link: "https://t.me/+88018187729352",
-    color: "#0088cc",
-  },
-  {
-    title: "WeChat",
-    icon: FaWeixin,
-    link: "weixin://dl/chat?shahalam2935",
-    color: "#1AAD19",
-  },
+  // {
+  //   title: "Telegram",
+  //   icon: FaTelegram,
+  //   link: "https://t.me/+88018187729352",
+  //   color: "#0088cc",
+  // },
+  // {
+  //   title: "WeChat",
+  //   icon: FaWeixin,
+  //   link: "weixin://dl/chat?shahalam2935",
+  //   color: "#1AAD19",
+  // },
 ];
 
 export const contactInfo = [
@@ -127,14 +133,14 @@ export const contactInfo = [
   // },
   {
     title: "Contact Number",
-    contact: "01914314909",
-    link: "tel:01914314909",
+    contact: "01511169923",
+    link: "tel:01511169923",
     icon: FaPhoneAlt,
   },
   {
     title: "Email",
-    contact: "tmcsbd.hss@gmail.com",
-    link: "mailto:tmcsbd.hss@gmail.com",
+    contact: "********@gamil.com",
+    link: "mailto:********@gamil.com",
     icon: FaEnvelope,
   },
 ];
@@ -149,46 +155,46 @@ import partner6 from "../../assets/partners/clients-image-copyright-6.webp";
 export const partnerList = [
   {
     logo: partner1,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner2,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner3,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner4,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner5,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner6,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner2,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner3,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner4,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner5,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
   {
     logo: partner6,
-    name: "Stawiva Beverage",
+    name: "Stamina Plus",
   },
 ];

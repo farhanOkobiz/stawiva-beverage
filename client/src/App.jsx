@@ -42,7 +42,14 @@ import Forgot from "./pages/Forgot";
 import ResetPassword from "./pages/ResetPassword";
 import BrandShop from "./components/shop/BrandShop";
 import Clients from "./pages/Clients";
-import Management from "./components/management/Management";
+import History from "./pages/History";
+import Management from "./pages/Management";
+import Policy from "./pages/Policy";
+import NewsEvents from "./pages/NewsEvents";
+import Career from "./pages/Career";
+import Environmental from "./pages/Environmental";
+import EmploymentWelfare from "./pages/EmploymentWelfare";
+import FoodBeverage from "./pages/FoodBeverage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -50,10 +57,17 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/company/about-us" element={<About />} />
       <Route path="/company/management" element={<Management />} />
+      <Route path="/company/history" element={<History />} />
+      <Route path="/industries/food-beverage" element={<FoodBeverage />} />
+      <Route path="/sustainability/environmental-sustainability" element={<Environmental/>} />
+      <Route path="/sustainability/employment-welfare" element={<EmploymentWelfare/>} />
+      <Route path="/news-events" element={<NewsEvents />} />
+      <Route path="/career" element={<Career />} />
+      <Route path="/policy" element={<Policy />} />
+      <Route path="/contact-us" element={<Contact />} />
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/blogs/:slug" element={<SingleBlogPage />} />
-      <Route path="/contact-us" element={<Contact />} />
       <Route path="/clients" element={<Clients />} />
       <Route path="/shoping-cart" element={<CartDetails />} />
       <Route path="/checkout/:id" element={<CheckOut />} />
@@ -61,7 +75,7 @@ const router = createBrowserRouter(
       <Route path="/thank-you" element={<Thankyou />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgotpassword" element={<Forgot />} />
-      <Route path="/resetPassword/:token" element={<ResetPassword/>} />
+      <Route path="/resetPassword/:token" element={<ResetPassword />} />
       <Route path="/gallery" element={<EventPage />} />
       <Route path="/gallery/:id" element={<SingleEventPage />} />
       <Route path="/login" element={<Login />} />

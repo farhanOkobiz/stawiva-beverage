@@ -198,18 +198,18 @@ const ProductGridShopPage = () => {
                           {product?.title}
                         </Link>
                       </h2>
-                      <p className="text-gray-600 text-[18px] flex justify-center">
+                      {/* <p className="text-gray-600 text-[18px] flex justify-center">
                         <FaBangladeshiTakaSign className="mr-1" />
                         <span>{product?.price}</span>
-                      </p>
-                      <div className="flex  justify-between items-center mt-3">
+                      </p> */}
+                      {/* <div className="flex  justify-between items-center mt-3">
                         <button
                           onClick={() => handleBuyNow(product)}
                           className="rounded-full text-white bg-primary hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150 px-4 py-1 text-sm w-full"
                         >
                           Order Now
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}
@@ -248,12 +248,12 @@ const ProductGridShopPage = () => {
                     <span>{product?.price}</span>
                   </p>
                   <div className="flex items-center gap-x-2.5 mt-10">
-                    <button
+                    {/* <button
                       onClick={() => handleBuyNow(product)}
                       className="px-5 rounded-md py-1.5 text-[14px] font-medium bg-primary text-white hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150"
                     >
                       Order Now
-                    </button>
+                    </button> */}
                     {/* <button
                       onClick={() => handleAddtoCart(product)}
                       className="px-5 rounded-md py-1.5 text-[14px] font-medium hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150 bg-primary text-white"

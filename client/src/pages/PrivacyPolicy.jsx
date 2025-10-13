@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
           </p>
           <p style={styles.paragraph}>
             <strong>Email:</strong>{" "}
-            <a href="mailto:tmcsbd.hss@gmail.com">tmcsbd.hss@gmail.com</a>
+            <a href="mailto:********@gamil.com">********@gamil.com</a>
           </p>
           <p style={styles.paragraph}>
             <strong>Address:</strong>{" "}

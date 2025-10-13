@@ -153,18 +153,18 @@ const CategoryShop = () => {
                   <h2 className="font-medium text-[20px] mt-7 mb-2 capitalize">
                     <Link to={`/shop/${product?.slug}`}>{product?.title}</Link>
                   </h2>
-                  <p className="text-gray-600 text-[18px] flex items-center ">
+                  {/* <p className="text-gray-600 text-[18px] flex items-center ">
                     <FaBangladeshiTakaSign className="mr-1" />
                     {product?.price}
-                  </p>
-                  <div className="flex justify-between items-center mt-3">
+                  </p> */}
+                  {/* <div className="flex justify-between items-center mt-3">
                     <button
                       onClick={() => handleBuyNow(product)}
                       className="px-5 rounded-md py-1.5 text-[14px] font-medium bg-primary text-white hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150 "
                     >
                       Order Now
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -196,18 +196,18 @@ const CategoryShop = () => {
                   <p className="text-gray-600 text-[14px] line-clamp-3 leading-7 mt-3">
                     {product?.details.replace(/<\/?[^>]+(>|$)/g, "")}
                   </p>
-                  <p className="flex items-center text-[18px] mt-5">
+                  {/* <p className="flex items-center text-[18px] mt-5">
                     <FaBangladeshiTakaSign className="inline-block mr-1" />
                     {product?.price}
-                  </p>
-                  <div className="flex items-center gap-x-2.5 mt-7">
+                  </p> */}
+                  {/* <div className="flex items-center gap-x-2.5 mt-7">
                     <button
                       onClick={() => handleBuyNow(product)}
                       className="px-5 rounded-md py-1.5 text-[14px] font-medium bg-primary text-white hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150"
                     >
                       Order Now
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/logoblack.png";
+import logo from "../../assets/logo/stamina.png";
 import { Link, NavLink, matchPath } from "react-router-dom";
 import { menulist } from "../constants";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -88,19 +88,19 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             <div>
               <div className="flex gap-x-3 items-center">
-                {/* <div className="h-[50px]">
+                <div className="h-[70px]">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>
-                </div> */}
-                <div>
+                </div>
+                {/* <div>
                   <Link
                     to={"/"}
                     className="text-[13px] md:text-[18px] xl:text-[24px] font-bold text-red-600"
                   >
                     LOGO
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center gap-x-3 xl:gap-x-10">
@@ -118,21 +118,21 @@ const Navbar = () => {
                         </div>
                         {/* Dropdown menu */}
                         <ul
-                          className={`absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-white shadow-lg
+                          className={`absolute left-1/2 -translate-x-1/2 top-full mt-4
                             opacity-0 translate-y-[20px] 
                             group-hover:opacity-100 group-hover:translate-y-0 
                             group-hover:visible invisible 
-                            transition-all duration-500 ease-out z-50 min-w-[600px] flex`}
+                            transition-all duration-500 ease-out z-50 flex`}
                         >
                           {/* 🔺 Arrow */}
-                          <div
+                          {/* <div
                             className="absolute top-[-8px] left-1/2 -translate-x-1/2 w-0 h-0 
                             border-l-[8px] border-l-transparent 
                             border-r-[8px] border-r-transparent 
                             border-b-[8px] border-b-white shadow-sm"
-                          />
+                          /> */}
                           {/* Left Menu */}
-                          <div className="w-[250px] border-r border-gray-200">
+                          <div className="w-[250px]">
                             {item?.subMenuList?.map((subItem, subIndex) => (
                               <NavLink
                                 key={subIndex}
@@ -140,7 +140,7 @@ const Navbar = () => {
                                 onMouseEnter={() => setActiveSubItem(subItem)}
                                 className={({ isActive }) =>
                                   `block px-4 py-4 text-white bg-gray-600 hover:bg-gray-700 hover:text-white transition-all ${
-                                    isActive ? "bg-red-800" : ""
+                                    isActive ? "bg-gray-700" : ""
                                   }`
                                 }
                               >
@@ -150,11 +150,11 @@ const Navbar = () => {
                           </div>
 
                           {/* Right Side Content */}
-                          <div className="w-[350px] px-4 py-2 text-sm text-gray-600 flex items-center transition-all duration-300 ease-in-out">
+                          {/* <div className="w-[450px] px-4 py-2 text-sm text-gray-600 flex items-center transition-all duration-300 ease-in-out">
                             {activeSubItem && (
                               <p>{activeSubItem.description}</p>
                             )}
-                          </div>
+                          </div> */}
                         </ul>
                       </>
                     ) : (

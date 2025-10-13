@@ -13,7 +13,7 @@ const RefundsAndReplacements = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-6">Refunds & Replacements</h1>
         <p className="mb-4">
-          Welcome to Stawiva Beverage ! We want you to be happy with your purchase, but we
+          Welcome to Stamina Plus ! We want you to be happy with your purchase, but we
           understand that sometimes things don’t work out as planned. Here’s
           everything you need to know about our refund and replacement policy:
         </p>
@@ -88,7 +88,7 @@ const RefundsAndReplacements = () => {
           <p>
             If you have any questions or need help with a return or replacement,
             please reach out to our customer service team. We’re here to assist
-            you and ensure you have a great experience with Stawiva Beverage .
+            you and ensure you have a great experience with Stamina Plus .
           </p>
         </div>
       </div>

@@ -44,7 +44,7 @@ const Chooseus = () => {
             <h4 className="text-md font-bold text-[#0083CB] uppercase mb-5">
               Why our clients love us
             </h4>
-            <h1 className="text-4xl font-semibold">Why you should choose Stawiva Beverage</h1>
+            <h1 className="text-4xl font-semibold">Why you should choose Stamina Plus</h1>
           </div>
           {/* <div>
             <img

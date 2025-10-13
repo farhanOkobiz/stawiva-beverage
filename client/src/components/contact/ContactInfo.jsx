@@ -30,16 +30,16 @@ const ContactInfo = () => {
                 </div>
                 <div className="mt-6">
                   <Link
-                    to={"mailto:tmcsbd.hss@gmail.com"}
+                    to={"mailto:********@gamil.com"}
                     className="text-sm text-texthead mb-1 block hover:text-danger"
                   >
-                    tmcsbd.hss@gmail.com
+                    ********@gamil.com
                   </Link>
                   <Link
-                    to={"tel:+8801914314909"}
+                    to={"tel:+8801511169923"}
                     className="text-sm text-texthead hover:text-danger"
                   >
-                    +8801914314909
+                    +8801511169923
                   </Link>
                 </div>
               </div>

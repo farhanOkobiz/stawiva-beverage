@@ -9,7 +9,7 @@ const BottomFooter = () => {
       <Containar>
         <div className="flex justify-center items-center">
           <p className="text-sm text-gray-400 text-center">
-            ©2025 Stawiva Beverage, All rights reserved. Developed by
+            ©2025 Stamina Plus, All rights reserved. Developed by
             <span className="text-white mx-2">
               <Link target="_blanck" to={"https://www.okobiz.com/"}>
                 okobiz.

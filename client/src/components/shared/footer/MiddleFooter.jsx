@@ -39,13 +39,13 @@ const MiddleFooter = () => {
     // },
     {
       type: "Phone",
-      details: "01914314909",
-      link: "tel:+01914314909",
+      details: "01511169923",
+      link: "tel:+01511169923",
     },
     {
       type: "Email",
-      details: "tmcsbd.hss@gmail.com",
-      link: "mailto:tmcsbd.hss@gmail.com",
+      details: "********@gamil.com",
+      link: "mailto:********@gamil.com",
     },
   ];
   const baseApi = useContext(ApiContext);
@@ -69,7 +69,7 @@ const MiddleFooter = () => {
         <div className="w-full flex justify-between flex-wrap py-10 gap-10 md:gap-0">
           <div className="w-full md:w-1/3">
             <h3 className="text-base md:text-lg text-gray-600 font-semibold uppercase">
-              Stawiva Beverage
+              Stamina Plus
             </h3>
             <ul className="mt-3 flex flex-col gap-y-4 list-disc custom-list">
               {accountList.map((item, index) => (

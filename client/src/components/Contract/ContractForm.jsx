@@ -49,6 +49,7 @@ const ContractForm = () => {
                         name="name"
                         placeholder="Your Name"
                         className="w-full px-3 py-3 md:py-5 border rounded-lg"
+                        required
                       />
                     </div>
                     <div className="mb-4 w-full">
@@ -57,6 +58,7 @@ const ContractForm = () => {
                         name="phone"
                         placeholder="Phone Number"
                         className="w-full px-3 py-3 md:py-5 border rounded-lg"
+                        required
                       />
                     </div>
                   </div>
@@ -67,6 +69,7 @@ const ContractForm = () => {
                         name="email"
                         placeholder="Email Address"
                         className="w-full px-3 py-3 md:py-5 border rounded-lg"
+                        required
                       />
                     </div>
                     <div className="mb-4  w-full">
@@ -75,6 +78,7 @@ const ContractForm = () => {
                         name="subject"
                         placeholder="Subject"
                         className="w-full px-3 py-3 md:py-5 border rounded-lg"
+                        required
                       />
                     </div>
                   </div>
@@ -85,6 +89,7 @@ const ContractForm = () => {
                       name="Comment"
                       placeholder="Comment"
                       rows="4"
+                      required
                     ></textarea>
                   </div>
                   <button

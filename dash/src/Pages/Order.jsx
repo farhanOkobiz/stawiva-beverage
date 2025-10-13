@@ -229,9 +229,9 @@ const Orders = () => {
               <div class="billing-section">
                 <div class="billing-info">
                   <p<strong><b>COMPANY:</b></strong></p>
-                <p>Stawiva Beverage</p>
-                <p>+88 01914314909</p>
-                <p>tmcsbd.hss@gmail.com</p>
+                <p>Stamina Plus</p>
+                <p>+88 01511169923</p>
+                <p>********@gamil.com</p>
                 </div>
               </div>
     
@@ -389,7 +389,7 @@ const Orders = () => {
      <div class="sub-header">Total Machinery & Chemical Supplier</div>
      <div class="header-text"><b>Head Office:</b> 183/184 (1st Floor), Misco Super Market, Mirpur-1, Dhaka-1216</div>
      <div class="header-text"><b>Sales & Service Center:</b> 841/A, Shah ali Bagh, Last Corner of Misco Super Market, Cell: 01818-772935</div>
-     <div class="header-text">Cell: 01914-314909, 01978-772935, E-mail: tmcsbd.hss@gmail.com</div>
+     <div class="header-text">Cell: 01914-314909, 01978-772935, E-mail: ********@gamil.com</div>
      <div class="header-text"><b>Chittagong Office:</b> 215, Port City Complex (Ground Floor), Dewanhat, Chittagong</div>
      <div class="header-text">Cell: 01820144528, 01978772935, 01716173735, E-mail: shahalamtmcs@gmail.com</div>
    </div>

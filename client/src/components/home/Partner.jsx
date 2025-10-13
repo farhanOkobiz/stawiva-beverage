@@ -40,7 +40,7 @@ const Partner = () => {
               <div className="pt-5">
                 <Containar>
                   <h2 className="text-[22px] sm:text-[36px] font-semibold leading-8 sm:leading-[48px] mt-16 text-primary">
-                    Trusted Client of Stawiva Beverage
+                    Trusted Client of Stamina Plus
                   </h2>
                 </Containar>
 

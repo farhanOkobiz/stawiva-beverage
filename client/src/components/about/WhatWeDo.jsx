@@ -9,13 +9,13 @@ const workData = [
   {
     title: "Custom Industrial Sewing Solutions",
     description:
-      "Stawiva Beverage delivers tailor-made industrial sewing machine solutions designed to meet the specific needs of garment factories, upholstery businesses, and other industries.",
+      "Stamina Plus delivers tailor-made industrial sewing machine solutions designed to meet the specific needs of garment factories, upholstery businesses, and other industries.",
     image: custom, // Replace with the appropriate image path
   },
   {
     title: "Innovation in Sewing Technology",
     description:
-      "Stawiva Beverage is at the forefront of sewing innovation, focusing on cutting-edge research to enhance speed, precision, and versatility in industrial sewing machines.",
+      "Stamina Plus is at the forefront of sewing innovation, focusing on cutting-edge research to enhance speed, precision, and versatility in industrial sewing machines.",
     image: research, // Replace with the appropriate image path
   },
   {
@@ -27,7 +27,7 @@ const workData = [
   {
     title: "Uncompromised Quality Assurance",
     description:
-      "At Stawiva Beverage, every sewing machine undergoes stringent quality checks to ensure maximum durability, performance, and customer satisfaction.",
+      "At Stamina Plus, every sewing machine undergoes stringent quality checks to ensure maximum durability, performance, and customer satisfaction.",
     image: casee, // Replace with the appropriate image path
   },
 ];
@@ -41,7 +41,7 @@ const WhatWeDo = () => {
             <GiSewingMachine className="inline-block text-[#0083CB] text-center w-10 h-10 mb-4" />
           </div>
           <h4 className="text-xl font-bold text-[#0083CB] text-center mb-10">
-            Welcome to <span className="text-primary">Stawiva Beverage!</span>
+            Welcome to <span className="text-primary">Stamina Plus!</span>
           </h4>
           <h1 className="text-4xl text-center font-semibold mb-12">
             Crafting Excellence in Sewing Machine Solutions

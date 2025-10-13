@@ -115,19 +115,19 @@ const Product = () => {
                                     >
                                       {product?.title}
                                     </Link>
-                                    <p className="flex items-center justify-center space-x-1 text-gray-600 text-[16px] mt-5">
+                                    {/* <p className="flex items-center justify-center space-x-1 text-gray-600 text-[16px] mt-5">
                                       <FaBangladeshiTakaSign className="inline" />
                                       <span>{product?.price}</span>
-                                    </p>
+                                    </p> */}
                                   </div>
-                                  <div className="flex justify-between items-center mt-5">
+                                  {/* <div className="flex justify-between items-center mt-5">
                                     <button
                                       onClick={() => handleBuyNow(product)}
                                       className="rounded-full text-white bg-primary hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear duration-150 px-4 py-2 text-sm w-full"
                                     >
                                       Order Now
                                     </button>
-                                  </div>
+                                  </div> */}
                                 </div>
                               </div>
                             </>

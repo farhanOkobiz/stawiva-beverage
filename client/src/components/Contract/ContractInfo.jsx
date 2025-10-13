@@ -16,7 +16,7 @@ const ContractInfo = () => {
             <div className="font-medium">
               <h2 className=" text-2xl mb-4">Address</h2>
               <p className="text-gray-500 font-light text-lg">
-                183,184 MISCO SUPER MARKET,MRPUR-1
+                Malibag
               </p>
               <p className="text-gray-500 font-light text-lg">
                 Dhaka, Bangladesh
@@ -30,10 +30,11 @@ const ContractInfo = () => {
             <div className="font-medium text-wrap">
               <h2 className="text-2xl mb-4">Email</h2>
               <Link
-                to={"mailto:tmcsbd.hss@gmail.com"}
+                to={"mailto:********@gamil.com"}
                 className="text-gray-500 font-light text-base md:text-lg"
               >
-                tmcsbd.hss@gmail.com <br />
+                {/* ********@gamil.com <br /> */}
+                ****************@gmail.com
               </Link>
             </div>
           </div>
@@ -44,19 +45,12 @@ const ContractInfo = () => {
             <div className=" font-medium">
               <h2 className=" text-2xl mb-4">Phone</h2>
               <div>
-
               </div>
-              {/* <Link
-                to={"telto:01970007503"}
-                className="block text-gray-500 font-light text-lg"
-              >
-                +88 01970007503
-              </Link> */}
               <Link
-                to={"telto:01914314909"}
+                to={"telto:01511169923"}
                 className="block text-gray-500 font-light text-lg"
               >
-                +88 01914314909
+                +88 01511169923
               </Link>
             </div>
           </div>

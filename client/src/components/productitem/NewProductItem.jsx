@@ -219,7 +219,7 @@ const NewProductItem = ({
               : "cursor-not-allowed text-gray-400"
           } flex justify-center`}
         >
-          <button
+          {/* <button
             style={{
               animation: "zoom 1s ease-in-out infinite",
             }}
@@ -228,7 +228,7 @@ const NewProductItem = ({
             className="rounded-full text-white bg-primary hover:bg-secondary hover:text-primary border-primary border-2 transition-all ease-linear w-full bg-secendary hover:text-secendary duration-200 text-xs font-semibold px-2 text-center py-2"
           >
             Order Now
-          </button>
+          </button> */}
         </div>
 
         {/* Buy now model */}
