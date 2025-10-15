@@ -109,9 +109,9 @@ const NewsEventsForHome = () => {
   };
 
   return (
-    <>
+    <div className="bg-[#FBF7F0]">
       <Containar>
-        <div className="my-10 py-10 w-full">
+        <div className=" py-10 w-full">
           <h3 className="text-[32px] text-center font-semibold text-text mt-20">
             NEWS & EVENTS
           </h3>
@@ -141,7 +141,7 @@ const NewsEventsForHome = () => {
           )}
         </div>
       </Containar>
-    </>
+    </div>
   );
 };
 

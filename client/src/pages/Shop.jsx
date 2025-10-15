@@ -5,10 +5,8 @@ import BradCumbs from "../components/shared/BradCumbs";
 import HeroBanner from "../components/shop/HeroBanner";
 import Skeleton from "react-loading-skeleton"; // Import skeleton loader
 import "react-loading-skeleton/dist/skeleton.css";
-
+import managementImg from "../assets/management/Pruduct.jpg";
 import { FaBangladeshiTakaSign, FaChevronRight } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -27,10 +25,8 @@ const Shop = () => {
   const [deals, setDeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // State for loading
   const location = useLocation();
-
   const isCategoryPath = location.pathname.startsWith("/shop/category");
   const isBrandPath = location.pathname.startsWith("/shop/brand");
-
   const categoryName = isCategoryPath ? location.pathname.split("/").pop() : "";
   const brandName = isBrandPath ? location.pathname.split("/").pop() : "";
 
@@ -50,7 +46,7 @@ const Shop = () => {
     } catch (error) {
       console.error(error.message);
     } finally {
-      setIsLoading(false); // Set loading to false after fetching data
+      setIsLoading(false);
     }
   };
 
@@ -93,7 +89,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className="h-[68px] sm:h-[140.4px] bg-[#f5f5f5] font-robo "></div>
+      <div className="h-[68px] sm:h-[110.4px] bg-[#f5f5f5] font-robo "></div>
       <Containar>
         <div className="flex gap-2 items-center py-10">
           <Link className="font-medium" to={"/"}>
@@ -117,147 +113,27 @@ const Shop = () => {
           )} */}
         </div>
       </Containar>
-
-      <div className="py-5 md:py-8 lg:py-14 bg-[#f5f5f5]">
+      <div className="pb-5 md:pb-8 lg:pb-14 bg-[#f5f5f5]">
         <Containar>
-          {/* <div className="grid grid-cols-12 gap-5 lg:pb-3">
-            <div className="hidden lg:block col-span-3">
-              <div className="h-[480px]">
-                {isLoading ? (
-                  <Skeleton height={480} />
-                ) : (
-                  <HeroBanner newRelease={newRelease} />
-                )}
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-9">
-              <div className="mb-5 lg:mb-10 relative">
-                {isLoading ? (
-                  <Skeleton height={480} />
-                ) : (
-                  <>
-                    <Swiper
-                      ref={swiperRef}
-                      modules={[Autoplay, Pagination, Navigation]}
-                      spaceBetween={30}
-                      centeredSlides={true}
-                      speed={1000}
-                      autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                      }}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={false}
-                      className="mySwiper"
-                    >
-                      {deals?.map((deal) => (
-                        <SwiperSlide key={deal._id}>
-                          <Link to={deal?.link}>
-                            <div className="relative h-60 md:h-[480px] bg-cover bg-center shadow-sm border">
-                              <img
-                                className="w-full h-full"
-                                src={deal?.photo}
-                              />
-                            </div>
-                          </Link>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                    <button
-                      onClick={handlePrev}
-                      className="absolute top-1/2 left-0 transform z-30 -translate-y-1/2 bg-primary text-white w-10 h-10 hidden lg:flex justify-center items-center"
-                    >
-                      <FaChevronLeft className="" />
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="absolute top-1/2 right-0 transform z-30 -translate-y-1/2 w-10 h-10 bg-primary text-white hidden lg:flex justify-center items-center"
-                    >
-                      <FaChevronLeft className="rotate-180" />
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
-          </div> */}
-
           <div className="grid grid-cols-12 gap-5">
-            {/* <div className=" col-span-3 hidden lg:block ">
-              <div className="sticky top-[88px]"> */}
-                {/* Brand Filter */}
-                {/* <div className="shadow-md">
-                  <div className="w-full bg-white border-l-2 border-t border-b border-r border-l-primary">
-                    <div>
-                      <h3 className="uppercase tracking-wide text-[18px] py-3.5 px-3 font-bold">
-                        Brand
-                      </h3>
-                    </div>
-                  </div>
-
-                  {isLoading ? (
-                    <Skeleton count={6} height={50} />
-                  ) : (
-                    brandList.map((item, index) => (
-                      <Link
-                        to={`/shop/brand/${item?.slug}`}
-                        className={`w-full ${
-                          item?.slug == lastSlug
-                            ? "bg-primary text-white"
-                            : "bg-white"
-                        }  border-l border-b border-r inline-block`}
-                        key={index}
-                      >
-                        <div>
-                          <h3 className="text-[16px] font-semibold uppercase py-3 px-3">
-                            {item?.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ))
-                  )}
-                </div> */}
-
-                {/* Category Filter */}
-                {/* <div className="shadow-md mt-10">
-                  <div className="w-full bg-white border-l-2 border-t border-b border-r border-l-primary">
-                    <div>
-                      <h3 className="uppercase tracking-wide text-[18px] py-3.5 px-3 font-bold">
-                        Product Category
-                      </h3>
-                    </div>
-                  </div>
-
-                  {isLoading ? (
-                    <Skeleton count={6} height={50} />
-                  ) : (
-                    categoryList.map((item, index) => (
-                      <Link
-                        to={`/shop/category/${item?.slug}`}
-                        className={`w-full ${
-                          item?.slug == lastSlug
-                            ? "bg-primary text-white"
-                            : "bg-white"
-                        }  border-l border-b border-r inline-block`}
-                        key={index}
-                      >
-                        <div>
-                          <h3 className="text-[16px] font-semibold uppercase py-3 px-3">
-                            {item?.title}
-                          </h3>
-                        </div>
-                      </Link>
-                    ))
-                  )}
-                </div> */}
-
-                {/* <PriceRange /> */}
-              {/* </div>
-            </div> */}
-
             <div className="col-span-12 lg:col-span-12 sm:col-span-12">
+              {/* Banner Section */}
+              <div className="relative w-full min-h-[50vh] flex items-center justify-center text-white perspective-1000">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-cover bg-center"
+                  style={{ backgroundImage: `url(${managementImg})` }}
+                />
+                <div
+                  className="relative z-10 text-center px-4 p-6 rounded"
+                >
+                  <h2 className=" max-w-7xl text-4xl md:text-5xl xl:text-7xl font-bold mb-4 text-green-900">
+                    Products
+                  </h2>
+                  <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
+                  </p>
+                </div>
+              </div>
               <div className="bg-white w-full">
                 <Outlet />
               </div>

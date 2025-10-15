@@ -65,7 +65,7 @@ const Product = () => {
         <div className="py-2 ">
           <div className="text-center">
             <div className="text-center mt-[10px]">
-              <h5 className="text-primary font-bold text-[16px] sm:text-xl mb-3 leading-8 sm:leading-[58px] uppercase tracking-widest">
+              <h5 className="text-[#c1af0f] font-bold text-[16px] sm:text-xl mb-3 leading-8 sm:leading-[58px] uppercase tracking-widest">
                 Our Latest Products
               </h5>
               <h2 className="text-[20px] sm:text-[36px] max-w-3xl mx-auto font-semibold mb-3">
@@ -129,7 +129,7 @@ const Product = () => {
                         <div className="mt-8 text-center">
                           <Link
                             to="/shop"
-                            className="w-28 mx-auto px-6 py-3 text-lg font-medium text-white bg-primary rounded-full hover:transform hover:scale-110 transition-all ease-linear duration-200"
+                            className="w-28 mx-auto px-6 py-3 text-lg font-medium text-white bg-[#c1af0f] hover:bg-[#001802] rounded-full hover:transform hover:scale-110 transition-all ease-linear duration-200"
                           >
                             See all products
                           </Link>
@@ -137,7 +137,7 @@ const Product = () => {
                       </div>
                     </>
                   ) : (
-                    <p className="h-32 flex items-center justify-center text-2xl font-semibold text-primary">
+                    <p className="h-32 flex items-center justify-center text-2xl font-semibold text-[#c1af0f]">
                       No Products Available!
                     </p>
                   )}

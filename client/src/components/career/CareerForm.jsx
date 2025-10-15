@@ -36,7 +36,7 @@ const CareerForm = () => {
       <input type="email" name="email" placeholder="Email" required className="mb-2 w-full px-2 py-3 border rounded"/>
       <textarea name="coverLatter" placeholder="Cover Letter" required className="mb-2 w-full px-2 py-5 border rounded"></textarea>
       <input type="file" accept="application/pdf" onChange={(e) => setCvFile(e.target.files[0])} required className="mb-2 w-full"/>
-      <button type="submit" className="w-full bg-[#001802] text-white px-2 py-3 rounded hover:bg-[#c1af0f]">Submit</button>
+      <button type="submit" className="w-full bg-[#001802] text-white px-2 py-3 rounded hover:bg-[#c1af0f] mt-4">Submit</button>
     </form>
   );
 };

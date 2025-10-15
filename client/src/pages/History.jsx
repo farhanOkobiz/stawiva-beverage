@@ -39,7 +39,9 @@ function History() {
             transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our History</h1>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase">
+            Our History
+          </h2>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">
             Stamina+ Beverage Limited
           </p>
@@ -72,7 +74,9 @@ function History() {
             viewport={{ once: true }}
             variants={textVariants}
           >
-            <h2 className="text-3xl md:text-4xl font-bold">Our History</h2>
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1b2a36] mb-4">
+              Our History
+            </h2>
             <p>
               The story of Stamina+ Beverage Limited began with a simple yet
               powerful vision — to create a beverage brand that inspires energy,
@@ -101,7 +105,9 @@ function History() {
               movement — to refresh the world with taste, purity, and power.
               Stamina+ Beverage Limited — Taste the Power. Refresh the World.
             </p>
-            <p className="font-bold mt-4">Stamina+ Beverage Limited — Taste the Power. Refresh the World.</p>
+            <p className="font-bold mt-4 text-[#00754a]">
+              Stamina+ Beverage Limited — Taste the Power. Refresh the World.
+            </p>
           </motion.div>
         </div>
       </Containar>

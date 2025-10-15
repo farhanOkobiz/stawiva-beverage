@@ -117,7 +117,7 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-white">
+      <div className="flex items-center justify-center h-screen bg-[#001802]">
         <motion.img
           src={img}
           alt="logo"

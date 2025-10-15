@@ -1,6 +1,7 @@
 import Containar from "../containar/Containar";
 import { motion } from "framer-motion";
 import AhmedJobaerSizan from "../../assets/management/AhmedJobaerSizan(MD)2.png";
+import BG from "../../assets/management/bg.jpg";
 
 const imageVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -18,7 +19,9 @@ const textVariants = {
 
 function MDQuote() {
   return (
-    <div>
+    <div className=" py-4 md:py-10 lg:py-16"
+    style={{ backgroundImage: `url(${BG})` }}
+    >
       <Containar>
         <div className="flex flex-col-reverse lg:flex-row items-start md:items-center gap-10">
           {/* Right Text */}

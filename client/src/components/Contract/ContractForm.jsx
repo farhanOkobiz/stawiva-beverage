@@ -94,7 +94,7 @@ const ContractForm = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white py-3 md:py-5 rounded-lg hover:bg-yellow-600"
+                    className="w-full bg-[#c1af0f] text-white py-3 md:py-5 rounded-lg hover:bg-[#001802]"
                   >
                     Send Message
                   </button>

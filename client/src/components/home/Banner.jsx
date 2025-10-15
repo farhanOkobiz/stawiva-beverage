@@ -56,7 +56,7 @@ const Banner = () => {
             modules={[EffectFade, Autoplay]}
             effect="fade"
             speed={1000}
-            autoplay={{ delay: 15000, disableOnInteraction: false }} // Set delay to 2000ms
+            autoplay={{ delay: 5000, disableOnInteraction: false }} // Set delay to 2000ms
             className="absolute top-0 left-0 w-full h-full"
           >
             {bannerData.map((banner, index) => (
@@ -85,48 +85,15 @@ const Banner = () => {
           <p className="text-white">No banners available.</p>
         )}
 
-        {/* <div className="z-50 absolute bottom-5 sm:bottom-32 md:bottom-5 lg:bottom-20 xl:bottom-24 2xl:bottom-40 sm:left-1/2 sm:-translate-x-1/2 height-600:bottom-5 height-900:bottom-10">
-          <Containar>
-            <ul className="flex flex-col sm:flex-row items-center flex-wrap gap-x-1 gap-y-2 sm:gap-x-4 xl:gap-x-[20px] mt-3 ">
-              {isLoading
-                ? Array(socialLink.length)
-                    .fill(0)
-                    .map((_, index) => (
-                      <li
-                        key={index}
-                        className="w-5 sm:w-10 h-5 sm:h-10 flex items-center justify-center"
-                      >
-                        <Skeleton circle={true} height={40} width={40} />
-                      </li>
-                    ))
-                : socialLink.map((item, index) => {
-                    const Icon = item?.icon;
-                    return (
-                      <li className="text-black" key={index}>
-                        <Link
-                          className={`w-5 sm:w-10 h-5 sm:h-10 justify-center bg-white hover:scale-125 transition-all ease-linear duration-150 items-center flex rounded-full text-[10px] sm:text-[15px] hover:text-white`}
-                          to={item?.link}
-                          target="_blanck"
-                          style={{ color: item?.color }}
-                        >
-                          <Icon />
-                        </Link>
-                      </li>
-                    );
-                  })}
-            </ul>
-          </Containar>
-        </div> */}
-
         {/* Content */}
-        <div className="relative z-20 text-white  flex justify-center items-center h-full">
+        <div className="relative z-20 text-white  flex justify-center items-center h-full md:mt-12">
           <Containar>
             <div className="w-full text-center ">
               <>
                 <h3 className="text-[12px] md:text-[16px] lg:text-[18px] xl:text-[28px]  font-normal">
                   {bannerData.length > 0 ? bannerData[0].title : "Loading..."}
                 </h3>
-                <p className="mt-[10px] mb-6 sm:mb-0 text-[20px] max-w-[1070px] mx-auto md:text-[40px] xl:text-[58px] font-semibold   font-robo capitalize">
+                <p className="mt-[10px] md:mb-6 sm:mb-0 text-[20px] max-w-[1070px] mx-auto md:text-[40px] xl:text-[58px] font-semibold   font-robo capitalize">
                   {bannerData.length > 0
                     ? bannerData[0].subTitle
                     : "Loading..."}
@@ -134,7 +101,7 @@ const Banner = () => {
 
                 <Link
                   to={"/contact-us"}
-                  className="px-3 sm:px-[25px] sm:py-[10px] xl:px-[50px] xl:py-[15px] py-[6px] inline-block bg-primary transition-all ease-linear duration-150 hover:bg-secondary hover:text-primary text-[14px] sm:text-base xl:text-[18px] mt-8 sm:mt-10 font-semibold text-white rounded-lg"
+                  className="px-3 sm:px-[25px] sm:py-[10px] xl:px-[50px] xl:py-[15px] py-[6px] inline-block bg-[#001802] transition-all ease-linear duration-150 hover:bg-[#c1af0f] hover:text-[#001802] text-[14px] sm:text-base xl:text-[18px] md:mt-8 mt-3 font-semibold text-white rounded-lg"
                 >
                   Contact Us Now
                 </Link>

@@ -7,7 +7,7 @@ export default function MissionVision() {
         <div className="">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent mb-4">
               Mission & Vision
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 via-green-500 to-emerald-500 mx-auto rounded-full"></div>
@@ -41,7 +41,7 @@ export default function MissionVision() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
                     Mission
                   </h3>
                 </div>
@@ -88,7 +88,7 @@ export default function MissionVision() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 group-hover:text-white transition-colors duration-300">
                     Vision
                   </h3>
                 </div>

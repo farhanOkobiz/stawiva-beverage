@@ -80,7 +80,9 @@ const Navbar = () => {
   return (
     <nav
       className={`transition-all duration-300 ease-in-out ${
-        isSticky ? "backdrop-blur-md bg-gradient-to-br from-yellow-50 via-green-50 to-emerald-50 shadow-md" : "sm:bg-[#001802] sm:backdrop-blur-[10%]"
+        isSticky
+          ? "backdrop-blur-md bg-[#001802] shadow-md"
+          : "bg-[#001802] backdrop-blur-[10%]"
       } z-[9999] font-robo fixed left-0 top-0 w-full`}
     >
       <Containar>
@@ -88,7 +90,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             <div>
               <div className="flex gap-x-3 items-center">
-                <div className="h-[100px]">
+                <div className="lg:h-[100px] md:h-[60px] h-[55px]">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>
@@ -103,8 +105,8 @@ const Navbar = () => {
                       <>
                         <div
                           className={`cursor-pointer text-[14px] xl:text-[16px] font-bold px-4 rounded transition-all ease-linear duration-150 ${
-                            isSticky ? "text-gray-700" : "text-white"
-                          } group-hover:text-yellow-500`}
+                            isSticky ? "text-white" : "text-white"
+                          } group-hover:text-[#c1af0f]`}
                         >
                           {item.title}
                         </div>
@@ -128,11 +130,11 @@ const Navbar = () => {
                             {item?.subMenuList?.map((subItem, subIndex) => (
                               <NavLink
                                 key={subIndex}
-                                to={subItem.link} 
+                                to={subItem.link}
                                 onMouseEnter={() => setActiveSubItem(subItem)}
                                 className={({ isActive }) =>
-                                  `block px-4 py-4 text-white bg-gray-600 hover:bg-gray-700 hover:text-white transition-all ${
-                                    isActive ? "bg-gray-700" : ""
+                                  `block px-4 py-4 text-white bg-[#c1af0f] hover:bg-[#8d8007] hover:text-white transition-all ${
+                                    isActive ? "bg-[#8d8007]" : ""
                                   }`
                                 }
                               >
@@ -155,10 +157,10 @@ const Navbar = () => {
                           to={item.link}
                           className={({ isActive }) =>
                             isActive
-                              ? `text-primary text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded`
+                              ? `text-[#c1af0f] text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded`
                               : `${
-                                  isSticky ? "text-gray-700" : "text-white"
-                                } text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-yellow-500 transition-all ease-linear duration-150`
+                                  isSticky ? "text-white" : "text-white"
+                                } text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-[#c1af0f] transition-all ease-linear duration-150`
                           }
                         >
                           {item.title}
@@ -168,37 +170,6 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              {/* <ul className="flex space-x-4">
-                {menulist.map((item, index) => (
-                  <li key={index} className="flex">
-                    {item?.title === "Hotline" ? (
-                      <a
-                        href={item?.link}
-                        className="bg-red-500 text-white text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:bg-red-600 transition-all ease-linear duration-150 flex flex-col items-center"
-                      >
-                        <div className="flex">
-                          {item?.icon && <item.icon className="mr-2" />}
-                          {item?.title}
-                        </div>
-                        <span className="hidden lg:block">01000000000</span>
-                      </a>
-                    ) : (
-                      <NavLink
-                        to={item?.link}
-                        className={({ isActive }) =>
-                          isActive
-                            ? `text-primary text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-primary transition-all ease-linear duration-150 flex items-center`
-                            : `${
-                                isSticky ? "text-gray-700" : "text-white"
-                              }  text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-primary transition-all ease-linear duration-150 flex items-center`
-                        }
-                      >
-                        {item?.title}
-                      </NavLink>
-                    )}
-                  </li>
-                ))}
-              </ul> */}
             </div>
             <div className="block lg:hidden">
               <ul className="flex items-center gap-x-2">
