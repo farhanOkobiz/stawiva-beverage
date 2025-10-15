@@ -41,14 +41,14 @@ function AboutUs() {
             About Us – Stamina+ Beverage Limited
           </h1>
           <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
-            We are a rapidly growing conglomerate, working in industries
-            including RMG, Pharmaceuticals, Retail, IT & Real Estate.
+            Stamina+ Beverage Limited offers refreshing, natural drinks designed
+            to energize and promote a healthy lifestyle.
           </p>
         </motion.div>
       </div>
 
       {/* Message Section */}
-      <motion.div
+      {/* <motion.div
         className="bg-[#19232f] text-white py-16 px-4"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -61,9 +61,8 @@ function AboutUs() {
             workforce of 20,000 employees.
           </p>
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      {/* Additional Content Section */}
       {/* Additional Content Section */}
       <Containar>
         <motion.div

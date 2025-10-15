@@ -8,6 +8,7 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 import { IoMdLogOut } from "react-icons/io";
+import { FaBriefcase } from "react-icons/fa";
 
 import { Button, Layout, Menu, theme, message } from "antd";
 import { Link, Outlet, useNavigate } from "react-router-dom";
@@ -17,7 +18,6 @@ import { Input, Space } from "antd";
 import UploadBanner from "../Pages/UploadBanner";
 import AddCategory from "../Pages/Category";
 import UploadProduct from "../Pages/UploadProduct";
-import AllProduct from "../Pages/AllProduct";
 import { useDispatch, useSelector } from "react-redux";
 import logoImage from "../../src/assets/logo.png";
 import CreateBlog from "../Pages/CreateBlog";
@@ -44,6 +44,7 @@ import { MdContacts } from "react-icons/md";
 import { GiKnightBanner } from "react-icons/gi";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import Brand from "../Pages/Brand";
+import Career from "../Pages/Career";
 
 const { Search } = Input;
 const { Header, Sider, Content } = Layout;
@@ -110,10 +111,6 @@ const MainLayout = () => {
       content = <UploadProduct />;
       break;
 
-    case "6":
-      content = <AllProduct />;
-      break;
-
     case "7":
       content = <CreateBlog />;
       break;
@@ -149,9 +146,12 @@ const MainLayout = () => {
       content = <AllContact />;
       break;
     case "18":
-      content = <UploadBanner />;
+      content = <Career />;
       break;
     case "19":
+      content = <UploadBanner />;
+      break;
+    case "20":
       content = <Discount />;
       break;
     default:
@@ -163,19 +163,19 @@ const MainLayout = () => {
   }
 
   let items = [
-    getItem(" All Users", "1", <UserOutlined />),
-
-    getItem(" Orders", "2", <CiShop />),
-    getItem(" Brand", "3", <CiShoppingTag />),
-    getItem(" Category", "4", <BiCategory />),
-    getItem(" Product", "5", <UploadOutlined />),
-    getItem(" Services", "11", <RiCustomerService2Line />),
-
-    getItem(" Gallery", "13", <MdEmojiEvents />),
-
+    getItem("All Users", "1", <UserOutlined />),
+    // getItem("Orders", "2", <CiShop />),
+    getItem("Brand", "3", <CiShoppingTag />),
+    getItem("Category", "4", <BiCategory />),
+    getItem("Product", "5", <UploadOutlined />),
+    // getItem("News Events Category", "7", <MdEmojiEvents />),
+    getItem("News & Events", "8", <MdEmojiEvents />),
+    // getItem(" Services", "11", <RiCustomerService2Line />),
+    // getItem(" Gallery", "13", <MdEmojiEvents />),
     getItem(" Partners", "15", <FaUserFriends />),
     getItem("All Contact", "17", <MdContacts />),
-    getItem("ADD Banner", "18", <GiKnightBanner />),
+    getItem("Career", "18", <FaBriefcase />),
+    getItem("ADD Banner", "19", <GiKnightBanner />),
   ];
 
   const handleLogout = () => {

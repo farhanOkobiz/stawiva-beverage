@@ -245,9 +245,8 @@ const Products = () => {
     if (product) {
       form.setFieldsValue({
         ...product,
-        // backend expects body.model to be a JSON string that becomes specification
-        // the UI uses `packaging` Form.List, so populate that from product.specification
-        packaging: product?.specification || [],
+        // populate packaging from specification (if present) or from packaging field
+        packaging: product?.specification || product?.packaging || [],
         category: product.category?._id,
         brand: product.brand?._id,
         details: product.details,

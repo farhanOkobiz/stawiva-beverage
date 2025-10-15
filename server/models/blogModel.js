@@ -6,45 +6,43 @@ const blogSchema = new Schema(
   {
     title: {
       type: String,
-      required: [true, "A blog post must have a title"],
+      required: [true, "A News & Event post must have a title"],
       trim: true,
-      maxLength: [100, "Blog title must not exceed 100 characters"],
-      unique: true,
+      maxLength: [100, "News & Event title must not exceed 100 characters"],
     },
-
     content: {
       type: String,
-      required: [true, "A blog post must have content"],
+      required: [true, "A News & Event post must have content"],
     },
-
     category: {
-      type: Schema.Types.ObjectId,
-      ref: "BlogCategory",
-      required: [true, "A blog post must belong to a category"],
+      type: String,
+      required: [true, "A News & Event post must belong to a category"],
     },
-
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "A blog post must have an author"],
+      required: [true, "A News & Event post must have an author"],
     },
-
     tags: [
       {
         type: String,
         trim: true,
-        required: [true, "A blog post must have at least one tag"],
+        required: [true, "A News & Event post must have at least one tag"],
       },
     ],
 
     photos: [
       {
         type: String,
-        required: [true, "A blog post must have at least one photo"],
+        required: false,
         trim: true,
       },
     ],
-
+    youtubeVideo: {
+      type: String,
+      required: false,
+      trim: true,
+    },
     status: {
       type: String,
       enum: {

@@ -16,12 +16,20 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axiosInstance from "../Components/Axios";
 
-
 const { Option } = Select;
 
 const BlogsComponent = () => {
   const [blogs, setBlogs] = useState([]);
-  const [blogCategories, setBlogCategories] = useState([]);
+  const [blogCategories, setBlogCategories] = useState([
+    {
+      _id: "1",
+      title: "News",
+    },
+    {
+      _id: "2",
+      title: "Events",
+    },
+  ]);
   const [visible, setVisible] = useState(false);
   const [editingBlog, setEditingBlog] = useState(null);
   const [fileList, setFileList] = useState([]);
@@ -43,8 +51,8 @@ const BlogsComponent = () => {
 
   const fetchBlogCategories = async () => {
     try {
-      const response = await axiosInstance.get("/blogCategories"); // Assuming there's an API for categories
-      setBlogCategories(response.data.data.doc);
+      // const response = await axiosInstance.get("/blogCategories"); // Assuming there's an API for categories
+      // setBlogCategories(response.data.data.doc);
     } catch (error) {
       message.error("Failed to fetch categories.");
     }
@@ -57,7 +65,7 @@ const BlogsComponent = () => {
       // Append form fields
       formData.append("title", values.title);
       formData.append("content", values.content);
-
+      formData.append("youtubeVideo", values.youtubeVideo);
       // Only append the category if the category was explicitly chosen
       if (values.category !== undefined) {
         formData.append("category", values.category);
@@ -86,7 +94,7 @@ const BlogsComponent = () => {
       setVisible(false);
       fetchBlogs();
     } catch (error) {
-      message.error("Failed to save blog.");
+      message.error("Failed to save News & Event.");
     }
   };
 
@@ -145,7 +153,6 @@ const BlogsComponent = () => {
       title: "Category",
       dataIndex: "category",
       key: "category",
-      render: (category) => category?.title || "No Category",
     },
     {
       title: "Photos",
@@ -153,16 +160,45 @@ const BlogsComponent = () => {
       key: "photos",
       render: (photos) => (
         <div>
-          {photos.map((photo, index) => (
-            <img
-              key={index}
-              src={photo}
-              alt="blog"
-              style={{ width: "100px", marginRight: "10px" }}
-            />
-          ))}
+          {photos.length === 0 ? (
+            <span>No Photo</span>
+          ) : (
+            photos.map((photo, index) => (
+              <img
+                key={index}
+                src={photo}
+                alt="blog"
+                style={{ width: "100px", marginRight: "10px" }}
+              />
+            ))
+          )}
         </div>
       ),
+    },
+    {
+      title: "Youtube Video",
+      dataIndex: "youtubeVideo",
+      key: "youtubeVideo",
+      render: (youtubeVideo) => {
+        if (!youtubeVideo) return <span>No Video</span>;
+
+        // Simple validation
+        const videoIdMatch = youtubeVideo.match(/(?:v=|youtu\.be\/)([\w-]+)/);
+        if (!videoIdMatch) return <span>Invalid URL</span>;
+
+        const embedUrl = `https://www.youtube.com/embed/${videoIdMatch[1]}`;
+
+        return (
+          <iframe
+            width="200"
+            height="120"
+            src={embedUrl}
+            title="YouTube video"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        );
+      },
     },
     {
       title: "Tags",
@@ -202,13 +238,13 @@ const BlogsComponent = () => {
   return (
     <div className="container mx-auto py-5">
       <div className="flex justify-between mb-4">
-        <h1 className="text-2xl font-bold">All Blogs</h1>
+        <h1 className="text-2xl font-bold">News & Events</h1>
         <Button
           type="primary"
           onClick={() => showModal()}
           style={{ marginBottom: 16 }}
         >
-          <PlusOutlined /> Create Blog
+          <PlusOutlined /> Create News & Events
         </Button>
       </div>
 
@@ -216,7 +252,7 @@ const BlogsComponent = () => {
 
       <Modal
         visible={visible}
-        title={editingBlog ? "Edit Blog" : "Create Blog"}
+        title={editingBlog ? "Edit News & Event" : "Create News & Event"}
         onCancel={() => setVisible(false)}
         onOk={() => form.submit()}
       >
@@ -224,9 +260,7 @@ const BlogsComponent = () => {
           <Form.Item
             name="title"
             label="Title"
-            rules={[
-              { required: true, message: "Please input the blog title!" },
-            ]}
+            rules={[{ required: true, message: "Please input the title!" }]}
           >
             <Input />
           </Form.Item>
@@ -239,7 +273,7 @@ const BlogsComponent = () => {
             >
               <Select placeholder="Select a category">
                 {blogCategories.map((category) => (
-                  <Option key={category._id} value={category._id}>
+                  <Option key={category._id} value={category?.title}>
                     {category.title}
                   </Option>
                 ))}
@@ -260,9 +294,7 @@ const BlogsComponent = () => {
           <Form.Item
             name="content"
             label="Content"
-            rules={[
-              { required: true, message: "Please input the blog content!" },
-            ]}
+            rules={[{ required: true, message: "Please input the content!" }]}
           >
             <ReactQuill />
           </Form.Item>
@@ -277,6 +309,13 @@ const BlogsComponent = () => {
             >
               <Button icon={<UploadOutlined />}>Upload</Button>
             </Upload>
+          </Form.Item>
+          <Form.Item
+            name="youtubeVideo"
+            label="YouTube Video Link"
+            rules={[{ message: "Please input the youtube video link" }]}
+          >
+            <Input />
           </Form.Item>
         </Form>
       </Modal>

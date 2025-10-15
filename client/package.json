@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@radix-ui/themes": "^3.1.4",
     "@reduxjs/toolkit": "^2.2.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "antd": "^5.22.7",
     "aos": "^2.3.4",
     "axios": "^1.7.7",

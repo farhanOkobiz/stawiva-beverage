@@ -163,6 +163,7 @@ exports.getAll = (Model, popOptions) =>
       .paginate();
 
     const doc = await features.query.select("-__v");
+    
     // const doc = await features.query.select('-__v').explain();
 
     res.status(200).json({

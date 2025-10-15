@@ -64,13 +64,6 @@ const Product = () => {
       <Containar>
         <div className="py-2 ">
           <div className="text-center">
-            <div className="flex justify-center">
-              <img
-                src={leafIcon}
-                className="w-[50px] sm:w-[70px]"
-                alt="leaf-icon"
-              />
-            </div>
             <div className="text-center mt-[10px]">
               <h5 className="text-primary font-bold text-[16px] sm:text-xl mb-3 leading-8 sm:leading-[58px] uppercase tracking-widest">
                 Our Latest Products

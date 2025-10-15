@@ -11,7 +11,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
 import managementImg from "../assets/management/management.jpg";
 
-const Blogs = () => {
+const NewsEventsForHome = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState("*");
@@ -110,38 +110,6 @@ const Blogs = () => {
 
   return (
     <>
-      <div className="h-[64px] sm:h-[83.4px] bg-[#f5f5f5]"></div>
-      {/* Banner Section */}
-      <div className="relative w-full min-h-screen flex items-center justify-center text-white perspective-1000">
-        {/* Background Image */}
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
-          initial={{ z: -200, opacity: 0, scale: 1.2 }}
-          animate={{
-            z: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 1.5 },
-          }}
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
-        <motion.div
-          className="relative z-10 text-center px-4 p-6 rounded"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1.5, ease: "easeOut" },
-          }}
-        >
-          <h2 className="text-4xl md:text-5xl xl:text-7xl font-bold mb-4">
-            News & Events – Stamina+ Beverage Limited
-          </h2>
-        </motion.div>
-      </div>
-
       <Containar>
         <div className="my-10 py-10 w-full">
           <h3 className="text-[32px] text-center font-semibold text-text mt-20">
@@ -165,7 +133,7 @@ const Blogs = () => {
                   ))
                 ) : (
                   <p className="h-32 flex items-center justify-center text-2xl font-semibold text-primary">
-                    No  NEWS & EVENTS Available Now!
+                    No Blogs Available Now!
                   </p>
                 )}
               </div>
@@ -177,4 +145,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default NewsEventsForHome;

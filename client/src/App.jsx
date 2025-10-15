@@ -50,6 +50,10 @@ import Career from "./pages/Career";
 import Environmental from "./pages/Environmental";
 import EmploymentWelfare from "./pages/EmploymentWelfare";
 import FoodBeverage from "./pages/FoodBeverage";
+import { useState } from "react";
+import { useEffect } from "react";
+import img from "./assets/logo/logo.png";
+import { motion } from "framer-motion";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -59,9 +63,15 @@ const router = createBrowserRouter(
       <Route path="/company/management" element={<Management />} />
       <Route path="/company/history" element={<History />} />
       <Route path="/industries/food-beverage" element={<FoodBeverage />} />
-      <Route path="/sustainability/environmental-sustainability" element={<Environmental/>} />
-      <Route path="/sustainability/employment-welfare" element={<EmploymentWelfare/>} />
-      <Route path="/news-events" element={<NewsEvents />} />
+      <Route
+        path="/sustainability/environmental-sustainability"
+        element={<Environmental />}
+      />
+      <Route
+        path="/sustainability/employment-welfare"
+        element={<EmploymentWelfare />}
+      />
+      <Route path="/news-events" element={<Blogs />} />
       <Route path="/career" element={<Career />} />
       <Route path="/policy" element={<Policy />} />
       <Route path="/contact-us" element={<Contact />} />
@@ -98,6 +108,28 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-white">
+        <motion.img
+          src={img}
+          alt="logo"
+          className="w-40 h-40"
+          initial={{ opacity: 0, y: 50, scale: 0.5 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       {/* <ToastContainer /> */}

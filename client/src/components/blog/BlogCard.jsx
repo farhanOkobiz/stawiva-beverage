@@ -43,7 +43,7 @@ const BlogCard = ({ blog, loading }) => {
           />
         </Link>
         {blog?.date && (
-          <div className="bg-primary absolute right-3 -bottom-5 text-white rounded-full w-20 h-20 border-[6px] border-white flex justify-center items-center">
+          <div className="bg-green-800 absolute right-3 -bottom-5 text-white rounded-full w-20 h-20 border-[6px] border-white flex justify-center items-center">
             <p className="text-base font-medium leading-6 text-center">
               {blog.date.split(" ")[1]}
               <br />
@@ -71,7 +71,7 @@ const BlogCard = ({ blog, loading }) => {
         />
         <div className="flex justify-between items-center mt-5 w-full">
           <Link to={`/blogs/${blog?.slug || ""}`}>
-            <button className="inline-block w-full md:w-auto text-center rounded-md text-white text-[14px] bg-primary px-4 py-1">
+            <button className="inline-block w-full md:w-auto text-center rounded-md text-white text-[14px] bg-green-800 hover:bg-yellow-500 px-4 py-1">
               Read More
             </button>
           </Link>

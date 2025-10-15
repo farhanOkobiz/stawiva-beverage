@@ -11,7 +11,7 @@ const Breadcrumb = ({ children }) => {
 
         {/* Content */}
         <div className="relative z-10 flex items-center justify-between h-full text-center text-white px-28">
-          <h2 className="text-[24px] font-bold text-white">All Blogs</h2>
+          <h2 className="text-[24px] font-bold text-white">News & Events</h2>
           {/* Breadcrumbs */}
           <div className="mt-6 text-base font-semibold">
             <a href="/" className="hover:underline">

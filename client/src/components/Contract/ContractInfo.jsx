@@ -16,10 +16,7 @@ const ContractInfo = () => {
             <div className="font-medium">
               <h2 className=" text-2xl mb-4">Address</h2>
               <p className="text-gray-500 font-light text-lg">
-                Malibag
-              </p>
-              <p className="text-gray-500 font-light text-lg">
-                Dhaka, Bangladesh
+                Block-D, Road Number-11, Plot Number-13, Ashuliya model town,dhaka,bangladesh
               </p>
             </div>
           </div>
@@ -34,7 +31,7 @@ const ContractInfo = () => {
                 className="text-gray-500 font-light text-base md:text-lg"
               >
                 {/* ********@gamil.com <br /> */}
-                ****************@gmail.com
+                stminaplus2025@gmail.com
               </Link>
             </div>
           </div>
@@ -50,7 +47,7 @@ const ContractInfo = () => {
                 to={"telto:01511169923"}
                 className="block text-gray-500 font-light text-lg"
               >
-                +88 01511169923
+                +8801783182659
               </Link>
             </div>
           </div>

@@ -75,12 +75,6 @@ const SingleBlogPage = () => {
   return (
     <div>
       <div className="h-[64px] sm:h-[83.4px] bg-[#f5f5f5] font-robo"></div>
-      <BradCumbs
-        title="Latest Blogs & News"
-        brad="Latest Blogs & News"
-        brad2="Single Blog"
-        bradLink="/blogs"
-      />
       <Containar>
         <div className="grid grid-cols-12 py-20 gap-y-10 md:gap-5 lg:gap-10 font-robo">
           <div className="col-span-12 md:col-span-8">
@@ -140,7 +134,7 @@ const SingleBlogPage = () => {
                 {loading ? (
                   <Skeleton circle height={80} width={80} />
                 ) : (
-                  <div className="w-20 h-20 rounded-full bg-primary flex justify-center items-center">
+                  <div className="w-20 h-20 rounded-full bg-green-800 flex justify-center items-center">
                     <div className="text-center text-white font-semibold">
                       <h4>{formatDate(singleBlog?.blog?.createdAt)}</h4>
                     </div>
@@ -176,8 +170,8 @@ const SingleBlogPage = () => {
           </div>
           <div className="col-span-12 md:col-span-4">
             <div className="sticky top-24">
-              <div className="flex justify-between py-3 px-4 bg-primary text-white rounded-md">
-                <h3>Related Blogs & News</h3>
+              <div className="flex justify-between py-3 px-4 bg-green-800 text-white rounded-md">
+                <h3>Related News & Event</h3>
                 <Link to={"/blogs"}>View All</Link>
               </div>
               {loading ? (

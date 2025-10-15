@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "../Components/Axios";
 import { useDispatch } from "react-redux";
 import { activeUser } from "../Slices/userSlices";
+import img from "../assets/logo.png";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -53,43 +54,52 @@ const Login = () => {
 
   return (
     <div className="flex justify-center flex-col items-center h-screen">
-      <div className="md:w-[500px] mx-auto border p-10 mb-16 rounded-md">
-        <h1 className="text-2xl my-2 mb-5">Login</h1>
-        <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-        >
-          <Form.Item
-            name="email"
-            rules={[{ required: true, message: "Please input your email!" }]}
+      <div className="flex items-center justify-center gap-10">
+        <div className="w-100 h-100 mt-3 md:mt-7 sm:mt-0 sm:hidden md:block mx-auto mb-5 md:mb-10 rounded-full flex justify-center items-center ">
+          <Link to="/">
+            <img className="w-full" src={img} alt="Logo" />
+          </Link>
+        </div>
+        <div className="md:w-[500px] mx-auto border p-10 mb-16 rounded-md">
+          <h1 className="text-2xl my-2 mb-5">Login</h1>
+          <Form
+            name="normal_login"
+            className="login-form"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
           >
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Email"
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[{ required: true, message: "Please input your Password!" }]}
-          >
-            <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button w-full bg-primary"
+            <Form.Item
+              name="email"
+              rules={[{ required: true, message: "Please input your email!" }]}
             >
-              Log in
-            </Button>
-          </Form.Item>
-        </Form>
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Email"
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                { required: true, message: "Please input your Password!" },
+              ]}
+            >
+              <Input
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="login-form-button w-full bg-primary"
+              >
+                Log in
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
       <h1>
         Developed by{" "}

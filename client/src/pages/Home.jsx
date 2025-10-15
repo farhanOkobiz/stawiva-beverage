@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react";
-import Partner from "../components/home/Partner";
 import Product from "../components/home/Product";
 import Banner from "../components/home/Banner";
-import Event from "../components/home/Event";
-import Service from "../components/home/Service";
+import NewsEventsForHome from "./NewsEventsForHome";
+import VisionMissionValues from "../components/home/VisionMissionValues";
+import MDQuote from "../components/home/MDQuote";
 
 const Home = () => {
   return (
     <>
       <Banner />
-      <Service />
+      <VisionMissionValues />
       <Product />
-      <Event />
-      <Partner />
+      <MDQuote/>
+      <NewsEventsForHome/>
+      {/* <Event /> */}
+      {/* <Partner /> */}
     </>
   );
 };

@@ -5,44 +5,60 @@ const catchAsync = require("../utils/catchAsync");
 const { deleteUploadedImages } = require("../middlewares/photoMiddleware");
 const { getAll } = require("./handleFactory");
 const generateSlug = require("../utils/slugGenerator");
+const mongoose = require("mongoose");
 
+// Helper to update BlogCategory by id, slug or title safely (avoids casting non-ObjectId strings)
+const findCategoryAndUpdate = async (
+  categoryIdentifier,
+  update,
+  options = { new: true }
+) => {
+  if (!categoryIdentifier) return null;
+  if (mongoose.Types.ObjectId.isValid(String(categoryIdentifier))) {
+    return BlogCategory.findOneAndUpdate(
+      { _id: categoryIdentifier },
+      update,
+      options
+    );
+  }
+  // try slug first, then case-insensitive title
+  return BlogCategory.findOneAndUpdate(
+    {
+      $or: [
+        { slug: categoryIdentifier },
+        { title: { $regex: `^${categoryIdentifier}$`, $options: "i" } },
+      ],
+    },
+    update,
+    options
+  );
+};
 
 exports.createBlogController = catchAsync(async (req, res, next) => {
   const body = { ...req.body };
   body.author = req.user.id;
   const title = body?.title;
-  const slug = generateSlug(title)
+  const slug = generateSlug(title);
 
+  const publicIds = req.body.publicIds;
+  body.photos = req.body.photos;
+  body.slug = slug;
 
-  if (req.body.photos && req.body.photos.length > 0) {
-    const publicIds = req.body.publicIds;
-    body.photos = req.body.photos;
-    body.slug = slug;
+  try {
+    const blog = await Blog.create(body);
 
-    try {
-      const blog = await Blog.create(body);
+    await findCategoryAndUpdate(blog.category, { $push: { blogs: blog._id } });
 
-      await BlogCategory.findOneAndUpdate(
-        { _id: blog.category },
-        { $push: { blogs: blog._id } },
-        { new: true }
-      );
-
-      return res.status(201).json({
-        status: "success",
-        message: "Blog has been created successfully",
-        data: {
-          blog,
-        },
-      });
-    } catch (error) {
-      await deleteUploadedImages(publicIds);
-      return next(error);
-    }
-  } else {
-    return next(
-      new AppError("No photos uploaded, please upload at least one image.", 400)
-    );
+    return res.status(201).json({
+      status: "success",
+      message: "News & Event has been created successfully",
+      data: {
+        blog,
+      },
+    });
+  } catch (error) {
+    await deleteUploadedImages(publicIds);
+    return next(error);
   }
 });
 
@@ -63,7 +79,7 @@ exports.getBlogController = catchAsync(async (req, res, next) => {
 
   blog.views += 1;
 
-   await blog.save();
+  await blog.save();
 
   res.status(200).json({
     status: "success",
@@ -132,11 +148,7 @@ exports.deleteBlogController = catchAsync(async (req, res, next) => {
     await deleteUploadedImages(publicIds);
   }
 
-  await BlogCategory.findOneAndUpdate(
-    { _id: blog.category },
-    { $pull: { blogs: blog._id } },
-    { new: true }
-  );
+  await findCategoryAndUpdate(blog.category, { $pull: { blogs: blog._id } });
 
   await Blog.findByIdAndDelete(blog._id);
 

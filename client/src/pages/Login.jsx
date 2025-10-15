@@ -59,7 +59,6 @@ const Login = () => {
       setEmailOrPhone("");
       setPassword("");
     } catch (error) {
-      console.error("Login error", error);
       toast.error("Login failed. Please check your credentials.", {
         position: "top-right",
         autoClose: 700,
@@ -80,7 +79,7 @@ const Login = () => {
       <div className="grid grid-cols-12 h-full">
         <div className="col-span-12 sm:col-span-7 lg:h-full">
           <div className="col-span-6 lg:h-full">
-            <div className="w-36 h-36 mt-3 md:mt-7 sm:mt-0 sm:hidden mx-auto mb-5 md:mb-10 rounded-full flex justify-center items-center bg-white">
+            <div className="w-36 h-36 mt-3 md:mt-7 sm:mt-0 sm:hidden md:block mx-auto mb-5 md:mb-10 rounded-full flex justify-center items-center bg-white">
               <Link to="/">
                 <img className="w-24" src={img} alt="Logo" />
               </Link>

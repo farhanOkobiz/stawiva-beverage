@@ -2,12 +2,22 @@ const validator = require("validator");
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const contactSchema = new Schema(
+const getquoteSchema = new Schema(
   {
     name: {
       type: String,
       required: [true, "Full name is required"],
       trim: true,
+    },
+    address: {
+      type: String,
+      trim: true,
+      required: false,
+    },
+    country: {
+      type: String,
+      trim: true,
+      required: false,
     },
     email: {
       type: String,
@@ -21,13 +31,11 @@ const contactSchema = new Schema(
       required: [true, "Phone number is required"],
       trim: true,
     },
-
     subject: {
       type: String,
-      required: [true, "Subject is required"],
       trim: true,
+      require: false,
     },
-
     message: {
       type: String,
       required: [true, "Message is required"],
@@ -39,6 +47,6 @@ const contactSchema = new Schema(
   }
 );
 
-const Contact = model("Contact", contactSchema);
+const GetQoute = model("GetQoute", getquoteSchema);
 
-module.exports = Contact;
+module.exports = GetQoute;

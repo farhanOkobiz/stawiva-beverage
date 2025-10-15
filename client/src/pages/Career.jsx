@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
 import managementImg from "../assets/management/management.jpg";
+import CareerForm from "../components/career/CareerForm";
 
 const imageVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -49,28 +50,19 @@ function Career() {
             listed candidates with minimum criteria as mentioned will be called
             for Interview/Written exam. The company reserves the right to amend
             the decision regarding the recruitment or selection. For immediate
-            Consideration Email your CV to : career@*******.com.bd
+            Consideration Email your CV to : stminaplus2025@gmail.com
           </p>
         </motion.div>
       </div>
 
       {/* Message Section */}
-        <div className="flex flex-col lg:flex-row items-start">
-          {/* Left Image */}
-          <motion.div
-            className="lg:w-1/2 w-full flex justify-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={imageVariants}
-          >
-            <img
-              src={managementImg}
-              alt="Management Team"
-              className="w-full h-auto shadow-lg"
-            />
-          </motion.div>
-          {/* Right Text */}
+      <Containar>
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16 my-16">
+          {/* Left */}
+          <div className="lg:w-1/2 w-full">
+            <CareerForm />
+          </div>
+          {/* Right */}
           <motion.div
             className="lg:w-1/2 w-full flex justify-center"
             initial="hidden"
@@ -85,6 +77,7 @@ function Career() {
             />
           </motion.div>
         </div>
+      </Containar>
     </div>
   );
 }

@@ -57,7 +57,7 @@ exports.getProductController = catchAsync(async (req, res, next) => {
     .populate([
       {
         path: "category",
-        select: "id slug",
+        select: "id slug title",
       },
       {
         path: "brand",

@@ -85,7 +85,7 @@ const Banner = () => {
           <p className="text-white">No banners available.</p>
         )}
 
-        <div className="z-50 absolute bottom-5 sm:bottom-32 md:bottom-5 lg:bottom-20 xl:bottom-24 2xl:bottom-40 sm:left-1/2 sm:-translate-x-1/2 height-600:bottom-5 height-900:bottom-10">
+        {/* <div className="z-50 absolute bottom-5 sm:bottom-32 md:bottom-5 lg:bottom-20 xl:bottom-24 2xl:bottom-40 sm:left-1/2 sm:-translate-x-1/2 height-600:bottom-5 height-900:bottom-10">
           <Containar>
             <ul className="flex flex-col sm:flex-row items-center flex-wrap gap-x-1 gap-y-2 sm:gap-x-4 xl:gap-x-[20px] mt-3 ">
               {isLoading
@@ -116,7 +116,7 @@ const Banner = () => {
                   })}
             </ul>
           </Containar>
-        </div>
+        </div> */}
 
         {/* Content */}
         <div className="relative z-20 text-white  flex justify-center items-center h-full">

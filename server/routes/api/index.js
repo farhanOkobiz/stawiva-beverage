@@ -16,6 +16,8 @@ const eventRoute = require("./eventRoute");
 const partnerRoute = require("./partnerRoute");
 const bannerRoute = require("./bannerRoute");
 const contactRoute = require("./contactRoute");
+const careerRoute = require("./careerRoute");
+const getquoteRoute = require("./getquoteRoute");
 const searchRoute = require("./searchRoute");
 
 const router = express.Router();
@@ -36,6 +38,8 @@ router.use("/events", eventRoute);
 router.use("/partners", partnerRoute);
 router.use("/banners", bannerRoute);
 router.use("/contacts", contactRoute);
+router.use("/career", careerRoute);
+router.use("/getquote", getquoteRoute);
 router.use("/search", searchRoute);
 
 module.exports = router;

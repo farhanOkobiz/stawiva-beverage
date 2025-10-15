@@ -70,8 +70,6 @@ const ProductGridShopPage = () => {
         params: {
           limit: limit,
           page: page,
-          "price[gte]": selectedRange[0],
-          "price[lte]": selectedRange[1],
           sort, // Include the sort option in the query params
         },
       });
@@ -152,7 +150,7 @@ const ProductGridShopPage = () => {
 
       {gridOrList ? (
         <div className="mt-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full px-5 pb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full px-5 pb-6">
             {loading
               ? Array.from({ length: productsPerPage }).map((_, index) => (
                   <div
@@ -176,8 +174,8 @@ const ProductGridShopPage = () => {
                     key={index}
                     className="rounded-lg hover:shadow-lg overflow-hidden bg-white group pb-4 border"
                   >
-                    <div className="relative">
-                      <div className="h-[300px] overflow-hidden">
+                    <div className="relative md:mt-2">
+                      <div className="h-[300px] md:h-[200px] lg:h-[300px] overflow-hidden">
                         <Link to={`/shop/${product?.slug}`}>
                           <img
                             src={product?.photos[0]}
@@ -186,15 +184,10 @@ const ProductGridShopPage = () => {
                           />
                         </Link>
                       </div>
-                      {/* <div className="bg-primary group-hover:bg-secondary hover:text-primary border-primary border-2  transition-all ease-linear duration-150 text-white absolute right-4 -bottom-7 rounded-full border-4 border-white flex justify-center items-center w-16 h-16">
-                        <p className="text-base uppercase font-medium">
-                          {product?.size}
-                        </p>
-                      </div> */}
                     </div>
-                    <div className="text-left px-4">
-                      <h2 className="font-medium text-[20px] mt-7 mb-2 capitalize flex justify-center">
-                        <Link to={`/shop/${product?.slug}`}>
+                    <div className="text-left px-4 md:px-2">
+                      <h2 className="font-medium text-[18px] mt-7 mb-2 capitalize flex justify-center">
+                        <Link className="text-center" to={`/shop/${product?.slug}`}>
                           {product?.title}
                         </Link>
                       </h2>

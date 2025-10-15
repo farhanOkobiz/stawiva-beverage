@@ -140,6 +140,7 @@ const cloudinaryUploadMiddleware = (folder, fieldName) => {
   });
 };
 
+
 const deleteUploadedImages = async (publicIds, resourceType = "image") => {
   if (!publicIds || publicIds.length === 0) return;
 

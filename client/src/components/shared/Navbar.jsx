@@ -80,27 +80,19 @@ const Navbar = () => {
   return (
     <nav
       className={`transition-all duration-300 ease-in-out ${
-        isSticky ? "bg-white" : "sm:bg-[rgba(0,0,0,0.11)] sm:backdrop-blur-[3%]"
+        isSticky ? "backdrop-blur-md bg-gradient-to-br from-yellow-50 via-green-50 to-emerald-50 shadow-md" : "sm:bg-[#001802] sm:backdrop-blur-[10%]"
       } z-[9999] font-robo fixed left-0 top-0 w-full`}
     >
       <Containar>
-        <div className="py-4 lg:py-9">
+        <div className="py-4 lg:py-2">
           <div className="flex justify-between items-center">
             <div>
               <div className="flex gap-x-3 items-center">
-                <div className="h-[70px]">
+                <div className="h-[100px]">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>
                 </div>
-                {/* <div>
-                  <Link
-                    to={"/"}
-                    className="text-[13px] md:text-[18px] xl:text-[24px] font-bold text-red-600"
-                  >
-                    LOGO
-                  </Link>
-                </div> */}
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center gap-x-3 xl:gap-x-10">
@@ -112,7 +104,7 @@ const Navbar = () => {
                         <div
                           className={`cursor-pointer text-[14px] xl:text-[16px] font-bold px-4 rounded transition-all ease-linear duration-150 ${
                             isSticky ? "text-gray-700" : "text-white"
-                          } group-hover:text-primary`}
+                          } group-hover:text-yellow-500`}
                         >
                           {item.title}
                         </div>
@@ -166,7 +158,7 @@ const Navbar = () => {
                               ? `text-primary text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded`
                               : `${
                                   isSticky ? "text-gray-700" : "text-white"
-                                } text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-primary transition-all ease-linear duration-150`
+                                } text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-yellow-500 transition-all ease-linear duration-150`
                           }
                         >
                           {item.title}

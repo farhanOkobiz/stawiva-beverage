@@ -13,10 +13,6 @@ import { FaFacebookF } from "react-icons/fa6";
 
 export const menulist = [
   {
-    title: "PRODUCTS",
-    link: "/products",
-  },
-  {
     title: "COMPANY",
     subMenuList: [
       {
@@ -38,6 +34,10 @@ export const menulist = [
           "We have diversified our presence from the apparel manufacturing industry onward to retail, pharmaceuticals, IT and real estate with aspirations to expand even further.",
       },
     ],
+  },
+  {
+    title: "PRODUCTS",
+    link: "/products",
   },
   {
     title: "INDUSTRIES",
@@ -98,17 +98,29 @@ export const socialLink = [
     link: "https://www.facebook.com/people/Staminaplus/61569582182168/?rdid=6TTDKoplN3t7r3oV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bc9oxzDh3%2F",
     color: "#1877F2",
   },
-  // {
-  //   title: "Youtube",
-  //   icon: FaYoutube,
-  //   link: "https://www.youtube.com/@shahalam846",
-  //   color: "#C11616",
-  // },
+  {
+    title: "Youtube",
+    icon: FaYoutube,
+    link: "https://www.youtube.com/@StaminaPlus-l2z",
+    color: "#C11616",
+  },
   {
     title: "WhatsApp",
     icon: FaWhatsapp, // WhatsApp icon from React Icons
     link: "https://wa.me/88 01511169923", // WhatsApp link with international number
     color: "#25D366",
+  },
+  {
+    title: "Instagram",
+    icon: FaInstagram, // WhatsApp icon from React Icons
+    link: "https://www.instagram.com/stamina785/?utm_source=qr&&r=nametag", // WhatsApp link with international number
+    color: "#E1306C",
+  },
+  {
+    title: "LinkedIn",
+    icon: FaLinkedin, // WhatsApp icon from React Icons
+    link: "https://www.linkedin.com/company/the-stamina-beverage-limited/", // WhatsApp link with international number
+    color: "#0A66C2",
   },
   // {
   //   title: "Telegram",
@@ -116,31 +128,17 @@ export const socialLink = [
   //   link: "https://t.me/+88018187729352",
   //   color: "#0088cc",
   // },
-  // {
-  //   title: "WeChat",
-  //   icon: FaWeixin,
-  //   link: "weixin://dl/chat?shahalam2935",
-  //   color: "#1AAD19",
-  // },
 ];
 
 export const contactInfo = [
-  // {
-  //   title: "Contact Number",
-  //   contact: "01970007503",
-  //   link: "tel:01970007503",
-  //   icon: FaPhoneAlt,
-  // },
   {
     title: "Contact Number",
-    contact: "01511169923",
-    link: "tel:01511169923",
+    contact: "01783182659",
     icon: FaPhoneAlt,
   },
   {
     title: "Email",
-    contact: "********@gamil.com",
-    link: "mailto:********@gamil.com",
+    contact: "stminaplus2025@gmail.com",
     icon: FaEnvelope,
   },
 ];

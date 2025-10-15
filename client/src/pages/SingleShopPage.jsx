@@ -16,6 +16,8 @@ import RelatedProductItem from "../components/shop/RelatedProductItem";
 import { addToAgroCart } from "../redux/slices/cart/agroCartSlice";
 import Skeleton from "react-loading-skeleton";
 import "react-toastify/dist/ReactToastify.css";
+import GetQuote from "../components/shop/GetQuote";
+import AnimatedText from "../components/shop/AnimatedText";
 
 const SingleShopPage = () => {
   const swiperRef = useRef(null);
@@ -125,7 +127,7 @@ const SingleShopPage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-7">
+                <div className="col-span-12 md:col-span-7 ">
                   <h2 className="text-[1.3rem] font-bold leading-[1.5]">
                     {product?.title}
                   </h2>
@@ -175,15 +177,26 @@ const SingleShopPage = () => {
                   <div className="mt-3.5 pb-2.5 lg:mt-5 lg:pb-4 border-black/40 border-b">
                     <span className="text-[1.3rem] font-bold leading-[1.5]">
                       Certifications:
-                    </span>{" "}
+                    </span>
                     <span className="text-lg text-gray-700">
                       {product?.certifications?.length > 0
                         ? product.certifications.join(", ")
                         : "N/A"}
                     </span>
                   </div>
+                  <div className="">
+                    <div className="mt-6 mb-6 flex justify-center ">
+                      <AnimatedText />
+                    </div>
+                    <GetQuote />
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-xl font-semibold">Categories: </span>
+                    {product?.category?.title || "N/A"}
+                  </div>
                 </div>
               </div>
+
               <div className="mt-14">
                 <div className="flex gap-1 text-2xl font-bold items-center my-5 text-primary">
                   {product ? (
