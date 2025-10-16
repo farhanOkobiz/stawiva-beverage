@@ -1,11 +1,11 @@
 const AppError = require("../utils/AppError");
-const Blog = require("../models/blogModel");
 const BlogCategory = require("../models/blogCategoryModel");
 const catchAsync = require("../utils/catchAsync");
 const { deleteUploadedImages } = require("../middlewares/photoMiddleware");
 const { getAll } = require("./handleFactory");
 const generateSlug = require("../utils/slugGenerator");
 const mongoose = require("mongoose");
+const NewsEvents = require("../models/newsEventsModel");
 
 // Helper to update BlogCategory by id, slug or title safely (avoids casting non-ObjectId strings)
 const findCategoryAndUpdate = async (
@@ -34,7 +34,7 @@ const findCategoryAndUpdate = async (
   );
 };
 
-exports.createBlogController = catchAsync(async (req, res, next) => {
+exports.createNewsEventController = catchAsync(async (req, res, next) => {
   const body = { ...req.body };
   body.author = req.user.id;
   const title = body?.title;
@@ -45,7 +45,7 @@ exports.createBlogController = catchAsync(async (req, res, next) => {
   body.slug = slug;
 
   try {
-    const blog = await Blog.create(body);
+    const blog = await NewsEvents.create(body);
 
     await findCategoryAndUpdate(blog.category, { $push: { blogs: blog._id } });
 
@@ -62,16 +62,18 @@ exports.createBlogController = catchAsync(async (req, res, next) => {
   }
 });
 
-exports.getAllBlogsController = getAll(Blog, {
-  path: "category author",
-  select: "title name slug ",
+// newsEventsModel stores `category` as a plain string, so populating it will return undefined.
+// Populate only `author` (which is an ObjectId reference) and leave `category` as-is.
+exports.getAllNewsEventController = getAll(NewsEvents, {
+  path: "author",
+  select: "name",
 });
 
-exports.getBlogController = catchAsync(async (req, res, next) => {
+exports.getNewsEventController = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
 
-  const blog = await Blog.findOne({ slug })
-    .populate("category author", "title name email role")
+  const blog = await NewsEvents.findOne({ slug })
+    .populate("author", "name email role category")
     .select("-__v");
   if (!blog) {
     return next(new AppError("No blog was found with that name!", 404));
@@ -89,11 +91,11 @@ exports.getBlogController = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateBlogController = catchAsync(async (req, res, next) => {
+exports.updateNewsEventController = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
   const body = { ...req.body };
 
-  const blog = await Blog.findOne({ slug });
+  const blog = await NewsEvents.findOne({ slug });
   if (!blog) {
     return next(new AppError("No blog was found with that name", 404));
   }
@@ -133,10 +135,10 @@ exports.updateBlogController = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.deleteBlogController = catchAsync(async (req, res, next) => {
+exports.deleteNewsEventController = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
 
-  const blog = await Blog.findOne({ slug });
+  const blog = await NewsEvents.findOne({ slug });
   if (!blog) return next(new AppError("No blog found with that name", 404));
 
   // Check if the blog has photos and delete them from Cloudinary
@@ -150,7 +152,7 @@ exports.deleteBlogController = catchAsync(async (req, res, next) => {
 
   await findCategoryAndUpdate(blog.category, { $pull: { blogs: blog._id } });
 
-  await Blog.findByIdAndDelete(blog._id);
+  await NewsEvents.findByIdAndDelete(blog._id);
 
   res.status(204).json({
     status: "success",

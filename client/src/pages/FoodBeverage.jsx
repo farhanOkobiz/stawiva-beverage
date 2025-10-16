@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
-import managementImg from "../assets/management/management.jpg";
+import managementImg from "../assets/industries/i1.png";
 
 const textVariants = {
   hidden: { y: -100, opacity: 0 },

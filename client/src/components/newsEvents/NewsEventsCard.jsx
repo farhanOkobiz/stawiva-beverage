@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
+import { MdAccessTime } from "react-icons/md";
 import Articles1 from "../../assets/Articles1.png";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
+import { CiCalendarDate } from "react-icons/ci";
 
-const BlogCard = ({ blog, loading }) => {
+const NewsEventsCard = ({ blog, loading }) => {
   if (loading) {
     // Render skeleton if loading
     return (
@@ -30,12 +32,28 @@ const BlogCard = ({ blog, loading }) => {
   if (!blog) {
     return <div></div>;
   }
+
+  const formatDateWithTime = (dateString) => {
+    if (!dateString) return { time: "", date: "" };
+    const date = new Date(dateString);
+    if (Number.isNaN(date.getTime())) return { time: "", date: "" };
+    return {
+      time: date.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      }),
+      date: `${date.getDate()} ${date.toLocaleString("en-US", {
+        month: "long",
+      })} ${date.getFullYear()}`,
+    };
+  };
   // console.log("blog", blog)
-  // Render actual blog card if not loading
+
   return (
     <div className="rounded-lg overflow-hidden pb- border bg-white w-full">
       <div className="relative">
-        <Link to={`/blogs/${blog?.slug || ""}`}>
+        <Link to={`/news-events/${blog?.slug || ""}`}>
           <img
             src={blog?.photos?.[0] || Articles1} // Fallback to default image
             alt="Blog Cover"
@@ -45,17 +63,32 @@ const BlogCard = ({ blog, loading }) => {
         {blog?.date && (
           <div className="bg-green-800 absolute right-3 -bottom-5 text-white rounded-full w-20 h-20 border-[6px] border-white flex justify-center items-center">
             <p className="text-base font-medium leading-6 text-center">
-              {blog.date.split(" ")[1]}
-              <br />
-              {blog.date.split(" ")[0]}
+              {blog.category}
             </p>
           </div>
         )}
       </div>
-
       {/* Icon and Content */}
       <div className="text-left pl-4 my-7 w-full">
-        <div>{/* <p>{blog?.author || "Unknown Author"}</p> */}</div>
+        <div className="flex  ">
+          {/** compute formatted once and render safely */}
+          {(() => {
+            const formatted = formatDateWithTime(blog?.createdAt || blog?.date);
+            return (
+              <>
+                <div className="flex items-center gap-1 mr-2">
+                  <MdAccessTime />
+                  <h4>{formatted.time || ""}</h4>
+                </div>
+                <span className="mx-2">|</span>
+                <div className="flex items-center gap-1 ml-2">
+                  <CiCalendarDate />
+                  <h4>{formatted.date || ""}</h4>
+                </div>
+              </>
+            );
+          })()}
+        </div>
         <Link to={`/blogs/${blog?.slug || ""}`}>
           <h2 className="font-bold text-xl mt-4">
             {blog?.title || "Untitled Blog"}
@@ -81,4 +114,4 @@ const BlogCard = ({ blog, loading }) => {
   );
 };
 
-export default BlogCard;
+export default NewsEventsCard;

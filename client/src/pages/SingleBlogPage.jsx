@@ -136,7 +136,7 @@ const SingleBlogPage = () => {
                 ) : (
                   <div className="w-20 h-20 rounded-full bg-green-800 flex justify-center items-center">
                     <div className="text-center text-white font-semibold">
-                      <h4>{formatDate(singleBlog?.blog?.createdAt)}</h4>
+                      <h4>{singleBlog?.blog?.category}</h4>
                     </div>
                   </div>
                 )}

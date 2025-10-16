@@ -162,7 +162,7 @@ exports.getAll = (Model, popOptions) =>
       .limitFields()
       .paginate();
 
-    const doc = await features.query.select("-__v");
+    const doc = await features.query.select("-__v");    
     
     // const doc = await features.query.select('-__v').explain();
 

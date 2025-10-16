@@ -9,7 +9,6 @@ import RootLayout from "./components/layout/RootLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import Blogs from "./pages/Blogs";
 import EventPage from "./pages/EventPage";
 import SuccessStories from "./pages/SuccessStories";
 
@@ -45,7 +44,6 @@ import Clients from "./pages/Clients";
 import History from "./pages/History";
 import Management from "./pages/Management";
 import Policy from "./pages/Policy";
-import NewsEvents from "./pages/NewsEvents";
 import Career from "./pages/Career";
 import Environmental from "./pages/Environmental";
 import EmploymentWelfare from "./pages/EmploymentWelfare";
@@ -54,6 +52,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import img from "./assets/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import NewsEvents from "./pages/NewsEvents";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -71,13 +70,12 @@ const router = createBrowserRouter(
         path="/sustainability/employment-welfare"
         element={<EmploymentWelfare />}
       />
-      <Route path="/news-events" element={<Blogs />} />
+      <Route path="/news-events" element={<NewsEvents />} />
       <Route path="/career" element={<Career />} />
       <Route path="/policy" element={<Policy />} />
       <Route path="/contact-us" element={<Contact />} />
-      <Route path="/blogs" element={<Blogs />} />
       <Route path="/profile" element={<UserProfile />} />
-      <Route path="/blogs/:slug" element={<SingleBlogPage />} />
+      <Route path="/news-events/:slug" element={<SingleBlogPage />} />
       <Route path="/clients" element={<Clients />} />
       <Route path="/shoping-cart" element={<CartDetails />} />
       <Route path="/checkout/:id" element={<CheckOut />} />

@@ -110,7 +110,6 @@ const MainLayout = () => {
     case "5":
       content = <UploadProduct />;
       break;
-
     case "7":
       content = <CreateBlog />;
       break;
@@ -172,7 +171,7 @@ const MainLayout = () => {
     getItem("News & Events", "8", <MdEmojiEvents />),
     // getItem(" Services", "11", <RiCustomerService2Line />),
     // getItem(" Gallery", "13", <MdEmojiEvents />),
-    getItem(" Partners", "15", <FaUserFriends />),
+    // getItem(" Partners", "15", <FaUserFriends />),
     getItem("All Contact", "17", <MdContacts />),
     getItem("Career", "18", <FaBriefcase />),
     getItem("ADD Banner", "19", <GiKnightBanner />),

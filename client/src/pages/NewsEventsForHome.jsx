@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import BlogCard from "../components/blog/BlogCard";
 import Containar from "../components/containar/Containar";
 import { FaSearch } from "react-icons/fa";
 import BradCumbs from "../components/shared/BradCumbs";
@@ -10,6 +9,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
 import managementImg from "../assets/management/management.jpg";
+import NewsEventsCard from "../components/newsEvents/NewsEventsCard";
 
 const NewsEventsForHome = () => {
   const [blogs, setBlogs] = useState([]);
@@ -128,7 +128,7 @@ const NewsEventsForHome = () => {
                 {blogs.length > 0 ? (
                   blogs.map((blog) => (
                     <div key={blog.id} className={`mix ${blog.category}`}>
-                      <BlogCard key={blog.id} blog={blog} loading={loading} />
+                      <NewsEventsCard key={blog.id} blog={blog} loading={loading} />
                     </div>
                   ))
                 ) : (
