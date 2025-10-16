@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import managementImg from "../assets/management/management.jpg";
+import H1 from "../assets/history/H1.png";
+import H2 from "../assets/history/H2.png";
 import Containar from "../components/containar/Containar";
 
 const imageVariants = {
@@ -16,11 +17,18 @@ function History() {
   return (
     <div className="overflow-hidden">
       {/* Banner Section */}
-      <div className="relative w-full min-h-screen flex items-center justify-center text-white perspective-1000">
+      <div
+        style={{
+          minHeight: `calc(100vh - ${
+            window.innerWidth >= 1024 ? 100 : window.innerWidth >= 768 ? 60 : 55
+          }px)`,
+        }}
+        className="relative w-full xl:mt-28 flex items-center justify-center text-white perspective-1000"
+      >
         {/* Background Image */}
         <motion.div
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-black/40"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          className="absolute inset-0 w-full h-full max-w-full bg-cover bg-center bg-black/40"
+          style={{ backgroundImage: `url(${H2})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,
@@ -39,12 +47,6 @@ function History() {
             transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase">
-            Our History
-          </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Stamina+ Beverage Limited
-          </p>
         </motion.div>
       </div>
 
@@ -60,7 +62,7 @@ function History() {
             variants={imageVariants}
           >
             <img
-              src={managementImg}
+              src={H1}
               alt="Management Team"
               className="w-full h-auto rounded-lg shadow-lg"
             />

@@ -1,21 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import Containar from "../components/containar/Containar";
-import Product from "../components/home/Product";
-import BradCumbs from "../components/shared/BradCumbs";
-import HeroBanner from "../components/shop/HeroBanner";
-import Skeleton from "react-loading-skeleton"; // Import skeleton loader
 import "react-loading-skeleton/dist/skeleton.css";
 import managementImg from "../assets/management/Pruduct.jpg";
-import { FaBangladeshiTakaSign, FaChevronRight } from "react-icons/fa6";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { FaChevronLeft, FaList } from "react-icons/fa";
-import ProductGridShopPage from "../components/shop/ProductGridShopPage";
 import api from "../components/axios/Axios";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import PriceRange from "../components/shop/PriceRange";
-import { FaFilter } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa";
+
 
 const Shop = () => {
   const swiperRef = useRef(null);

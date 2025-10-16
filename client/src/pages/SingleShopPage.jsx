@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"; // Import useDispatch to dispatch actions
-import SinglePageBradCumbs from "../components/shared/SinglePageBradCumbs";
 import Containar from "../components/containar/Containar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -70,7 +69,7 @@ const SingleShopPage = () => {
     <div className="font-robo">
       <div className="h-[68px] sm:h-[83.4px]"></div>
       <div className="mt-4">
-        <SinglePageBradCumbs title={product?.title} />
+        {/* <SinglePageBradCumbs title={product?.title} /> */}
       </div>
       <Containar>
         <div className="pb-24">

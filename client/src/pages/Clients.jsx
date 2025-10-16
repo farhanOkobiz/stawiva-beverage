@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import BradCumbs from "../components/shared/BradCumbs";
 import Containar from "../components/containar/Containar";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -36,7 +35,7 @@ const Clients = () => {
     <div className="font-robo">
       {/* Top Section */}
       <div className="h-[64px] sm:h-[83.4px] bg-[#f5f5f5]"></div>
-      <BradCumbs title="Our Clients" brad="Clients" />
+      {/* <BradCumbs title="Our Clients" brad="Clients" /> */}
       <div className="py-[60px] sm:py-[100px]">
         <Containar>
           <div className="lg:p-0">

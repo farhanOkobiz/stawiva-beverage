@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import managementImg from "../assets/management/management.jpg";
+import managementImg from "../assets/about/A1.png";
 import Containar from "../components/containar/Containar";
 
 const textVariants = {

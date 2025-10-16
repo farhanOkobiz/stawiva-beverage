@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { MdAccessTime } from "react-icons/md";
-import Articles1 from "../../assets/Articles1.png";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";

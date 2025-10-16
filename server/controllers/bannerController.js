@@ -14,6 +14,13 @@ const extractPublicIdFromUrl = (url) => {
 
 exports.createBannerController = catchAsync(async (req, res, next) => {
   try {
+    // sanitize title/subTitle to avoid storing literal 'undefined' or empty strings
+    if (req.body.title === "undefined" || req.body.title === "" || req.body.title == null) {
+      delete req.body.title;
+    }
+    if (req.body.subTitle === "undefined" || req.body.subTitle === "" || req.body.subTitle == null) {
+      delete req.body.subTitle;
+    }
     const banner = await Banner.create(req.body);
 
     res.status(201).json({
@@ -44,6 +51,14 @@ exports.updateBannerController = catchAsync(async (req, res, next) => {
     const oldPhotoPublicId = extractPublicIdFromUrl(banner.photo);
     const resourceType = banner.mediaType || "image";
     await deleteUploadedImages([oldPhotoPublicId], resourceType);
+  }
+
+  // sanitize title/subTitle before updating
+  if (req.body.title === "undefined" || req.body.title === "" || req.body.title == null) {
+    delete req.body.title;
+  }
+  if (req.body.subTitle === "undefined" || req.body.subTitle === "" || req.body.subTitle == null) {
+    delete req.body.subTitle;
   }
 
   const updatedBanner = await Banner.findByIdAndUpdate(id, req.body, {

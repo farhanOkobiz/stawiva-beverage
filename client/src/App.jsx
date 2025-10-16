@@ -9,8 +9,6 @@ import RootLayout from "./components/layout/RootLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import EventPage from "./pages/EventPage";
-import SuccessStories from "./pages/SuccessStories";
 
 import Contact from "./pages/Contact";
 
@@ -18,11 +16,7 @@ import Login from "./pages/Login";
 import RegistrationUser from "./pages/Registration";
 import Shop from "./pages/Shop";
 
-import SingleStoryPage from "./pages/SingleStoryPage";
 import SingleBlogPage from "./pages/SingleBlogPage";
-import SingleEventPage from "./pages/SingleEventPage";
-
-import CartDetails from "./pages/CartDetails";
 
 import SingleShopPage from "./pages/SingleShopPage";
 import UserProfile from "./pages/UserProfile";
@@ -77,15 +71,12 @@ const router = createBrowserRouter(
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/news-events/:slug" element={<SingleBlogPage />} />
       <Route path="/clients" element={<Clients />} />
-      <Route path="/shoping-cart" element={<CartDetails />} />
       <Route path="/checkout/:id" element={<CheckOut />} />
       <Route path="/order-confirm" element={<OrderConfirmation />} />
       <Route path="/thank-you" element={<Thankyou />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgotpassword" element={<Forgot />} />
       <Route path="/resetPassword/:token" element={<ResetPassword />} />
-      <Route path="/gallery" element={<EventPage />} />
-      <Route path="/gallery/:id" element={<SingleEventPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/products" element={<Shop />}>
         <Route index element={<ProductGridShopPage />} />
@@ -97,8 +88,6 @@ const router = createBrowserRouter(
       <Route path="/registration-user" element={<RegistrationUser />} />
       <Route path="/registration-dealer" element={<RegistrationDealer />} />
       <Route path="/registration-choose" element={<RegistrationChoose />} />
-      <Route path="/success-stories" element={<SuccessStories />} />
-      <Route path="/success-stories/:id" element={<SingleStoryPage />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
@@ -136,7 +125,7 @@ function App() {
               transition={{ duration: 1, ease: "easeOut" }}
             />
 
-            <motion.div
+            {/* <motion.div
               className="absolute bottom-0 left-0 w-full bg-[#c1af0f]"
               initial={{ height: 0 }}
               animate={{ height: "100%" }}
@@ -144,7 +133,7 @@ function App() {
                 duration: 2.5,
                 ease: [0.83, 0, 0.17, 1],
               }}
-            />
+            /> */}
           </motion.div>
         )}
       </AnimatePresence>

@@ -181,14 +181,10 @@ const AllBanner = () => {
         footer={null}
       >
         <Form form={form} onFinish={handleCreateBanner} layout="vertical">
-          <Form.Item
-            name="subTitle"
-            label="Title"
-            rules={[{ required: true }]}
-          >
+          <Form.Item name="title" label="Title">
             <Input />
           </Form.Item>
-          <Form.Item name="title" label="Sub-title" rules={[{ required: true }]}>
+          <Form.Item name="subTitle" label="Sub-title">
             <Input />
           </Form.Item>
           <Form.Item

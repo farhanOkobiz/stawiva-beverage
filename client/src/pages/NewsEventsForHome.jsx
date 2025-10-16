@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Containar from "../components/containar/Containar";
 import { FaSearch } from "react-icons/fa";
-import BradCumbs from "../components/shared/BradCumbs";
 import mixitup from "mixitup";
 import api from "../components/axios/Axios";
 import { Link } from "react-router-dom";

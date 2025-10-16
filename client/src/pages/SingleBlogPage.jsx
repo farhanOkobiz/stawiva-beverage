@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import BradCumbs from "../components/shared/BradCumbs";
 import Containar from "../components/containar/Containar";
 import { FaHome } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";

@@ -1,5 +1,5 @@
 import Containar from "../containar/Containar";
-import bdImg from "../../assets/Contact/contact-bg.jpg";
+// import bdImg from "../../assets/Contact/contact-bg.jpg";
 import { Link } from "react-router-dom";
 import { socialLink } from "../constants/index";
 
@@ -10,7 +10,7 @@ const SocialMediaLinks = () => {
       <div className="relative">
         <div
           className="h-96 md:h-80 bg-cover bg-fixed"
-          style={{ backgroundImage: `url(${bdImg})` }}
+          // style={{ backgroundImage: `url(${bdImg})` }}
         >
           <div className="absolute inset-0 bg-[rgb(0,0,0,.7)] text-white flex justify-center items-center">
             <div className="relative z-10">

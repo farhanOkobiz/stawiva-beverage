@@ -181,14 +181,12 @@ const AllBanner = () => {
           <Form.Item
             name="title"
             label="Title"
-            rules={[{ required: true, message: "Please enter the title" }]}
           >
             <Input />
           </Form.Item>
           <Form.Item
             name="subTitle"
             label="Sub-title"
-            rules={[{ required: true, message: "Please enter the sub-title" }]}
           >
             <Input />
           </Form.Item>

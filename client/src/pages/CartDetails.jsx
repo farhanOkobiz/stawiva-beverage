@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Containar from "../components/containar/Containar";
-import BradCumbs from "../components/shared/BradCumbs";
+import BradCumbs from "../components/bradcumbs/BradCumbs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { FaArrowLeftLong, FaMinus, FaPlus } from "react-icons/fa6";

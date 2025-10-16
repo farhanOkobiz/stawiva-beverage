@@ -4,18 +4,14 @@ const { Schema, model } = mongoose;
 const bannerSchema = new Schema(
   {
     title: {
-      type: String,
-      required: [true, "Title is required"],
-      unique: true,
-      trim: true,
+        type: String,
+        trim: true,
     },
     
     subTitle: {
       type: String,
-      required: [true, "Sub-title is required"],
       trim: true,
     },
-
     photo: {
       type: String,
       required: [true, "Photo is required"],
@@ -50,6 +46,8 @@ const bannerSchema = new Schema(
     timestamps: true,
   }
 );
+
+
 
 const Banner = model("Banner", bannerSchema);
 

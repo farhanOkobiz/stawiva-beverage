@@ -143,56 +143,6 @@ export const contactInfo = [
   },
 ];
 
-import partner1 from "../../assets/partners/clients-image-copyright-1.webp";
-import partner2 from "../../assets/partners/clients-image-copyright-2.webp";
-import partner3 from "../../assets/partners/clients-image-copyright-3.webp";
-import partner4 from "../../assets/partners/clients-image-copyright-4.webp";
-import partner5 from "../../assets/partners/clients-image-copyright-5.webp";
-import partner6 from "../../assets/partners/clients-image-copyright-6.webp";
 
-export const partnerList = [
-  {
-    logo: partner1,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner2,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner3,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner4,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner5,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner6,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner2,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner3,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner4,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner5,
-    name: "Stamina Plus",
-  },
-  {
-    logo: partner6,
-    name: "Stamina Plus",
-  },
-];
+
+
