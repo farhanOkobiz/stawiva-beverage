@@ -53,7 +53,7 @@ import FoodBeverage from "./pages/FoodBeverage";
 import { useState } from "react";
 import { useEffect } from "react";
 import img from "./assets/logo/logo.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -109,31 +109,50 @@ const router = createBrowserRouter(
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showWebsite, setShowWebsite] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setShowWebsite(true);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-[#001802]">
-        <motion.img
-          src={img}
-          alt="logo"
-          className="w-40 h-40"
-          initial={{ opacity: 0, y: 50, scale: 0.5 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        />
-      </div>
-    );
-  }
-
   return (
     <>
-      {/* <ToastContainer /> */}
-      <RouterProvider router={router} />
+      {/* Loader Overlay */}
+      <AnimatePresence>
+        {loading && (
+          <motion.div
+            key="loader"
+            className="fixed inset-0 flex items-center justify-center bg-[#001802] z-[9999] overflow-hidden"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.4 } }}
+          >
+            <motion.img
+              src={img}
+              alt="logo"
+              className="w-40 h-40 z-20 relative"
+              initial={{ opacity: 0, y: 50, scale: 0.5 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            />
+
+            <motion.div
+              className="absolute bottom-0 left-0 w-full bg-[#c1af0f]"
+              initial={{ height: 0 }}
+              animate={{ height: "100%" }}
+              transition={{
+                duration: 2.5,
+                ease: [0.83, 0, 0.17, 1],
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main Website */}
+      {showWebsite && <RouterProvider router={router} />}
     </>
   );
 }

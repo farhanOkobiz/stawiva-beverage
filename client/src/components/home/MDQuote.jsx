@@ -24,7 +24,7 @@ function MDQuote() {
       style={{ backgroundImage: `url(${BG})` }}
     >
       <Containar>
-        <div className="flex flex-col-reverse lg:flex-row items-start md:items-center gap-10">
+        <div className="flex flex-col-reverse lg:flex-row items-start gap-10">
           {/* Right Text */}
           <motion.div
             className="lg:w-1/2 w-full space-y-6"
@@ -34,24 +34,28 @@ function MDQuote() {
           >
             {/* Name */}
             <motion.h3
-              className="text-3xl lg:text-4xl font-bold text-[#1b2a36]"
+              className="text-3xl lg:text-4xl font-bold text-[#c1af0f]"
               variants={textVariants}
               custom={0}
             >
-              Ahmed Jobaer Sizan
+              The Journey
             </motion.h3>
             {/* Position */}
             <motion.h4
-              className="text-xl lg:text-2xl font-semibold text-[#00754a]"
+              className="text-xl lg:text-2xl font-semibold"
               variants={textVariants}
               custom={1}
             >
-              MANAGING DIRECTOR & OWNER, STAMINA+ BEVERAGE LIMITED
+              STAMINA+ BEVERAGE LIMITED’s Evolution
             </motion.h4>
             {/* Bio */}
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               {[
-                "At Stamina+, we believe real energy comes from nature — every drop is crafted to refresh, recharge, and inspire a healthier tomorrow.",
+                "Since the First Footstep on 8th September 2025, STAMINA+ BEVERAGE LIMITED has transformed from a bold dream into a dynamic reality — a brand that embodies passion, innovation, and unwavering determination.",
+                "Founded with the vision to redefine refreshment, STAMINA+ has grown from humble beginnings into a symbol of energy, taste, and trust across Bangladesh and beyond.",
+                "Under the inspiring leadership of Managing Director Ahmed Jobaer Sizan, the company continues to evolve with a relentless commitment to quality, modern technology, and international standards.",
+                "Every drop of STAMINA+ tells a story of excellence — crafted to energize, empower, and elevate every moment.",
+                "The journey has only just begun, and the future holds limitless possibilities for STAMINA+ BEVERAGE LIMITED.",
               ].map((para, i) => (
                 <motion.p
                   key={i}
