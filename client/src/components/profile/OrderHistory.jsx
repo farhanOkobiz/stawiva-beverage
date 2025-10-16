@@ -166,7 +166,9 @@ const OrderHistory = () => {
     <div class="bg">
       <div class="header bg">
         <div class="logo">
-          <img src="${logo || 'default_logo.png'}" alt="Company Logo" style="height: 50px;" />
+          <img src="${
+            logo || "default_logo.png"
+          }" alt="Company Logo" style="height: 50px;" />
         </div>
         <div class="invoice-title">INVOICE</div>
       </div>
@@ -190,7 +192,9 @@ const OrderHistory = () => {
           <p>${order.name}</p>
           <p>${order.phone}</p>
           <p>${order.email}</p>
-          <p>${order.streetAddress}, ${order.area}, ${order.upazilla}, ${order.district}, ${order.postCode}</p>
+          <p>${order.streetAddress}, ${order.area}, ${order.upazilla}, ${
+      order.district
+    }, ${order.postCode}</p>
         </div>
         <div class="order-info">
           <p><strong>Invoice No.:</strong> ${order?._id.slice(0, 6)}</p>
@@ -221,7 +225,7 @@ const OrderHistory = () => {
                   </td>
                 </tr>`
             )
-            .join('')}
+            .join("")}
         </tbody>
       </table>
 
@@ -351,7 +355,8 @@ const OrderHistory = () => {
                             </td>
                             {/* Total Price (Quantity × Unit Price) */}
                             <td className="border border-gray-300 px-4 py-2 text-center">
-                              {product?.quantity * product?.product?.salePrice} TK
+                              {product?.quantity * product?.product?.salePrice}{" "}
+                              TK
                             </td>
                             {/* Order Status (only for the first row of the order) */}
                             {index === 0 && (

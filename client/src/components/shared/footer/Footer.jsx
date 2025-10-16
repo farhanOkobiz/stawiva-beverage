@@ -1,16 +1,15 @@
-import React from 'react'
-import UpperFooter from './UpperFooter'
-import BottomFooter from './BottomFooter'
-import MiddleFooter from './MiddleFooter'
+import UpperFooter from "./UpperFooter";
+import BottomFooter from "./BottomFooter";
+import MiddleFooter from "./MiddleFooter";
 
 const Footer = () => {
   return (
     <>
-      <UpperFooter/>
-      <MiddleFooter/>
-      <BottomFooter/>
+      <UpperFooter />
+      <MiddleFooter />
+      <BottomFooter />
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

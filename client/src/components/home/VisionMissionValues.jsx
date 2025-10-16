@@ -2,12 +2,12 @@ import Containar from "../containar/Containar";
 
 export default function MissionVision() {
   return (
-    <div className="bg-gradient-to-br from-yellow-50 via-green-50 to-emerald-50 py-16 px-4">
+    <div className="bg-gradient-to-br from-yellow-50 via-green-50 to-emerald-50 py-8 md:py-12 lg:py-16">
       <Containar>
         <div className="">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-8 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-yellow-600 to-green-600 bg-clip-text text-transparent mb-4">
               Mission & Vision
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 via-green-500 to-emerald-500 mx-auto rounded-full"></div>

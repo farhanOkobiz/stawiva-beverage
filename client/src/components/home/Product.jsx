@@ -29,7 +29,7 @@ const Product = () => {
 
   const handleBuyNow = (product) => {
     dispatch(addToAgroCart({ ...product, quantity: 1 }));
-    navigate(`/checkout/${product?._id}`)
+    navigate(`/checkout/${product?._id}`);
   };
 
   const getProducts = async () => {
@@ -60,19 +60,15 @@ const Product = () => {
   };
 
   return (
-    <div className="bg-[#FBF7F0] py-12 sm:pt-[110px] sm:pb-[130px] font-robo relative group">
+    <div className="bg-[#FBF7F0] py-8 md:py-12 lg:py-16 font-robo relative group">
       <Containar>
-        <div className="py-2 ">
+        <div className="">
           <div className="text-center">
-            <div className="text-center mt-[10px]">
-              <h5 className="text-[#c1af0f] font-bold text-[16px] sm:text-xl mb-3 leading-8 sm:leading-[58px] uppercase tracking-widest">
+            <div className="text-center">
+              <h5 className="text-[#c1af0f] font-bold text-3xl md:text-4xl xl:text-5xl mb-8 md:mb-16 leading-8 sm:leading-[58px] uppercase tracking-widest">
                 Our Latest Products
               </h5>
-              <h2 className="text-[20px] sm:text-[36px] max-w-3xl mx-auto font-semibold mb-3">
-                Explore Our Latest Products.
-              </h2>
             </div>
-
             <div>
               {loading ? (
                 <div>

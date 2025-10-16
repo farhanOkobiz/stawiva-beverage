@@ -19,8 +19,9 @@ const textVariants = {
 
 function MDQuote() {
   return (
-    <div className=" py-4 md:py-10 lg:py-16"
-    style={{ backgroundImage: `url(${BG})` }}
+    <div
+      className="py-8 md:py-12 lg:py-16"
+      style={{ backgroundImage: `url(${BG})` }}
     >
       <Containar>
         <div className="flex flex-col-reverse lg:flex-row items-start md:items-center gap-10">

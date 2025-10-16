@@ -68,7 +68,6 @@ const OrderHistory = () => {
     setSelectedOrder(null);
   };
 
-
   const handlePrint = (order) => {
     // Create an iframe element
     const printWindow = window.open("", "_blank");
@@ -80,12 +79,12 @@ const OrderHistory = () => {
     iframe.style.position = "absolute";
     iframe.style.top = "0";
     iframe.style.left = "0";
-  
+
     // Access the iframe document
     // const doc = iframe.contentWindow.document;
-  
+
     // Invoice HTML content
-     const invoiceContent = `
+    const invoiceContent = `
             <html>
               <head>
                 <title>Invoice</title>
@@ -184,17 +183,19 @@ const OrderHistory = () => {
                     <p>${order.name}</p>
                     <p>${order.phone}</p>
                     <p>${order.email}</p>
-                    <p>${order.streetAddress}, ${order.area}, ${order.upazilla
-      }, ${order.district}, ${order.postCode}</p>
+                    <p>${order.streetAddress}, ${order.area}, ${
+      order.upazilla
+    }, ${order.district}, ${order.postCode}</p>
                   </div>
                   <div class="order-info">
                     <p><strong>Invoice No.:</strong> ${order._id.slice(
-        0,
-        6
-      )}</p>
+                      0,
+                      6
+                    )}</p>
                     <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
-                    <p><strong>Payment Status:</strong> ${order.paymentStatus
-      }</p>
+                    <p><strong>Payment Status:</strong> ${
+                      order.paymentStatus
+                    }</p>
                   </div>
                 </div>
                 
@@ -209,24 +210,26 @@ const OrderHistory = () => {
                   </thead>
                   <tbody>
                     ${order.products
-        .map(
-          (product) => `
+                      .map(
+                        (product) => `
                         <tr>
                           <td>${product.product.title}</td>
                           <td>${product.quantity}</td>
                           <td>${product.product.salePrice} TK</td>
-                          <td>${product.quantity * product.product.salePrice
-            } TK</td>
+                          <td>${
+                            product.quantity * product.product.salePrice
+                          } TK</td>
                         </tr>
                       `
-        )
-        .join("")}
+                      )
+                      .join("")}
                   </tbody>
                 </table>
       
                 <div class="summary">
-                  <p class="total"><strong>Grand Total:</strong> ${order.totalCost
-      } TK</p>
+                  <p class="total"><strong>Grand Total:</strong> ${
+                    order.totalCost
+                  } TK</p>
                 </div>
       
                 <div class="thank-you">
@@ -240,11 +243,11 @@ const OrderHistory = () => {
     printWindow.document.open();
     printWindow.document.write(invoiceContent);
     printWindow.document.close();
-  
+
     setTimeout(() => {
       printWindow.focus(); // Focus the print window before printing
-      printWindow.print();  // Trigger the print dialog
-      printWindow.close();  // Close the print window after printing
+      printWindow.print(); // Trigger the print dialog
+      printWindow.close(); // Close the print window after printing
     }, 50000);
     // Trigger print and close the window after printing
     // printWindow.onload = () => {
@@ -256,19 +259,18 @@ const OrderHistory = () => {
     // doc.open();
     // doc.write(invoiceContent);
     // doc.close();
-  
+
     // // Print the invoice once the iframe loads
     // iframe.onload = () => {
     //   iframe.contentWindow.focus();
     //   iframe.contentWindow.print();
     // };
-  
+
     // // Remove the iframe after printing
     // iframe.contentWindow.onafterprint = () => {
     //   document.body.removeChild(iframe);
     // };
   };
-  
 
   if (error) return <div>{error}</div>;
 
@@ -362,8 +364,15 @@ const OrderHistory = () => {
                             <td className="border border-gray-300 px-4 py-2 text-center">
                               <span>
                                 {product.quantity >= 1000
-                                  ? `${(product.quantity / 1000).toFixed(3)} Ton` // Display quantity in tons for values >= 1000
-                                  : `${product.quantity % 1 === 0 ? product.quantity : product.quantity.toFixed(3)} Kg`} {/* Display quantity in kilograms */}
+                                  ? `${(product.quantity / 1000).toFixed(
+                                      3
+                                    )} Ton` // Display quantity in tons for values >= 1000
+                                  : `${
+                                      product.quantity % 1 === 0
+                                        ? product.quantity
+                                        : product.quantity.toFixed(3)
+                                    } Kg`}{" "}
+                                {/* Display quantity in kilograms */}
                               </span>
                             </td>
                             {/* Unit Price */}
@@ -381,10 +390,11 @@ const OrderHistory = () => {
                                 className="border border-gray-300 px-4 py-2 text-center"
                               >
                                 <span
-                                  className={`font-semibold ${order.orderStatus === "Successful"
+                                  className={`font-semibold ${
+                                    order.orderStatus === "Successful"
                                       ? "text-green-500"
                                       : "text-red-500"
-                                    }`}
+                                  }`}
                                 >
                                   {order.orderStatus}
                                 </span>

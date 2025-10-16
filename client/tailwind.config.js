@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        robo: ["Roboto", "sans-serif"], // Correct fallback font
+        robo: ["Arial", "sans-serif"], // Correct fallback font
       },
       colors: {
         primary: "#0083cb",
@@ -13,7 +13,7 @@ export default {
       },
       animation: {
         "spin-slow": "spin 20s linear infinite", // Slow spin example
-        "spin360": "spin360 2s linear infinite", // Reference to the keyframes below
+        spin360: "spin360 2s linear infinite", // Reference to the keyframes below
       },
       keyframes: {
         spin360: {
@@ -37,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

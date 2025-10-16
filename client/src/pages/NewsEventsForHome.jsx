@@ -109,10 +109,10 @@ const NewsEventsForHome = () => {
   };
 
   return (
-    <div className="bg-[#FBF7F0]">
+    <div className="bg-[#FBF7F0] py-8 md:py-12 lg:py-16">
       <Containar>
-        <div className=" py-10 w-full">
-          <h3 className="text-[32px] text-center font-semibold text-text mt-20">
+        <div className="w-full">
+          <h3 className="font-bold text-3xl md:text-4xl xl:text-5xl text-center text-text">
             NEWS & EVENTS
           </h3>
           {loading ? (
@@ -123,7 +123,7 @@ const NewsEventsForHome = () => {
             <>
               <div
                 ref={containerRef}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full my-10"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-10"
               >
                 {blogs.length > 0 ? (
                   blogs.map((blog) => (

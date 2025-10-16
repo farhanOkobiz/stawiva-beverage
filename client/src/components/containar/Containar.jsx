@@ -3,7 +3,7 @@
 
 const Containar = ({ children, className }) => {
   return (
-    <div className={`lg:container mx-auto ${className} px-2`}>
+    <div className={`xl:container mx-auto ${className} px-4 md:px-8 lg:px-12`}>
       {children}
     </div>
   );

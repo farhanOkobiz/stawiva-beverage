@@ -98,13 +98,13 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center gap-x-3 xl:gap-x-10">
-              <ul className="flex space-x-4 relative">
+              <ul className="flex space-x-2 relative">
                 {menulist?.map((item, index) => (
                   <li key={index} className="relative group">
                     {item?.subMenuList ? (
                       <>
                         <div
-                          className={`cursor-pointer text-[14px] xl:text-[16px] font-bold px-4 rounded transition-all ease-linear duration-150 ${
+                          className={`cursor-pointer mt-0.5 text-[14px] xl:text-[16px] xl:font-bold px-4 rounded transition-all ease-linear duration-150 ${
                             isSticky ? "text-white" : "text-white"
                           } group-hover:text-[#c1af0f]`}
                         >
@@ -126,14 +126,14 @@ const Navbar = () => {
                             border-b-[8px] border-b-white shadow-sm"
                           /> */}
                           {/* Left Menu */}
-                          <div className="w-[250px]">
+                          <div className="w-[250px] ">
                             {item?.subMenuList?.map((subItem, subIndex) => (
                               <NavLink
                                 key={subIndex}
                                 to={subItem.link}
                                 onMouseEnter={() => setActiveSubItem(subItem)}
                                 className={({ isActive }) =>
-                                  `block px-4 py-4 text-white bg-[#c1af0f] hover:bg-[#8d8007] hover:text-white transition-all ${
+                                  `block px-4 py-2 text-sm text-white bg-[#c1af0f] hover:bg-[#8d8007] hover:text-white transition-all ${
                                     isActive ? "bg-[#8d8007]" : ""
                                   }`
                                 }
@@ -157,10 +157,10 @@ const Navbar = () => {
                           to={item.link}
                           className={({ isActive }) =>
                             isActive
-                              ? `text-[#c1af0f] text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded`
+                              ? `text-[#c1af0f] text-[14px] xl:text-[16px] xl:font-bold px-4 py-2 rounded`
                               : `${
                                   isSticky ? "text-white" : "text-white"
-                                } text-[14px] xl:text-[16px] font-bold px-4 py-2 rounded hover:text-[#c1af0f] transition-all ease-linear duration-150`
+                                } text-[14px] xl:text-[16px] xl:font-bold px-4 py-2 rounded hover:text-[#c1af0f] transition-all ease-linear duration-150`
                           }
                         >
                           {item.title}

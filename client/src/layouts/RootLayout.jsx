@@ -29,7 +29,6 @@ const RootLayout = () => {
         {/* <div className="fixed right-9 bottom-24 z-50">
           <MessengerBtn /> 
         </div> */}
-
         <a
           href="https://weixin.qq.com/r/shahalam29351"
           target="_blank"
@@ -37,13 +36,11 @@ const RootLayout = () => {
         >
           <img src={whatsAppIcon} alt="" className="w-10" />
         </a>
-
         <ScrollToTop
           style={{ backgroundColor: "#F5F5F5", border: "1px solid #0083CB" }}
           smooth
           color="#0083CB"
         />
-
         {location.pathname != "/cart" && <FixedCart />}
         <Header />
         {/* Suspense with a Loader */}
@@ -57,6 +54,7 @@ const RootLayout = () => {
           <Outlet />
         </Suspense>
         <Footer />
+        ok
         <FooterMenu />
       </Theme>
     </div>
