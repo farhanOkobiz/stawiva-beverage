@@ -33,15 +33,23 @@ const NavberDrawer = ({ menulist, isShopDrawerOpen, toggleDrawer }) => {
         <ul className="flex-1 overflow-y-auto">
           {menulist?.map((item, index) => (
             <div key={index} className="border-b border-gray-700">
-              <button
-                onClick={() => toggleSubmenu(index)}
-                className="w-full text-left px-4 py-3 font-semibold flex justify-between items-center"
-              >
-                {item.title}
-                {item.subMenuList && (
+              {item.subMenuList ? (
+                <button
+                  onClick={() => toggleSubmenu(index)}
+                  className="w-full text-left px-4 py-3 font-semibold flex justify-between items-center"
+                >
+                  {item.title}
                   <span>{activeIndex === index ? "-" : "+"}</span>
-                )}
-              </button>
+                </button>
+              ) : (
+                <NavLink
+                  to={item.link}
+                  className="block px-4 py-3 font-semibold hover:text-[#c1af0f]"
+                  onClick={toggleDrawer}
+                >
+                  {item.title}
+                </NavLink>
+              )}
 
               {item.subMenuList && activeIndex === index && (
                 <ul className="bg-[#0e240c]">

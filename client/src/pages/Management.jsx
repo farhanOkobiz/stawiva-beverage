@@ -42,7 +42,6 @@ function Management() {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
         <motion.div
           className="relative z-10 text-center px-4 p-6 rounded"
           initial={{ y: 50, opacity: 0 }}
