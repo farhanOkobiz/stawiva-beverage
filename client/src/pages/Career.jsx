@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
-import managementImg from "../assets/management/management.jpg";
+import C1 from "../assets/career/C1.png";
+import C2 from "../assets/career/C2.png";
 import CareerForm from "../components/career/CareerForm";
 
 const imageVariants = {
@@ -21,7 +22,7 @@ function Career() {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          style={{ backgroundImage: `url(${C1})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,
@@ -31,7 +32,6 @@ function Career() {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
         <motion.div
           className="relative z-10 text-center px-4 p-6 rounded"
           initial={{ y: 50, opacity: 0 }}
@@ -41,17 +41,6 @@ function Career() {
             transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
-          <h2 className="text-4xl md:text-5xl xl:text-7xl font-bold mb-4">
-            Careers – Stamina+ Beverage Limited
-          </h2>
-          <p className="max-w-7xl lg:font-medium text-lg md:text-xl lg:2xl xl:text-2xl leading-relaxed md:leading-loose xl:leading-loose">
-            Career Please keep an eye on Bdjobs.com and LinkedIn sites for
-            relevant opening. Due to a large number of applications, only short
-            listed candidates with minimum criteria as mentioned will be called
-            for Interview/Written exam. The company reserves the right to amend
-            the decision regarding the recruitment or selection. For immediate
-            Consideration Email your CV to : stminaplus2025@gmail.com
-          </p>
         </motion.div>
       </div>
 
@@ -71,7 +60,7 @@ function Career() {
             variants={imageVariants}
           >
             <img
-              src={managementImg}
+              src={C2}
               alt="Management Team"
               className="w-full h-auto shadow-lg"
             />

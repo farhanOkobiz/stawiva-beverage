@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
-import managementImg from "../assets/management/management.jpg";
+import M1 from "../assets/management/m1.png";
 import DarulIslamOmar from "../assets/management/DarulIslamOmar(CFO).jpg";
 import GolamKibriyaRony from "../assets/management/GolamKibriyaRony(CEO).jpg";
 import DidarulIslam from "../assets/management/DidarulIslam(COO).jpg";
@@ -32,7 +32,7 @@ function Management() {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          style={{ backgroundImage: `url(${M1})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,

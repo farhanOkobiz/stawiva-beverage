@@ -81,7 +81,6 @@ const Career = () => {
   return (
     <div className="container mx-auto py-5">
       <h1 className="text-2xl font-bold mb-4">Career Applicants</h1>
-
       <Table
         columns={columns}
         dataSource={applicants}

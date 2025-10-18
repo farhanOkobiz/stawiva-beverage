@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
-import managementImg from "../assets/management/management.jpg";
+import S2 from "../assets/sustainability/s2.png";
 
 const textVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -15,7 +15,7 @@ function EmploymentWelfare() {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          style={{ backgroundImage: `url(${S2})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,

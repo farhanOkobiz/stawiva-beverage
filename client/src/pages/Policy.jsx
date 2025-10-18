@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
-import managementImg from "../assets/management/management.jpg";
+import P1 from "../assets/policy/P1.png";
 
 
 
@@ -17,7 +17,7 @@ function Policy() {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          style={{ backgroundImage: `url(${P1})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,
@@ -27,7 +27,6 @@ function Policy() {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
         <motion.div
           className="relative z-10 text-center px-4 p-6 rounded"
           initial={{ y: 50, opacity: 0 }}
@@ -37,9 +36,6 @@ function Policy() {
             transition: { duration: 1.5, ease: "easeOut" },
           }}
         >
-          <h2 className="text-4xl md:text-5xl xl:text-7xl font-bold mb-4">
-            Policy – Stamina+ Beverage Limited
-          </h2>
         </motion.div>
       </div>
 

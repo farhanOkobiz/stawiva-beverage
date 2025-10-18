@@ -5,7 +5,7 @@ import api from "../components/axios/Axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
-import managementImg from "../assets/management/management.jpg";
+import NE1 from "../assets/newsevent/NE1.png";
 import NewsEventsCard from "../components/newsEvents/NewsEventsCard";
 
 const NewsEvents = () => {
@@ -115,7 +115,7 @@ const NewsEvents = () => {
         {/* Background Image */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
+          style={{ backgroundImage: `url(${NE1})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{
             z: 0,
@@ -125,7 +125,6 @@ const NewsEvents = () => {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
         <motion.div
           className="relative z-10 text-center px-4 p-6 rounded"
           initial={{ y: 50, opacity: 0 }}

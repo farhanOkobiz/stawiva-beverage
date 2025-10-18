@@ -15,7 +15,7 @@ const textVariants = {
 
 function History() {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       {/* Banner Section */}
       <div
         style={{
@@ -27,7 +27,7 @@ function History() {
       >
         {/* Background Image */}
         <motion.div
-          className="absolute inset-0 w-full h-full max-w-full bg-cover bg-center bg-black/40"
+          className="absolute inset-0 w-full h-full max-w-full bg-cover bg-black/40"
           style={{ backgroundImage: `url(${H2})` }}
           initial={{ z: -200, opacity: 0, scale: 1.2 }}
           animate={{

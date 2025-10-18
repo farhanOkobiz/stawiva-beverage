@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Containar from "../components/containar/Containar";
 import "react-loading-skeleton/dist/skeleton.css";
-import managementImg from "../assets/management/Pruduct.jpg";
+import P1 from "../assets/product/p1.png";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -116,14 +116,11 @@ const Shop = () => {
                 {/* Background Image */}
                 <div
                   className="absolute inset-0 w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${managementImg})` }}
+                  style={{ backgroundImage: `url(${P1})` }}
                 />
                 <div
                   className="relative z-10 text-center px-4 p-6 rounded"
                 >
-                  <h2 className=" max-w-7xl text-4xl md:text-5xl xl:text-7xl font-bold mb-4 text-green-900">
-                    Products
-                  </h2>
                   <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
                   </p>
                 </div>
