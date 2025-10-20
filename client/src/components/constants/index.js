@@ -107,7 +107,7 @@ export const socialLink = [
   {
     title: "WhatsApp",
     icon: FaWhatsapp, // WhatsApp icon from React Icons
-    link: "https://wa.me/88 01511169923", // WhatsApp link with international number
+    link: "https://wa.me/8801511169923", // WhatsApp link with international number
     color: "#25D366",
   },
   {
@@ -133,12 +133,12 @@ export const socialLink = [
 export const contactInfo = [
   {
     title: "Contact Number",
-    contact: "01783182659",
+    contact: "+880 1783182659",
     icon: FaPhoneAlt,
   },
   {
     title: "Email",
-    contact: "stminaplus2025@gmail.com",
+    contact: "staminaplus2025@gmail.com",
     icon: FaEnvelope,
   },
 ];

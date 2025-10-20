@@ -31,7 +31,7 @@ const ContractInfo = () => {
                 className="text-gray-500 font-light text-base md:text-lg"
               >
                 {/* ********@gamil.com <br /> */}
-                stminaplus2025@gmail.com
+                staminaplus2025@gmail.com
               </Link>
             </div>
           </div>

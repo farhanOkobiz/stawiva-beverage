@@ -99,12 +99,12 @@ const Banner = () => {
                     : "Loading..."}
                 </p>
 
-                <Link
+                {/* <Link
                   to={"/contact-us"}
                   className="px-3 sm:px-[25px] sm:py-[10px] xl:px-[50px] xl:py-[15px] py-[6px] inline-block bg-[#001802] transition-all ease-linear duration-150 hover:bg-[#c1af0f] hover:text-[#001802] text-[14px] sm:text-base xl:text-[18px] md:mt-8 mt-3 font-semibold text-white rounded-lg"
                 >
                   Contact Us Now
-                </Link>
+                </Link> */}
               </>
             </div>
           </Containar>
