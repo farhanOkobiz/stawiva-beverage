@@ -29,7 +29,7 @@ const CareerForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto px-4">
+    <form onSubmit={handleSubmit} className="w-full mx-auto">
       <input type="text" name="name" placeholder="Your Name" required className="mb-2 w-full px-2 py-3 border rounded"/>
       <input type="text" name="address" placeholder="Address" required className="mb-2 w-full px-2 py-3 border rounded"/>
       <input type="text" name="phone" placeholder="Phone Number" required className="mb-2 w-full px-2 py-3 border rounded"/>

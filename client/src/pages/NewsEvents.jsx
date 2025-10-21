@@ -112,7 +112,6 @@ const NewsEvents = () => {
       <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
         {/* Banner Section */}
         <BannerImage image={NE1} />
-
         <Containar>
           <div className="my-10 py-10 w-full">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1b2a36] mb-4 text-center">

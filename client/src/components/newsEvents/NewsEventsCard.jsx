@@ -47,7 +47,7 @@ const NewsEventsCard = ({ blog, loading }) => {
       })} ${date.getFullYear()}`,
     };
   };
-  // console.log("blog", blog)
+  console.log("blog", blog);
 
   return (
     <div className="rounded-lg overflow-hidden pb- border bg-white w-full">
@@ -59,13 +59,13 @@ const NewsEventsCard = ({ blog, loading }) => {
             className="w-full h-72 object-cover"
           />
         </Link>
-        {blog?.date && (
+        {/* {blog?.date && (
           <div className="bg-green-800 absolute right-3 -bottom-5 text-white rounded-full w-20 h-20 border-[6px] border-white flex justify-center items-center">
-            <p className="text-base font-medium leading-6 text-center">
+            <p className="text-base font-medium leading-6 text-center text-white">
               {blog.category}
             </p>
           </div>
-        )}
+        )} */}
       </div>
       {/* Icon and Content */}
       <div className="text-left pl-4 my-7 w-full">
@@ -102,7 +102,7 @@ const NewsEventsCard = ({ blog, loading }) => {
           }}
         />
         <div className="flex justify-between items-center mt-5 w-full">
-          <Link to={`/blogs/${blog?.slug || ""}`}>
+          <Link to={`/news-events/${blog?.slug || ""}`}>
             <button className="inline-block w-full md:w-auto text-center rounded-md text-white text-[14px] bg-green-800 hover:bg-yellow-500 px-4 py-1">
               Read More
             </button>

@@ -76,14 +76,14 @@ const Product = () => {
                             <>
                               <div
                                 key={product._id}
-                                className="rounded-lg overflow-hidden bg-white pb-4 group/edit flex flex-col justify-between"
+                                className="rounded-lg hover:shadow-lg overflow-hidden bg-white pb-4 group/edit flex flex-col justify-between"
                               >
                                 <div className="">
                                   <Link to={`/shop/${product?.slug}`}>
                                     <img
                                       src={product?.photos[0]}
                                       alt={product?.title || "Product Image"}
-                                      className="w-full h-[305px] rounded-none object-cover aspect-square"
+                                      className="w-full h-[305px] rounded-none object-contain aspect-square"
                                     />
                                   </Link>
                                 </div>

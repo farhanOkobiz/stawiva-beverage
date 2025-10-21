@@ -180,7 +180,7 @@ const ProductGridShopPage = () => {
                           <img
                             src={product?.photos[0]}
                             alt={product?.title}
-                            className="w-full group-hover:scale-105 transition-all ease-linear duration-300 h-full group rounded-none object-cover"
+                            className="w-full group-hover:scale-105 transition-all ease-linear duration-300 h-full group rounded-none object-contain"
                           />
                         </Link>
                       </div>

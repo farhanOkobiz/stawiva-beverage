@@ -99,7 +99,7 @@ const RelatedProductItem = ({ slug, prevProductId }) => {
                   <img
                     src={item?.photos[0]}
                     alt={item?.title}
-                    className="w-full h-full group-hover:scale-105 transition-all ease-linear duration-150 aspect-square rounded-t-lg object-cover"
+                    className="w-full h-full group-hover:scale-105 transition-all ease-linear duration-150 aspect-square rounded-t-lg object-contain"
                   />
                 </Link>
 

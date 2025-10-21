@@ -2,7 +2,7 @@
 import React from "react";
 import Containar from "../containar/Containar";
 import logo from "../../assets/logo/stamina.png";
-import { contactInfo, menulist, socialLink } from "../constants";
+import { contactInfo, Footermenulist, socialLink } from "../constants";
 import { Link, NavLink } from "react-router-dom";
 import "./footer.css";
 
@@ -31,7 +31,7 @@ const Footer = () => {
               <div className="mb-4">
                 <h2 className="text-xl font-bold mb-4">Links</h2>
                 <ul className="navLink flex flex-col md:flex-row md:flex-wrap lg:flex-col md:gap-3 lg:gap-0 md:gap-y-2 mt-5">
-                  {menulist.map((item, index) => (
+                  {Footermenulist.map((item, index) => (
                     <li key={index}>
                       <NavLink
                         to={item?.link}
@@ -119,8 +119,8 @@ const Footer = () => {
         <Containar>
           <div className="flex justify-between flex-wrap px-5 lg:px-0 py-5 text-white">
             <p className="text-[12px] sm:text-[14px]">
-              Stamina<span className="text-xl">+</span> © 2025. All Rights
-              Reserved.
+              Stamina<span className="text-xl">+</span> Beverage Limited © 2025.
+              All Rights Reserved.
             </p>
             <a
               href="https://okobiz.com/"

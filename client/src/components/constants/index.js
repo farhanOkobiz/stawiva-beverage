@@ -143,6 +143,70 @@ export const contactInfo = [
   },
 ];
 
+export const Footermenulist = [
+  {
+    title: "About Us",
+    link: "/company/about-us",
+    description:
+      "Our reputation for reliability can be credited to our highly skilled workforce of over 20,000 employees.",
+  },
+  {
+    title: "Management",
+    link: "/company/management",
+    description:
+      "Since the First Footstep in 2009 to till date, Team Group has come a long way.",
+  },
+  {
+    title: "History",
+    link: "/company/history",
+    description:
+      "We have diversified our presence from the apparel manufacturing industry onward to retail, pharmaceuticals, IT and real estate with aspirations to expand even further.",
+  },
 
+  {
+    title: "PRODUCTS",
+    link: "/products",
+  },
 
+  {
+    title: "Food and Beverage ",
+    link: "/industries/food-beverage",
+    description:
+      "Stamina+ Beverage Limited delivers innovative solutions for the food and beverage sector, focusing on premium-quality products, strict safety standards, and sustainable practices. From concept to consumer, we ensure every product meets the highest standards of taste, nutrition, and reliability.",
+  },
+  {
+    title: "Environmental Sustainability",
+    link: "/sustainability/environmental-sustainability",
+    description:
+      "At Stamina+ Beverage Limited, we recognize that protecting the environment is fundamental to our mission. Our commitment to environmental sustainability shapes every decision we make, from sourcing ingredients to delivering products to our consumers.",
+  },
+  {
+    title: "Employment & Welfare",
+    link: "/sustainability/employment-welfare",
+    description:
+      "At Stamina+ Beverage Limited, our employees are the heart of our success. We are committed to creating a work environment that fosters growth, well-being, and professional excellence.",
+  },
 
+  {
+    title: "NEWS & EVENTS",
+    link: "/news-events",
+  },
+  {
+    title: "CAREER",
+    link: "/career",
+  },
+  {
+    title: "POLICY",
+    link: "/policy",
+  },
+  {
+    title: "CONTACT US",
+    link: "/contact-us",
+  },
+  // {
+  //   title: "Hotline",
+  //   icon: FaPhoneAlt,
+  //   link: "tel:+8801511169923",
+  //   color: "#E63946",
+  // },
+];
