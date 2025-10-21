@@ -9,7 +9,7 @@ import {
   FaWeixin,
   FaWhatsapp,
 } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 
 export const menulist = [
   {
@@ -111,10 +111,10 @@ export const socialLink = [
     color: "#25D366",
   },
   {
-    title: "Instagram",
-    icon: FaInstagram, // WhatsApp icon from React Icons
-    link: "https://www.instagram.com/stamina785/?utm_source=qr&&r=nametag", // WhatsApp link with international number
-    color: "#E1306C",
+    title: "X (Twitter)",
+    icon: FaXTwitter,
+    link: "https://x.com/beverage15184?t=Bc0c7-5ADRw9KJH9IbVFOQ&&s=08",
+    color: "#000000", // Official X brand color (black)
   },
   {
     title: "LinkedIn",
