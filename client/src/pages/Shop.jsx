@@ -10,7 +10,6 @@ import api from "../components/axios/Axios";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
 
-
 const Shop = () => {
   const swiperRef = useRef(null);
   const [newRelease, setNewRelease] = useState([]);
@@ -112,19 +111,12 @@ const Shop = () => {
           <div className="grid grid-cols-12 gap-5">
             <div className="col-span-12 lg:col-span-12 sm:col-span-12">
               {/* Banner Section */}
-              <div className="relative w-full min-h-[50vh] flex items-center justify-center text-white perspective-1000">
                 {/* Background Image */}
-                <div
-                  className="absolute inset-0 w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${P1})` }}
+                <img
+                  src={P1}
+                  alt="History Banner"
+                  className="w-full h-[calc(30vh)] md:h-[calc(50vh)] xl:h-[calc(50vh)] "
                 />
-                <div
-                  className="relative z-10 text-center px-4 p-6 rounded"
-                >
-                  <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
-                  </p>
-                </div>
-              </div>
               <div className="bg-white w-full">
                 <Outlet />
               </div>

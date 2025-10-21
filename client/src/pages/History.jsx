@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import H1 from "../assets/history/H1.png";
 import H2 from "../assets/history/H2.png";
 import Containar from "../components/containar/Containar";
+import BannerImage from "../components/bannerimage/BannerImage";
 
 const imageVariants = {
   hidden: { y: 100, opacity: 0 },
@@ -15,44 +16,13 @@ const textVariants = {
 
 function History() {
   return (
-    <div className="">
+   <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
       {/* Banner Section */}
-      <div
-        style={{
-          minHeight: `calc(100vh - ${
-            window.innerWidth >= 1024 ? 100 : window.innerWidth >= 768 ? 60 : 55
-          }px)`,
-        }}
-        className="relative w-full xl:mt-28 flex items-center justify-center text-white perspective-1000"
-      >
-        {/* Background Image */}
-        <motion.div
-          className="absolute inset-0 w-full h-full max-w-full bg-cover bg-black/40"
-          style={{ backgroundImage: `url(${H2})` }}
-          initial={{ z: -200, opacity: 0, scale: 1.2 }}
-          animate={{
-            z: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 1.5 },
-          }}
-        />
-        {/* Overlay Text */}
-        <motion.div
-          className="relative z-10 text-center px-4 p-6 rounded"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1.5, ease: "easeOut" },
-          }}
-        >
-        </motion.div>
-      </div>
+      <BannerImage image={H2} />
 
       {/* Message Section */}
       <Containar>
-        <div className="flex flex-col lg:flex-row items-start gap-10 my-20">
+        <div className="flex flex-col lg:flex-row items-start gap-10 py-10 lg:my-10">
           {/* Left Image */}
           <motion.div
             className="lg:w-1/2 w-full flex justify-center"

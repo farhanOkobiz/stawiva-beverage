@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
 import managementImg from "../assets/industries/i1.png";
+import BannerImage from "../components/bannerimage/BannerImage";
 
 const textVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -9,41 +10,9 @@ const textVariants = {
 
 function FoodBeverage() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
       {/* Banner Section */}
-      <div className="relative w-full min-h-screen flex items-center justify-center text-white perspective-1000">
-        {/* Background Image */}
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
-          initial={{ z: -200, opacity: 0, scale: 1.2 }}
-          animate={{
-            z: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 1.5 },
-          }}
-        />
-        {/* Dark Overlay */}
-        <motion.div
-          className="relative z-10 text-center px-4 p-6 rounded"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1.5, ease: "easeOut" },
-          }}
-        >
-          <h2 className=" max-w-7xl text-4xl md:text-5xl xl:text-7xl font-bold mb-4">
-            Food and Beverage – Stamina+ Beverage Limited
-          </h2>
-          <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
-            Stamina+ Beverage Limited offers premium-quality beverages, blending
-            unique flavors, strict safety standards, and refreshing experiences
-            for modern consumers.
-          </p>
-        </motion.div>
-      </div>
+      <BannerImage image={managementImg} />
       {/* Message Section */}
       <Containar>
         <motion.div

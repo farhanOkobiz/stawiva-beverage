@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import managementImg from "../assets/about/A1.png";
 import Containar from "../components/containar/Containar";
+import BannerImage from "../components/bannerimage/BannerImage";
 
 const textVariants = {
   hidden: { y: -100, opacity: 0 },
@@ -9,43 +10,9 @@ const textVariants = {
 
 function AboutUs() {
   return (
-    <div className="overflow-hidden">
+      <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
       {/* Banner Section */}
-      <div className="relative w-full min-h-screen flex items-center justify-center text-white perspective-1000">
-        {/* Background Image: top/front to back */}
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${managementImg})` }}
-          initial={{ z: 200, y: -100, scale: 1.3, opacity: 0 }} // top/front position
-          animate={{
-            z: 0,
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            transition: { duration: 2, ease: "easeOut" },
-          }}
-        />
-
-        {/* Overlay Text: bottom to top */}
-        <motion.div
-          className="relative z-10 text-center px-4 p-6 rounded"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1.5, ease: "easeOut", delay: 0.3 },
-          }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Us – Stamina+ Beverage Limited
-          </h1>
-          <p className="mt-2 xl:mt-8 font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-5xl mx-auto lg:leading-relaxed xl:leading-relaxed">
-            Stamina+ Beverage Limited offers refreshing, natural drinks designed
-            to energize and promote a healthy lifestyle.
-          </p>
-        </motion.div>
-      </div>
-
+      <BannerImage image={managementImg} />
       {/* Message Section */}
       {/* <motion.div
         className="bg-[#19232f] text-white py-16 px-4"

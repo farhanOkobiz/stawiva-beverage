@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import Containar from "../components/containar/Containar";
 import P1 from "../assets/policy/P1.png";
 
-
-
 const textVariants = {
   hidden: { y: -100, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { duration: 1.2 } },
@@ -11,34 +9,24 @@ const textVariants = {
 
 function Policy() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
       {/* Banner Section */}
-      <div className="relative w-full min-h-screen flex items-center justify-center text-white perspective-1000">
-        {/* Background Image */}
-        <motion.div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${P1})` }}
-          initial={{ z: -200, opacity: 0, scale: 1.2 }}
-          animate={{
-            z: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 1.5 },
-          }}
+      <motion.div
+        initial={{ z: 200, y: -100, scale: 1.3, opacity: 0 }}
+        animate={{
+          z: 0,
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          transition: { duration: 2, ease: "easeOut" },
+        }}
+      >
+        <img
+          src={P1}
+          alt="History Banner"
+          className="w-full h-[300px]  md:h-auto xl:max-h-[calc(100vh-100px)]"
         />
-        {/* Dark Overlay */}
-        <motion.div
-          className="relative z-10 text-center px-4 p-6 rounded"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1.5, ease: "easeOut" },
-          }}
-        >
-        </motion.div>
-      </div>
-
+      </motion.div>
       {/* Message Section */}
       <Containar>
         <div className="my-20">

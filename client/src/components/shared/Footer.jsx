@@ -18,11 +18,13 @@ const Footer = () => {
                 <div className="">
                   <img className="w-[150px] -mt-[25px]" src={logo} />
                 </div>
+                <h2></h2>
                 <p className="text-[14px] leading-7 text-white -mt-6">
-                  Our Mission Is To Empower Garment Manufacturers, Tailors, And
-                  Fashion Designers By Providing High-Quality Industrial Sewing
-                  Machines And Services That Optimize Production, Enhance
-                  Efficiency, And Drive Innovation In The Apparel Industry.
+                  Export Vision: Stamina+ Beverage Limited is committed to
+                  expanding beyond the borders of Bangladesh. With world-class
+                  quality and uncompromising standards, the company aims to
+                  export its refreshing flavored beverages to international
+                  markets, proudly representing Bangladesh on the global stage.
                 </p>
               </div>
               {/* Section 2 */}
