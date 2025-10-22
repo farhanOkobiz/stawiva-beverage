@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
@@ -23,7 +23,7 @@ const Forgot = () => {
         draggable: true,
         progress: undefined,
       });
-    } catch (error) {
+    } catch {
       toast.error("Failed to send password reset email. Try again later.", {
         position: "top-right",
         autoClose: 5000,
