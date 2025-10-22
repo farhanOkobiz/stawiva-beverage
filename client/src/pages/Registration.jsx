@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import img from "../assets/logo/logo.png";
-import { socialLink } from "../components/constants";
 import { Link, useNavigate } from "react-router-dom";
 import { RxEyeOpen, RxEyeNone } from "react-icons/rx";
 import api from "../components/axios/Axios";

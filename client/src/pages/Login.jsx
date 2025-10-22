@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import img from "../assets/logo/logo.png";
-import { socialLink } from "../components/constants";
 import { Link, useNavigate } from "react-router-dom";
 import { RxEyeNone, RxEyeOpen } from "react-icons/rx";
 import api from "../components/axios/Axios";
@@ -58,7 +57,7 @@ const Login = () => {
 
       setEmailOrPhone("");
       setPassword("");
-    } catch (error) {
+    } catch  {
       toast.error("Login failed. Please check your credentials.", {
         position: "top-right",
         autoClose: 700,
@@ -157,7 +156,7 @@ const Login = () => {
                 </div>
 
                 <p className="mt-4 text-center text-sm text-gray-600">
-                  Don't have an account?{" "}
+                  Do not have an account?{" "}
                   <Link
                     to={"/registration-choose"}
                     className="text-primary hover:underline"

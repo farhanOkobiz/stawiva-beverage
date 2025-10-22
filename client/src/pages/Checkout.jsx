@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import BillingDetails from "../components/checkout/BillingDetails";
-import OrderDetails from "../components/checkout/OrderDetails";
 import { useDispatch, useSelector } from "react-redux";
 import api from "../components/axios/Axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
