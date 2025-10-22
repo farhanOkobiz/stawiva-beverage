@@ -1,7 +1,5 @@
 // import Containar from "../components/containar/Containar";
 import { Link } from "react-router-dom";
-import notFound from "../assets/404/404.png";
-import { FaArrowRight } from "react-icons/fa";
 import image from "../assets/404/404.gif";
 import Containar from "../components/containar/Containar";
 
@@ -19,7 +17,7 @@ const NotFound = () => {
               <img className="-z-20" src={image} />
             </div>
             <div className="text-center absolute bottom-10 left-1/2 -translate-x-1/2">
-              <h3 className="text-[20px]">Look like you're lost</h3>
+              <h3 className="text-[20px]">Look like you are lost</h3>
 
               <p className="mt-2 mb-6">
                 the page you are looking for not avaible!
