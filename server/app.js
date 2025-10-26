@@ -13,8 +13,24 @@ const app = express();
 
 app.set('trust proxy', 1);
 
-// GLOBAL MIDDLEWARES:
-app.use(cors({ origin: "*", credentials: true }));
+// GLOBAL MIDDLEWARES
+const allowedOrigins = [
+  "https://admin.staminaplusbeverageltd.com",
+  "https://staminaplusbeverageltd.com"
+];
+
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      return callback(new Error("CORS not allowed for this origin"), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
+
+app.options("*", cors({ origin: allowedOrigins, credentials: true }));
 
 
 app.use(bodyParser.json()); // for parsing application/json
