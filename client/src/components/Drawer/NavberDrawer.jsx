@@ -1,5 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
-import logo from "../../assets/logo/stamina.png";
+import logo from "../../assets/logo/footerLogo.png";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { NavLink } from "react-router-dom";
