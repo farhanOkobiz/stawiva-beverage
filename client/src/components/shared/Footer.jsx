@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/stamina.png";
+import logo from "../../assets/logo/footerlogo.png";
 import { contactInfo, Footermenulist, socialLink } from "../constants";
 import { Link, NavLink } from "react-router-dom";
 import "./footer.css";
@@ -19,8 +18,8 @@ const Footer = () => {
                   <img className="w-[150px] -mt-[25px]" src={logo} />
                 </div>
                 <h2></h2>
-                <p className="text-[14px] leading-7 text-white -mt-6">
-                  Export Vision: Stamina+ Beverage Limited is committed to
+                <p className="text-[14px] leading-7 text-white">
+                  Stamina+ Beverage Limited is committed to
                   expanding beyond the borders of Bangladesh. With world-class
                   quality and uncompromising standards, the company aims to
                   export its refreshing flavored beverages to international

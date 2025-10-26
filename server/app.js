@@ -14,9 +14,8 @@ const app = express();
 app.set('trust proxy', 1);
 
 // GLOBAL MIDDLEWARES:
-app.use(
-  cors()
-);
+app.use(cors({ origin: "*", credentials: true }));
+
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/xwww-form-urlencoded

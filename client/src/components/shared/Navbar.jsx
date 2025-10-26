@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/stamina.png";
+import logo from "../../assets/logo/footerLogo.png";
 import { Link, NavLink, matchPath } from "react-router-dom";
 import { menulist } from "../constants";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -81,8 +81,8 @@ const Navbar = () => {
     <nav
       className={`transition-all duration-300 ease-in-out ${
         isSticky
-          ? "backdrop-blur-md bg-[#001802] shadow-md"
-          : "bg-[#001802] backdrop-blur-[10%]"
+          ? "backdrop-blur-md bg-white shadow-md"
+          : "bg-white backdrop-blur-[10%]"
       } z-[9999] font-robo fixed left-0 top-0 w-full`}
     >
       <Containar>
@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             <div>
               <div className="flex gap-x-3 items-center">
-                <div className="lg:h-[100px] md:h-[60px] h-[55px] W-[200px] lg:w-[150px]">
+                <div className="lg:h-[80px] md:h-[60px] h-[55px] W-[200px] lg:w-[150px]">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>
@@ -105,9 +105,9 @@ const Navbar = () => {
                       <>
                         <div
                           className={`cursor-pointer text-[14px] xl:text-[16px] xl:font-bold px-3 rounded transition-all ease-linear duration-150 ${
-                            isSticky ? "text-white" : "text-white"
-                          } group-hover:text-[#c1af0f]`}
-                        >
+                            isSticky ? "text-[#c1af0f]" : "text-[#c1af0f]"
+                          } group-hover:text-[#001802]`}
+                        > 
                           {item.title}
                         </div>
                         {/* Dropdown menu */}
@@ -159,8 +159,8 @@ const Navbar = () => {
                             isActive
                               ? `text-[#c1af0f] text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded`
                               : `${
-                                  isSticky ? "text-white" : "text-white"
-                                } text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded hover:text-[#c1af0f] transition-all ease-linear duration-150`
+                                  isSticky ? "text-[#c1af0f]" : "text-[#c1af0f]"
+                                } text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded hover:text-[#001802] transition-all ease-linear duration-150`
                           }
                         >
                           {item.title}

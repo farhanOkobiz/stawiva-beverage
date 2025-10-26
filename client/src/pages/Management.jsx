@@ -246,10 +246,10 @@ function Management() {
               {/* Bio */}
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                 {[
-                  "Darul Islam Omar is a dynamic and hardworking professional who currently serves as the Chief Financial Officer of Stamina+ Beverage Limited. He is not only highly skilled in finance but also admired for his honesty, integrity, and kind-hearted nature.",
-                  "He has successfully completed both his BBA and MBA with a major in Finance, equipping him with strong analytical and strategic thinking abilities. Known for his sharp intellect and innovative mindset, Omar brings fresh perspectives and practical solutions to every challenge he faces.",
-                  "Before joining Stamina+ Beverage Limited, he built a strong foundation in the corporate and financial sectors. He served as a Senior Officer at Al-Arafah Islami Bank, where he gained deep expertise in financial operations and compliance. Later, he worked as an Assistant Manager (Accounts) at Sadiq Agrochemicals Limited, where he honed his skills in financial management, reporting, and organizational development.",
-                  "With his diverse professional background, Omar is a visionary leader who believes in combining financial discipline with innovative strategies to drive sustainable growth. His dedication, leadership, and collaborative approach make him an invaluable asset to the company.",
+                  "Didarul Islam is a highly talented and accomplished professional with an impressive academic and legal background. He completed his LLB from Northern University in Bangladesh, despite having admission offers from several prestigious public universities. While he was also admitted to the Marketing Department of the University of Dhaka, his true passion for law guided him to pursue legal studies.",
+                  "He completed his Higher Secondary Certificate (HSC) from RAJUK Uttara Model School and College, and was later awarded a fully funded scholarship to the Asian Pacific University in Japan. However, due to his young age, his mother decided it was not the right time for him to pursue the opportunity abroad.",
+                  "Known for his intelligence and strategic mindset, Didarul possesses a deep understanding of business operations and leadership. He approaches challenges with calm and composed decision-making, consistently delivering effective and thoughtful solutions.",
+                  "His analytical skills, dedication, and vision make him a remarkable individual and a valuable contributor in any professional setting.",
                 ].map((para, i) => (
                   <motion.p
                     key={i}
@@ -339,67 +339,6 @@ function Management() {
             </motion.div>
           </div>
         </Containar>
-        {/* CIO  */}
-        <Containar>
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 my-20">
-            {/* Right Text */}
-            <motion.div
-              className=" w-full space-y-6"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {/* Name */}
-              <motion.h3
-                className="text-3xl lg:text-4xl font-bold text-[#1b2a36]"
-                variants={textVariants}
-                custom={0}
-              >
-                Sonia Akhter
-              </motion.h3>
-              {/* Position */}
-              <motion.h4
-                className="text-xl lg:text-2xl font-semibold text-[#00754a]"
-                variants={textVariants}
-                custom={1}
-              >
-                Chief Information Officer (CIO), Stamina+ Beverage Limited
-              </motion.h4>
-
-              {/* Bio */}
-              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-                {[
-                  "Sonia Akhter is the Chief Information Officer (CIO) of Stamina+ Beverage Limited, a highly intelligent, dedicated, and visionary professional who brings remarkable expertise in technology and innovation to the company. From an early age, she has demonstrated exceptional brilliance and analytical ability, earning outstanding academic achievements throughout her educational journey.",
-                  "She completed her Bachelor of Science (B.Sc.) in Electrical and Electronic Engineering from Khulna University of Engineering and Technology (KUET), one of Bangladesh’s most prestigious engineering institutions. Currently, she is pursuing her Master of Science (M.Sc.) degree at Macquarie University, Australia, further enhancing her global knowledge and leadership in the field of information technology.",
-                  "With her strong technical background, leadership skills, and strategic thinking, Sonia Akhter is perfectly suited for her role as CIO, driving the company’s digital transformation, IT infrastructure, and innovation roadmap.",
-                  "Beyond her professional excellence, Sonia is known for her humility, integrity, and commitment to personal growth. In her personal life, she is happily married and the proud mother of one child.",
-                ].map((para, i) => (
-                  <motion.p
-                    key={i}
-                    variants={textVariants}
-                    custom={i + 2} // stagger starts after Name and Position
-                  >
-                    {para}
-                  </motion.p>
-                ))}
-              </div>
-            </motion.div>
-            {/* Left Image */}
-            <motion.div
-            className="lg:w-1/2 w-full flex justify-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={imageVariants}
-          >
-            <img
-              src={SoniaAkhter}
-              alt="Darul Islam Omar"
-              className="w-full h-auto rounded-xl shadow-xl object-cover"
-            />
-          </motion.div>
-          </div>
-        </Containar>
         {/* CLPO */}
         <Containar>
           <div className="flex flex-col lg:flex-row items-start gap-10 py-20">
@@ -458,6 +397,67 @@ function Management() {
                 alt="Darul Islam Omar"
                 className="w-full h-auto rounded-xl shadow-xl object-cover"
               />
+            </motion.div>
+          </div>
+        </Containar>
+        {/* CIO  */}
+        <Containar>
+          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 py-20">
+            {/* Left Image */}
+            <motion.div
+              className="lg:w-1/2 w-full flex justify-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={imageVariants}
+            >
+              <img
+                src={SoniaAkhter}
+                alt="Darul Islam Omar"
+                className="w-full h-auto rounded-xl shadow-xl object-cover"
+              />
+            </motion.div>
+            {/* Right Text */}
+            <motion.div
+              className=" w-full space-y-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {/* Name */}
+              <motion.h3
+                className="text-3xl lg:text-4xl font-bold text-[#1b2a36]"
+                variants={textVariants}
+                custom={0}
+              >
+                Sonia Akhter
+              </motion.h3>
+              {/* Position */}
+              <motion.h4
+                className="text-xl lg:text-2xl font-semibold text-[#00754a]"
+                variants={textVariants}
+                custom={1}
+              >
+                Chief Information Officer (CIO), Stamina+ Beverage Limited
+              </motion.h4>
+
+              {/* Bio */}
+              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                {[
+                  "Sonia Akhter is the Chief Information Officer (CIO) of Stamina+ Beverage Limited, a highly intelligent, dedicated, and visionary professional who brings remarkable expertise in technology and innovation to the company. From an early age, she has demonstrated exceptional brilliance and analytical ability, earning outstanding academic achievements throughout her educational journey.",
+                  "She completed her Bachelor of Science (B.Sc.) in Electrical and Electronic Engineering from Khulna University of Engineering and Technology (KUET), one of Bangladesh’s most prestigious engineering institutions. Currently, she is pursuing her Master of Science (M.Sc.) degree at Macquarie University, Australia, further enhancing her global knowledge and leadership in the field of information technology.",
+                  "With her strong technical background, leadership skills, and strategic thinking, Sonia Akhter is perfectly suited for her role as CIO, driving the company’s digital transformation, IT infrastructure, and innovation roadmap.",
+                  "Beyond her professional excellence, Sonia is known for her humility, integrity, and commitment to personal growth. In her personal life, she is happily married and the proud mother of one child.",
+                ].map((para, i) => (
+                  <motion.p
+                    key={i}
+                    variants={textVariants}
+                    custom={i + 2} // stagger starts after Name and Position
+                  >
+                    {para}
+                  </motion.p>
+                ))}
+              </div>
             </motion.div>
           </div>
         </Containar>
