@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/footerlogo.png";
+import logo from "../../assets/logo/footerLogo.png";
 import { contactInfo, Footermenulist, socialLink } from "../constants";
 import { Link, NavLink } from "react-router-dom";
 import "./footer.css";
