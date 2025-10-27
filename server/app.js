@@ -15,8 +15,17 @@ app.set('trust proxy', 1);
 
 // GLOBAL MIDDLEWARES:
 app.use(
-  cors()
+  cors({
+    origin: [
+      "https://staminaplusbeverageltd.com",
+      "https://admin.staminaplusbeverageltd.com",
+      "http://localhost:5173", 
+      "http://localhost:5174" 
+    ],
+    credentials: true,
+  })
 );
+
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/xwww-form-urlencoded
