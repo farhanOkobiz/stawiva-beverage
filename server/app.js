@@ -2,51 +2,52 @@ const path = require("path");
 const express = require("express");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const monogoSanitize = require("express-mongo-sanitize");
-const bodyParser = require("body-parser");
+const mongoSanitize = require("express-mongo-sanitize");
 const cors = require("cors");
 
 const globalErrorMiddleware = require("./middlewares/globalErrorMiddleware");
 const routes = require("./routes");
 
 const app = express();
+app.set("trust proxy", 1);
 
-app.set('trust proxy', 1);
-
-// GLOBAL MIDDLEWARES:
+// 🌐 CORS
 app.use(
   cors({
     origin: [
       "https://staminaplusbeverageltd.com",
       "https://admin.staminaplusbeverageltd.com",
-      "http://localhost:5173", 
-      "http://localhost:5174" 
+      "http://localhost:5173",
+      "http://localhost:5174",
     ],
     credentials: true,
   })
 );
 
-
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/xwww-form-urlencoded
-
-app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // Serving static files
-app.use(helmet()); // Set security HTTP headers
-
+// 🛡️ Security & Rate Limiting
+app.use(helmet());
 const limiter = rateLimit({
   max: 5000,
   windowMs: 60 * 60 * 5000,
-  message: "Too many requests from this IP, Please try again after an hour!",
+  message: "Too many requests from this IP, please try again after an hour!",
 });
-
 app.use("/api", limiter);
 
+// 🧠 Body Parsers (single version)
 app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-app.use(monogoSanitize());
+// 🧹 Data Sanitization
+app.use(mongoSanitize());
 
+// 📂 Static Files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// 🚀 Routes
 app.get("/", (req, res) => res.send("Welcome to Stamina Plus..!🌿"));
 app.use(routes);
+
+// ⚠️ Global Error Middleware
 app.use(globalErrorMiddleware);
 
 module.exports = app;
