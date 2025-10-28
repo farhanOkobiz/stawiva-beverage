@@ -341,7 +341,7 @@ function Management() {
         </Containar>
         {/* CLPO */}
         <Containar>
-          <div className="flex flex-col lg:flex-row items-start gap-10 py-20">
+          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 my-20">
             {/* Right Text */}
             <motion.div
               className="lg:w-2/3 w-full space-y-6"
@@ -402,7 +402,7 @@ function Management() {
         </Containar>
         {/* CIO  */}
         <Containar>
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 py-20">
+          <div className="flex flex-col lg:flex-row items-start gap-10 my-20">
             {/* Left Image */}
             <motion.div
               className="lg:w-1/2 w-full flex justify-center"
