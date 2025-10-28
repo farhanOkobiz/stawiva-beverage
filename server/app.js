@@ -16,6 +16,7 @@ app.use(
   cors({
     origin: [
       "https://staminaplusbeverageltd.com",
+      "https://www.staminaplusbeverageltd.com",
       "https://admin.staminaplusbeverageltd.com",
       "http://localhost:5173",
       "http://localhost:5174",
