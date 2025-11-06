@@ -10,7 +10,7 @@ const textVariants = {
 
 function FoodBeverage() {
   return (
-    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
+    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       <BannerImage image={managementImg} />
       {/* Message Section */}

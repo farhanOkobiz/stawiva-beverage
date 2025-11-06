@@ -81,16 +81,16 @@ const Navbar = () => {
     <nav
       className={`transition-all duration-300 ease-in-out ${
         isSticky
-          ? "backdrop-blur-md bg-white shadow-md"
-          : "bg-white backdrop-blur-[10%]"
+          ? "backdrop-blur-md bg-[#001802] shadow-md"
+          : "bg-[#001802] backdrop-blur-[10%]"
       } z-[9999] font-robo fixed left-0 top-0 w-full`}
     >
       <Containar>
-        <div className="py-4 lg:py-2">
+        <div className="py-4 lg:py-3">
           <div className="flex justify-between items-center">
             <div>
               <div className="flex gap-x-3 items-center">
-                <div className="lg:h-[80px] md:h-[60px] h-[55px] W-[200px] lg:w-[150px]">
+                <div className="lg:h-[80px] md:h-[60px] h-[55px] W-[200px] lg:w-[150px] pt-4">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>
@@ -105,8 +105,8 @@ const Navbar = () => {
                       <>
                         <div
                           className={`cursor-pointer text-[14px] xl:text-[16px] xl:font-bold px-3 rounded transition-all ease-linear duration-150 ${
-                            isSticky ? "text-[#c1af0f]" : "text-[#c1af0f]"
-                          } group-hover:text-[#001802]`}
+                            isSticky ? "text-white" : "text-white"
+                          } group-hover:text-[#8d8007]`}
                         > 
                           {item.title}
                         </div>
@@ -157,10 +157,10 @@ const Navbar = () => {
                           to={item.link}
                           className={({ isActive }) =>
                             isActive
-                              ? `text-[#c1af0f] text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded`
+                              ? `text-white text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded`
                               : `${
-                                  isSticky ? "text-[#c1af0f]" : "text-[#c1af0f]"
-                                } text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded hover:text-[#001802] transition-all ease-linear duration-150`
+                                  isSticky ? "text-white" : "text-white"
+                                } text-[14px] xl:text-[16px] xl:font-bold px-3 py-2 rounded hover:text-[#8d8007] transition-all ease-linear duration-150`
                           }
                         >
                           {item.title}

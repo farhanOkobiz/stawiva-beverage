@@ -16,7 +16,7 @@ const textVariants = {
 
 function History() {
   return (
-   <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
+   <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       <BannerImage image={H2} />
 

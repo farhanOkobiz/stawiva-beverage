@@ -9,7 +9,7 @@ const textVariants = {
 
 function Policy() {
   return (
-    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
+    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       <motion.div
         initial={{ z: 200, y: -100, scale: 1.3, opacity: 0 }}

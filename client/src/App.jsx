@@ -44,7 +44,7 @@ import EmploymentWelfare from "./pages/EmploymentWelfare";
 import FoodBeverage from "./pages/FoodBeverage";
 import { useState } from "react";
 import { useEffect } from "react";
-import img from "./assets/logo/logo.png";
+import img from "./assets/logo/footerLogo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsEvents from "./pages/NewsEvents";
 

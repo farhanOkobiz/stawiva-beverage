@@ -43,8 +43,8 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="">
-      <div className="h-[85px] bg-white sm:hidden"></div>
+    <div className="md:mt-16">
+      <div className="h-[100px] bg-white sm:hidden"></div>
       <div className="font-robo relative h-[260px] md:h-[60vh] lg:h-screen w-full sm:overflow-hidden">
         {/* Overlay - Fix: Move it outside Swiper to avoid multiple opacity */}
         {/* <div className="absolute z-10 top-0 left-0 w-full h-full bg-black opacity-50"></div> */}

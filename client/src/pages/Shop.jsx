@@ -82,7 +82,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className="h-[68px] sm:h-[110.4px] bg-[#f5f5f5] font-robo "></div>
+      <div className="h-[68px] sm:h-[110.4px] md:-mt-3 bg-[#f5f5f5] font-robo "></div>
       <Containar>
         <div className="flex gap-2 items-center py-10">
           <Link className="font-medium" to={"/"}>

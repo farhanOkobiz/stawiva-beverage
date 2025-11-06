@@ -27,7 +27,7 @@ const textVariants = {
 
 function Management() {
   return (
-    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px]">
+    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       <BannerImage image={M1} />
       <div style={{ backgroundImage: `url(${BG})` }}>
