@@ -17,7 +17,7 @@ const textVariants = {
 
 function Career() {
   return (
-    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
+    <div className="overflow-hidden mt-[85px] md:mt-[120px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       {/* Banner Section */}
       <motion.div
@@ -29,7 +29,7 @@ function Career() {
           opacity: 1,
           transition: { duration: 2, ease: "easeOut" },
         }}
-        className="relative w-full h-[calc(50vh-100px)] md:h-[calc(60vh-100px)] lg:h-[calc(100vh-100px)] flex items-center justify-center text-white"
+        className="relative w-full h-[calc(80vh-100px)] md:h-[calc(90vh)] lg:h-[calc(100vh)] flex items-center justify-center text-white"
       >
         {/* Background Image */}
         <div

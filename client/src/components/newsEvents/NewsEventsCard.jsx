@@ -54,7 +54,7 @@ const NewsEventsCard = ({ blog, loading }) => {
       <div className="relative">
         <Link to={`/news-events/${blog?.slug || ""}`}>
           <img
-            src={blog?.photos?.[0] || Articles1} // Fallback to default image
+            src={blog?.photos?.[0]} // Fallback to default image
             alt="Blog Cover"
             className="w-full h-72 object-cover"
           />

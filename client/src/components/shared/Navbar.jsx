@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Containar from "../containar/Containar";
-import logo from "../../assets/logo/footerLogo.png";
+import logo from "../../assets/logo/logo.png";
 import { Link, NavLink, matchPath } from "react-router-dom";
 import { menulist } from "../constants";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -88,9 +88,9 @@ const Navbar = () => {
       <Containar>
         <div className="py-4 lg:py-3">
           <div className="flex justify-between items-center">
-            <div>
-              <div className="flex gap-x-3 items-center">
-                <div className="lg:h-[80px] md:h-[60px] h-[55px] W-[200px] lg:w-[150px] pt-4">
+            <div className="py-4">
+              <div className="lg:w-[8rem] md:h-[60px] w-[75px]  flex gap-x-3 items-center">
+                <div className="">
                   <Link to={"/"}>
                     <img className="w-full h-full" src={logo} alt="Logo" />
                   </Link>

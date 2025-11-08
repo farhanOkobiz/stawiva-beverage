@@ -44,7 +44,7 @@ import EmploymentWelfare from "./pages/EmploymentWelfare";
 import FoodBeverage from "./pages/FoodBeverage";
 import { useState } from "react";
 import { useEffect } from "react";
-import img from "./assets/logo/footerLogo.png";
+import img from "./assets/logo/loding.png";
 import { motion, AnimatePresence } from "framer-motion";
 import NewsEvents from "./pages/NewsEvents";
 
@@ -112,7 +112,7 @@ function App() {
         {loading && (
           <motion.div
             key="loader"
-            className="fixed inset-0 flex items-center justify-center bg-white z-[9999] overflow-hidden"
+            className="fixed inset-0 flex items-center justify-center bg-[#001802] z-[9999] overflow-hidden"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.4 } }}
           >

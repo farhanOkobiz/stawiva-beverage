@@ -12,7 +12,7 @@ function BannerImage({image}) {
         transition: { duration: 2, ease: "easeOut" },
       }}
     >
-      <img src={image} alt="History Banner" className="w-full h-[300px] md:h-auto xl:max-h-[calc(100vh-100px)]" />
+      <img src={image} alt="History Banner" className="w-full h-[350px] md:h-auto xl:max-h-[calc(100vh-100px)]" />
     </motion.div>
   );
 }

@@ -19,7 +19,7 @@ const textVariants = {
 
 const Contact = () => {
   return (
-    <div className="overflow-hidden mt-[85px] md:mt-[92px] lg:mt-[110px] 2xl:mt-[90px]">
+    <div className="overflow-hidden mt-[85px] md:mt-[120px] lg:mt-[110px] 2xl:mt-[90px]">
       {/* Banner Section */}
       <BannerImage image={C1} />
       <div className="h-[68px] sm:h-[83.4px] bg-[#f5f5f5] "></div>
